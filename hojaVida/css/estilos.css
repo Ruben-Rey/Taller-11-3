@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'DM sans';
+    background-color: rgb(255, 254, 254);
+}
+
+.body{
+    margin: auto;
+    font-size: 1.6rem;
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #070101;
+    display: flex;
+    width: 102.4rem;
+    height: 100vh
+}
+
+.aside {
+    background-color: #111111;
+    width: 50rem;
+}
+
+.aside__img{
+    margin: 4rem 0 6rem 0;
+}
+
+.aside__logo{
+    display: block;
+    margin: auto;
+    width: 50%;
+}
+
+.aside__subtitulo{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-top: 1rem;
+    letter-spacing: 1rem;
+}
+
+.aside__link{
+    font-size: 2rem;
+    text-align: center;
+    list-style-type: none;
+}
+
+.aside__link a{
+    position: relative;
+    color: #ffff;
+    margin-left: -3rem;
+    font-weight: 500;
+    line-height: 5rem;
+    text-decoration: none;
+    transition: 0.8s;
+    z-index: 1;
+    
+}
+.aside__link a::after{
+    content: "";
+    position: absolute;
+    border-bottom: 2px solid #ff0000;
+    border-top:2px solid #ff0000;
+    opacity: 0;
+    width: 100%;
+    height: 140%;
+    transform: scale(2);
+    left: 0;
+    top: -0.5rem;
+    transition: 0.5s;
+}
+
+.aside__link a::before{
+    position: absolute;
+    left: -0.1rem;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: -0.1rem;
+    background-color: #ff0000;
+    padding: 0.2rem;
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+}
+
+
+.aside__link a:hover::after{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.aside__link a:hover::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.aside__link a:hover{
+    color: rgb(255, 255, 255);
+}
+
+.foot__titulo{
+    text-align: center;
+    font-weight: 300;
+    margin: 18rem 0 1.5rem 0;
+}
+
+
+.foot__contact {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding-left: 2rem;
+
+}
+
+.foot__contact .logo { 
+    width: 4.2rem;
+    height: 4.2rem;
+    margin-left: 1rem;
+}
+
+.logo__whats{
+    background-image: url(/hojaVida/assets/img/whats_web.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.logo__lind{
+    background-image: url(/hojaVida/assets/img/lind_web.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.logo__behan{
+    background-image: url(/hojaVida/assets/img/behance_web.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.logo__git{
+    background-image: url(/hojaVida/assets/img/git_web.png);
+    background-size: 80%;
+    background-repeat: no-repeat;
+}
+
+.section{
+    background-image: url(/hojaVida/assets/img/fondo.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;   
+    text-align: center;
+    font-size: 2rem;
+}
+
+.section .header__titulo{
+    font-size: 2.5rem;
+    margin: 4rem 0 8rem 0;
+}
+
+.section .figure__img{
+    width: 30%;
+    border-radius: 50rem;
+    border: 10px solid rgb(240, 144, 144);
+    box-shadow: 2px 2px 5px rgb(168, 118, 118);
+}
+
+.section .article{
+    font-size: 2rem;
+    line-height: 3rem;
+    position: relative;
+    
+}
+
+.section .article__titulo{
+    font-size: 2rem;
+    margin: 2rem 0 2rem 0;
+    text-transform: uppercase;
+}
+
+.article__mas::after{
+    content: "Soy una persona autodidacta, comprometido con los objetivos y me adapto a los cambios. Me gusta trabajar en equipo con metodologias àgiles, logrando los objetivos propuestos en el trabajo.";
+    opacity: 0;
+    transition: 1s;
+    display: block;
+
+}
+
+.article__mas:hover::after{
+    opacity: 1;
+}
+
+
+/* -------Personal-------- */
+
+.body--personal{
+    margin: auto;
+    font-size: 1.6rem;
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/hojaVida/assets/img/Paisaje-Arbol-al-Atardecer.jpg);
+    background-repeat: no-repeat;
+    width: 102.4rem;
+    height: 100vh
+}
+
+.titulo--ref{
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.article__card{
+    display: block;
+    height: 100%;
+
+    padding: 2rem;
+    margin: 2rem 0;
+    background-color: rgba(255,255,255,0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0,0.05);
+}
+
+.article__card{
+    cursor: pointer;
+}
+
+.article__card-content{
+    display: none;
+}
+
+.section--ref{
+    width: 80rem;
+    margin: 0 auto;
+}
+
+.section--ref-cards{
+    display: flex;
+    justify-content: space-around;
+}
+
+.article__card:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+    box-shadow: 0px 2px 5px rgba(172, 161, 161, 0.5);
+}
+
+/* -------Familiar-------- */
+
+.body--familiar{
+    margin: auto;
+    font-size: 1.6rem;
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/hojaVida/assets/img/fondo_familiar.jpg);
+    background-repeat: no-repeat;
+    width: 102.4rem;
+    height: 100vh
+}
+
+
+.body--experiencia{
+    margin: auto;
+    color: black;
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/hojaVida/assets/img/experiencia.jpg);
+    background-repeat: no-repeat;
+    width: 102.4rem;
+    height: 100vh
+}
+
+
+.body--estudios{
+    margin: auto;
+    color: rgb(255, 255, 255);
+    font-size: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(/hojaVida/assets/img/fondo_estudios.jpg);
+    background-repeat: no-repeat;
+    width: 102.4rem;
+    height: 100vh
+}
+
+.background{
+    width: 100%;
+    margin-bottom: 11rem;
+}
+
+.background div{
+    width: 20rem;
+    height: 2rem;
+    background-image: url(/hojaVida/assets/img/colores.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 5rem;
+    position: relative;
+    padding-left: 1rem;
+    text-align: center;
+
+}
+
+.background__containt{
+    list-style: none;
+    width: 100%;
+    margin: auto;
+}
+
+.background__containt li{
+    cursor: pointer;
+}
+
+.background div ul{
+    visibility: hidden;
+    transition: 1s ease-in-out;
+    position: absolute;
+    font-size: 1.2rem;
+    top: 1.5rem;
+
+}
+
+.background div:hover ul{
+    visibility: visible;
+    top: 2rem;
+
+
+}
+
+.guinda{
+    background: #5e0303;
+}
+
+.green{
+    background: #05623e;
+}
+
+.blue{
+    background: #5b76c1;
+}

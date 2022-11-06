@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html class="html--taller" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/blackboard.css">
+    <link rel="stylesheet" href="/css/estylos.css">
+
+</head>
+<body class="body body--taller">
+    <button class="regresar">
+        <a href="/portafolio/project.html">Regresar</a>
+    </button>
+    <h1>Taller de ciclos</h1>
+
+    <section class="body body--taller">
+        <h2>Ejercicio #1</h2>
+        <p>Realizar la siguiente figura por medio del ciclo Para.
+        </p>    
+        <pre class="section__ejercicio">
+
+        *
+        **
+        ***
+        ****
+        *****
+        ******
+        *******
+        ********
+        *********
+        **********
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                   
+                        for (int j =0; j <= 10; j++){
+                            for ( int i = 0; i < j; i++ ){
+                                System.out.print( "*" );
+                            }
+                            System.out.println( "" );
+                        }
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio1"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+
+        <h2>Ejercicio #2</h2>
+        <p>Realizar la siguiente figura por medio del ciclo Mientras - Hacer</p>
+        
+        <pre class="section__ejercicio">
+
+                 *
+                **
+               ***
+              ****
+             *****
+            ******
+           *******
+          ********
+         *********
+        **********
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        for ( int j = 10; j > 0; j-- ){
+                            for ( int i = 0; i < j; i++ ){
+                                System.out.print( " " );
+                            }
+                            for ( int i = 11; i > j; i--){
+                                System.out.print( "*" );
+                            }
+                            System.out.println( "" );
+                        }
+                    }
+                }
+            
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio2"> >>>>> Repositorio en github</a>
+        </pre>
+         
+
+        <h2>Ejercicio #3</h2>
+        <p>Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que.
+        </p>
+        <pre class="section__ejercicio">
+
+                  *           
+                 ***
+                *****
+               *******
+              *********
+             ***********
+            *************
+           ***************
+          *****************
+         *******************
+        *********************
+                 ***
+                 ***
+                *****
+               ******* 
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        // tronco del arbol
+                        for ( int fila = 0; fila < 10; fila++){
+                            for ( int espacio = 10; espacio > fila; espacio-- ){
+                                System.out.print( " " );
+                            }
+                            
+                            for ( int left = 0; left < fila; left++ ){
+                                System.out.print( "*" );
+                            }
+                            System.out.print( "*" );
+                            for ( int rigth = 0; rigth < fila; rigth++ ){
+                                System.out.print( "*" );
+                            }
+                
+                            System.out.println( " " );
+                        }
+                        
+                        // base del arbol
+                        Boolean bandera = true;
+                
+                        for ( int fila = 0; fila < 3; fila++){
+                            for ( int espacio = 9; espacio > fila; espacio-- ){
+                                System.out.print( " " );
+                            }
+                
+                            for ( int left = -3; left < fila; left++ ){
+                                System.out.print( "*" );
+                            }
+                            
+                            if ( bandera ){
+                                System.out.println( " " );
+                                for ( int espacio = 9; espacio > fila; espacio-- ){
+                                    System.out.print( " " );
+                                }
+                                
+                                for ( int left = -3; left < fila; left++ ){
+                                    System.out.print( "*" );
+                                }
+                    
+                            }
+                
+                            bandera = false;
+                
+                            for ( int rigth = 0; rigth < fila; rigth++ ){
+                                System.out.print( "*" );
+                            }
+                
+                            System.out.println( " " );
+                        }
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio3"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #4</h2>
+        <p>Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por medio del ciclo
+            Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear la tabla del 5, entonces el
+            resultado debería ser el siguiente:
+        </p>
+
+        <pre class="section__ejercicio">
+
+            1 x 5 = 5
+            2 x 5 = 10
+            3 x 5 = 15
+            4 x 5 = 20
+            5 x 5 = 25
+            6 x 5 = 30
+            7 x 5 = 35
+            8 x 5 = 40
+            9 x 5 = 45
+            10 x 5 = 50
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                
+                        System.out.println( "**********Ingrese un numero**********" );
+                        int inputNumero = sc.nextInt();
+                        String saltoLinea = sc.nextLine();
+                
+                        for ( int i = 1; i <= 10; i++ ){
+                            System.out.println( i + " X " + inputNumero + " = "+ (i*inputNumero) );
+                        }
+                        sc.close();
+                    }
+                    
+                }  
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio4"> >>>>> Repositorio en github</a>
+        </pre>
+
+        <h2>Ejercicio #5</h2>
+        <p>Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee terminar dicho ciclo.
+        </p>
+        <pre class="section__ejercicio">
+            
+            Menù de usuario
+            1. Captura nombre
+            2. Saludar persona
+            3. Salir del sistema
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                        String salir = "yes";
+                
+                        while ( salir.equals("yes") ){
+                            System.out.println( "Menu de usuario" );
+                            System.out.println( "--------------------" );
+                            System.out.println( "1. Capturar nombre \n" + 
+                                            "2. Saludar persona \n" +
+                                            "3. Salir del sistema");
+                
+                            int opcion = sc.nextInt();
+                
+                            switch ( opcion ){
+                                case 1:
+                                    break;
+                                case 2:
+                                    break;
+                                case 3:
+                                    salir = "no";
+                                    return;
+                            }
+                        }
+                
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio5"> >>>>> Repositorio en github</a>
+        </pre>
+
+        <h2>Ejercicio #6</h2>
+        <p>Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos
+            en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que
+            la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados
+            y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo
+            indique.
+        </p>
+
+        <pre class="section__ejercicio">
+            
+            Menù de usuario
+            1. Captura nombre
+            2. Saludar persona
+            3. Salir del sistema
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.ArrayList;
+                import java.util.Scanner;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                
+                        ArrayList<Contacto> registroContactos = new ArrayList<>();
+                
+                        String salir = "yes";
+                
+                        while ( salir.equals("yes") ){
+                            System.out.println( " -----------------" );
+                            System.out.println( "| Menu de usuario |" );
+                            System.out.println( " -----------------" );
+                            System.out.println( "1. Añadir contacto \n" + 
+                                            "2. Buscar contacto \n" +
+                                            "3. Eliminar contacto \n" +
+                                            "4. Salir");
+                
+                            int opcion = sc.nextInt();
+                            String saltoLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                
+                                    if ( registroContactos.size() < 3 ){
+                                        System.out.println( " " );
+                                        System.out.println( "*******Ingrese los datos*******" );
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Nombre completo" );
+                                        String inputNombre = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "telefono" );
+                                        String inputTelefono = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "organizaciòn" );
+                                        String inputOrganizacion = sc.nextLine();
+                
+                                        int indice = buscarContacto( registroContactos, inputTelefono );
+                
+                                        if (  indice < 0 ){
+                
+                                            Contacto newContacto = new Contacto();
+                                            newContacto.setNombreCompleto(inputNombre);
+                                            newContacto.setTelefono(inputTelefono);
+                                            newContacto.setOrganizacion(inputOrganizacion);
+                
+                                            registroContactos.add(newContacto);
+                                        }else{
+                                        System.out.println( "El numero ya esta registrado" );
+                                        }                   
+                                    }else{
+                                        System.out.println( "Solo se puede agregar como màximo 3 contactos" );
+                                    }    
+                                    break;
+                
+                                case 2:
+                
+                                    System.out.println( " " );
+                                    System.out.println( "*******Ingrese el numero del contacto*******" );
+                                    String inputTelefono = sc.nextLine();
+                
+                                    int indice = buscarContacto( registroContactos, inputTelefono );
+                
+                                    if ( indice > -1 ){
+                                        System.out.println( "Nombre Completo : " + registroContactos.get(indice).getNombre() );
+                                        System.out.println( "Organizaciòn : " + registroContactos.get(indice).getOrganizacion() );
+                
+                                    }else{
+                                        System.out.println( "Usuario no encontrado" );
+                                    }
+                
+                                    break;
+                
+                                case 3:
+                
+                                    System.out.println( " " );
+                                    System.out.println( "*******Ingrese el numero del contacto*******" );
+                                    inputTelefono = sc.nextLine();
+                
+                                    indice = buscarContacto( registroContactos, inputTelefono );
+                                    System.out.println( registroContactos.get(indice).getNombre() + " Contacto eliminado" );
+                                    registroContactos.get(indice).contactoRemove();
+                                    registroContactos.remove(indice);
+                                    break;
+                
+                                case 4:
+                                    salir = "no";
+                                    return;
+                            }
+                            
+                            System.out.println( " " );
+                            System.out.println( "************Desea seguir en la aplicaciòn [YES / NO]************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                    }
+                
+                    public static int buscarContacto( ArrayList<Contacto> registroContactos, String inputTelefono ){
+                        int indice = -1;
+                        for ( int i = 0; i < registroContactos.size(); i++ ){
+                            if ( inputTelefono.equals( registroContactos.get(i).getTelefono() ) ){
+                                indice = i;
+                            }
+                        }
+                
+                        return indice;
+                    }
+                }                               
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio6"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #7</h2>
+        <p>El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una
+            aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero
+            tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número
+            de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y
+            consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así
+            lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java">
+                import java.util.ArrayList;
+                import java.util.Scanner;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                
+                        ArrayList<Auto> registroClientes = new ArrayList<>();
+                
+                        String salir = "yes";
+                
+                        while ( salir.equals("yes") ){
+                            System.out.println( " ---------------------------------------" );
+                            System.out.println( "| Bienvenido al parqueadero EL GUARDIÀN |" );
+                            System.out.println( " ---------------------------------------" );
+                            System.out.println( "1. Ingreso al parqueadero \n" + 
+                                            "2. Retiro del parqueadero \n" +
+                                            "3. Consulta de vehìculo \n" +
+                                            "4. Salir");
+                
+                            int opcion = sc.nextInt();
+                            String saltoLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                
+                                    if ( registroClientes.size() < 5 ){
+                                        System.out.println( " " );
+                                        System.out.println( "*******Ingrese los datos*******" );
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Nombre completo" );
+                                        String inputNombre = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Identidad" );
+                                        String inputIdentidad = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Celular" );
+                                        String inputCelular = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Marca" );
+                                        String inputMarca = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Placa" );
+                                        String inputPlaca = sc.nextLine();
+                
+                                        Auto newCliente = new Auto();
+                                        newCliente.setNombreCompleto(inputNombre);
+                                        newCliente.setIdentidad(inputIdentidad);
+                                        newCliente.setCelular(inputCelular);
+                                        newCliente.setMarca(inputMarca);
+                                        newCliente.setPlaca(inputPlaca);
+                
+                                        registroClientes.add(newCliente);                  
+                
+                                    }else{
+                                        System.out.println( "Màximo 5 autos en el parqueadero" );
+                                    }    
+                                    break;   
+                
+                                case 2:
+                
+                                    System.out.println( " " );
+                                    System.out.println( "*******Ingrese la placa*******" );
+                                    String inputPlaca = sc.nextLine();
+                
+                                    int indice = buscarAuto( registroClientes, inputPlaca );
+                                    System.out.println( registroClientes.get(indice).getNombreCompleto() + " Auto retirado" );
+                                    registroClientes.remove(indice);
+                
+                                    break;
+                
+                                case 3:
+                
+                                    System.out.println( " " );
+                                    System.out.println( "*******Ingrese la placa*******" );
+                                     inputPlaca = sc.nextLine();
+                
+                                    indice = buscarAuto( registroClientes, inputPlaca );
+                
+                                    if ( indice > -1 ){
+                                        System.out.println( "Nombre Completo : " + registroClientes.get(indice).getNombreCompleto() );
+                                        System.out.println( "Identidad : " + registroClientes.get(indice).getIdentidad() );
+                                        System.out.println( "Identidad : " + registroClientes.get(indice).getMarca() );
+                
+                
+                                    }else{
+                                        System.out.println( "Placa no encontrada" );
+                                    }
+                
+                                    break;
+                
+                                case 4:
+                                    salir = "no";
+                                    return;
+                            }
+                            
+                            System.out.println( " " );
+                            System.out.println( "************Desea seguir en la aplicaciòn [YES / NO]************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                    }
+                
+                    public static int buscarAuto( ArrayList<Auto> registroClientes, String inputPlaca ){
+                        int indice = -1;
+                        for ( int i = 0; i < registroClientes.size(); i++ ){
+                            if ( inputPlaca.equals( registroClientes.get(i).getPlaca() ) ){
+                                indice = i;
+                            }
+                        }
+                
+                        return indice;
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio7"> >>>>> Repositorio en github</a>
+        </pre>
+        
+        <h2>Ejercicio #8</h2>
+        <p>La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de
+            enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia
+            de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan
+            presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe
+            terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8
+            usuarios en su totalidad.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java">
+                import java.util.ArrayList;
+                import java.util.Scanner;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                        ArrayList<Estudiante> registroEstudiantes = new ArrayList<>();
+                
+                        String salir = "yes";
+                
+                        while ( salir.equals("yes") ){
+                            System.out.println( " ---------------------------------------" );
+                            System.out.println( "| La escuela automovilística El Maestro |" );
+                            System.out.println( " ---------------------------------------" );
+                            System.out.println( "1. Ingreso al curso \n" + 
+                                            "2. Consultar usuarios que llevaron el curso  \n" +
+                                            "3. Ingreso de notas  \n" +
+                                            "4. Salir");
+                
+                            int opcion = sc.nextInt();
+                            String saltoLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                
+                                    if ( registroEstudiantes.size() < 8 ){
+                                        System.out.println( " " );
+                                        System.out.println( "*******Ingrese los datos*******" );
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Nombre completo" );
+                                        String inputNombre = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Identidad" );
+                                        String inputIdentidad = sc.nextLine();
+                
+                                        System.out.println( " " );
+                                        System.out.println( "Celular" );
+                                        String inputCelular = sc.nextLine();
+                
+                                        Estudiante newEstudiante = new Estudiante();
+                                        newEstudiante.setNombreCompleto(inputNombre);
+                                        newEstudiante.setIdentidad(inputIdentidad);
+                                        newEstudiante.setCelular(inputCelular);
+                
+                                        registroEstudiantes.add(newEstudiante);                  
+                
+                                    }else{
+                                        System.out.println( "Màximo 8 autos en el parqueadero" );
+                                    }    
+                                    break;   
+                
+                
+                                case 2:
+                
+                                    System.out.println( " " );
+                                    System.out.println( "*******Ingrese la identidad*******" );
+                                    String inputIdentidad = sc.nextLine();
+                
+                                    int indice = buscarAuto( registroEstudiantes, inputIdentidad );
+                
+                                    if ( indice > -1 ){
+                                        System.out.println( "Nombre Completo : " + registroEstudiantes.get(indice).getNombreCompleto() );
+                                        System.out.println( "Identidad : " + registroEstudiantes.get(indice).getIdentidad() );
+                                        System.out.println( "Nota : " + registroEstudiantes.get(indice).getNota() );
+                                    
+                                        System.out.println( 
+                                            ( registroEstudiantes.get(indice).getNota() > 79 ) ? "Felicidades aprobaste el curso":
+                                            ( registroEstudiantes.get(indice).getNota() > 0) ? "Intente de nuevo, no llego a la nota minima":
+                                                                                            "Aùn no se ingresa la nota");
+                
+                
+                                    }else{
+                                        System.out.println( "Estudiante no encontrado" );
+                                    }
+                
+                                    break;
+                                
+                                case 3:
+                                    
+                                    System.out.println( " " );
+                                    System.out.println( "*******Ingrese la identidad*******" );
+                                    inputIdentidad = sc.nextLine();
+                
+                                    indice = buscarAuto( registroEstudiantes, inputIdentidad );
+                
+                                    if ( indice > -1 ){
+                                        
+                                        System.out.println( " " );
+                                        System.out.println( "*******Ingrese la nota*******" );
+                                        int inputNota = sc.nextInt();
+                                        saltoLinea = sc.nextLine();
+                
+                                        if ( inputNota > 0 & inputNota < 100 ){
+                                            registroEstudiantes.get(indice).setNota(inputNota);
+                
+                                            System.out.println( "Nombre Completo : " + registroEstudiantes.get(indice).getNombreCompleto() );
+                                            System.out.println( "Nota ingresada : " + registroEstudiantes.get(indice).getNota() );
+                
+                                        }
+                                        
+                
+                                    }else{
+                                        System.out.println( "Estudiante no encontrado" );
+                                    }
+                
+                                break;
+                
+                
+                                case 4:
+                                    salir = "no";
+                                    return;
+                            }
+                            
+                            System.out.println( " " );
+                            System.out.println( "************Desea seguir en la aplicaciòn [YES / NO]************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                
+                        sc.close();
+                    }
+                
+                    public static int buscarAuto( ArrayList<Estudiante> registroEstudiantes, String inputIdentidad ){
+                        int indice = -1;
+                        for ( int i = 0; i < registroEstudiantes.size(); i++ ){
+                            if ( inputIdentidad.equals( registroEstudiantes.get(i).getIdentidad() ) ){
+                                indice = i;
+                            }
+                        }
+                
+                        return indice;
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller3/ejercicio8"> >>>>> Repositorio en github</a>
+        </pre>
+    </section>
+</body>
+    <script src="/js/rainbow-custom.min.js" ></script>
+    <script src="/js/taller.js"></script>
+</html>

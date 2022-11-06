@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="html--taller" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/blackboard.css">
+    <link rel="stylesheet" href="/css/estylos.css">
+
+</head>
+<body class="body body--taller">
+
+    <button class="regresar">
+        <a href="/portafolio/project.html">Regresar</a>
+    </button>
+
+    <h1>Taller de variables e impresión</h1>
+
+    <section class="section__taller">
+        <h2>Ejercicio #1</h2>
+        <p>Realizar un programa el cual solicite su nombre y apellidos.</p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+	            Definir nombre, apellido Como Caracter;
+		
+	            Escribir  "¿Cuál es su nombre?";
+	            Leer  nombre;
+	
+	            Escribir "¿Cuáles son tus apellidos?";
+	            Leer apellido;
+	
+	            Limpiar Pantalla;
+	
+	            Escribir "Su nombre y apellido es : ", nombre, " " , apellido; 
+            FinProceso
+            </code>
+        </pre>
+
+
+
+        <h2>Ejercicio #2</h2>
+        <p>Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.</p>
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombre, apellido Como Caracter;
+                Definir edad Como Entero;
+                Definir estatura Como Real;
+            
+                Escribir  "¿Cuál es nombre?";
+                leer nombre;
+            
+                Escribir  "¿Cuáles son tus apellidos?";
+                leer apellido;
+        
+                Escribir "¿Cuál es su edad?";
+                leer edad;
+            
+                Escribir "¿Cuál es su estatura en metros?";
+                leer estatura;
+            
+                Limpiar Pantalla;
+            
+                Escribir "Mi nombre y apellido es :", nombre, " ", apellido;
+                Escribir "tengo :", edad, " años y de estatura de: ", estatura, "m";
+            FinProceso
+            </code>
+        </pre>
+         
+
+        <h2>Ejercicio #3</h2>
+        <p>Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su padre y
+            madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo de [Nombre de la
+            Madre] y [Nombre del Padre].
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombre, apellido, nombreMama, apellidoMama, nombrePapa, apellidoPapa Como Caracter;
+            
+                Escribir  "¿Cuál es su nombre?";
+                leer nombre;
+                Escribir  "¿Cuáles son tus apellidos?";
+                leer apellido;
+                Escribir "¿Cuál es el nombre de tu mamá?";
+                leer nombreMama;
+                Escribir "¿Cuál es el apellido de tu mamá?";
+                leer apellidoMama;
+            
+                Escribir "¿Cuál es el nombre de tu papá";
+                leer nombrePapa;
+                Escribir "¿Cúal es el apellido de tu papá?";
+                leer apellidoPapa;
+            
+                Limpiar Pantalla;
+            
+                Escribir "Yo ", nombre, " ", apellido, ", soy hijo de ", nombreMama, " y ", nombrePapa;
+            FinProceso
+
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #4</h2>
+        <p>Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir en
+            pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir pais, ciudadCapital Como Caracter;
+            
+                Escribir "Ingrese su pais";
+                Leer pais;
+            
+                Escribir "Ingrese la capital";
+                Leer ciudadCapital;
+            
+                Limpiar Pantalla;
+                Escribir "La ciudad ", ciudadCapital, " es la capital del país " , pais;
+            FinProceso
+            </code>
+        </pre>
+
+        <h2>Ejercicio #5</h2>
+        <p>Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su nombre
+            completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de Mascota] es un(a)
+            [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreMascota, tipoMascota, nombreDueno Como Caracter;
+                Definir edadMascota Como Entero;
+            
+                Escribir "¿Cúal es el nombre de su mascota?";
+                Leer nombreMascota;
+            
+                 "¿Cúal es la edad de la mascota? ";
+                Leer edadMascota;
+            
+                Escribir "¿Qué tipo es su mascota?";
+                Leer tipoMascota;
+            
+                Escribir  "Introduzca su nombre completo";
+                Leer  nombreDueno;
+            
+                Limpiar Pantalla;
+            
+                Escribir nombreMascota, " es un(a) ", tipoMascota, " el cual, tiene ", edadMascota, " años de edad y ", nombreDueno, "
+                es actualmente su dueño(a)";
+            FinProceso
+            </code>
+        </pre>
+
+    </section>
+</body>
+    <script src="/js/rainbow-custom.min.js" ></script>
+    <script src="/js/taller.js"></script>
+</html>

@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html class="html--taller" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/blackboard.css">
+    <link rel="stylesheet" href="/css/estylos.css">
+
+</head>
+<body class="body body--taller">
+    <button class="regresar">
+        <a href="/portafolio/project.html">Regresar</a>
+    </button>
+    <h1>Taller de variables e impresión</h1>
+
+    <section class="section__taller">
+        <h2>Ejercicio #1</h2>
+        <p>Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18 años, deberá
+            mostrar en pantalla: Usted es mayor de edad.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                
+                    public static void main(String[] args){
+                
+                        Scanner input = new Scanner(System.in);
+                        System.out.println("Ingrese su edad");
+                        Integer edad = input.nextInt();
+                
+                        input.close();
+                        
+                        if (edad >= 18 ){
+                            System.out.println("Usted es mayor de edad.");
+                        }
+                    } 
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio1"> >>>>> Repositorio en github</a>
+
+        </pre>
+
+
+
+        <h2>Ejercicio #2</h2>
+        <p>Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años, deberá mostrar en pantalla: Usted aún es un niño(a).</p>
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                
+                    public static void main(String[] args){
+                
+                        Scanner input = new Scanner(System.in);
+                        System.out.println("Ingrese su edad");
+                        Integer edad = input.nextInt();
+                
+                        input.close();
+                
+                        if ( edad < 18 ){
+                            System.out.println("Usted aún es un niño(a).");
+                        }
+                    }
+                }
+            </code>
+            <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio2"> >>>>> Repositorio en github</a>
+
+        </pre>
+         
+
+        <h2>Ejercicio #3</h2>
+        <p>Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es mayor o igual
+            a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad, por lo tanto puede
+            entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá imprimirse el siguiente mensaje:
+            [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                
+                    public static void main(String[] args){
+                
+                        Scanner input = new Scanner(System.in);
+                
+                        System.out.println("Ingrese su nombre completo");
+                        String nombreCompleto = input.nextLine();
+                
+                        System.out.println("Ingrese su edad");
+                        Integer edad = input.nextInt();
+                
+                        input.close();
+                
+                        if ( edad >= 18 ){
+                            System.out.println(nombreCompleto + " usted es mayor de edad, por lo tanto puede entrar a la fiesta.");
+                        }else{
+                            System.out.println(nombreCompleto + " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.");
+                        }
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio3"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #4</h2>
+        <p>La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir, requiere de
+            una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios. Para cada usuario se
+            debe permitir la opción de alquilar película, consultar películas disponibles y recibir película en la video tienda
+            con la opción de realizar anotaciones sobre estas si se llegan a presentar daños u otra novedad sobre la película.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.io.*;
+                import java.util.*;
+                
+                public class App {
+                 
+                    public static void main(String[] args){
+                        // Creacion del arrayList para guardar los atributos de Peliculas
+                        ArrayList<Peliculas> arrayPeliculas = new ArrayList<Peliculas>();
+                
+                        File file = new File("ListaPeliculas.txt");
+                        
+                        try {
+                            Scanner leer = new Scanner(file);
+                
+                            while ( leer.hasNextLine() ){
+                                String data = leer.nextLine();
+                                String [] separarData = data.split(",");
+                
+                                Peliculas pelicula = new Peliculas();
+                
+                                pelicula.setNombre(separarData[0]);
+                                pelicula.setGenero(separarData[1]);
+                                pelicula.setPais(separarData[2]);
+                                pelicula.setCantidad(Integer.parseInt(separarData[3]));
+                                
+                                arrayPeliculas.add(pelicula);
+                            }
+                            
+                            leer.close();
+                
+                        } catch ( FileNotFoundException error ) {
+                            System.out.println( "Exepcion al abrir el archivo " + error );
+                        }
+                
+                        Iterator<Peliculas> itrPelicula = arrayPeliculas.iterator();
+                
+                        // Array de registro de usuarios
+                        ArrayList<Usuarios> regisUsuarios = new ArrayList<>();
+                
+                        // Matriz registro de Peliculas
+                        String [][] regisPeliculas = new String[15][15];
+                
+                        Scanner sc = new Scanner( System.in );
+                        int cont = 0;
+                        String salir = "yes";
+                
+                
+                        while ( salir.equals("yes") ){
+                        System.out.println( "Bienvenido a la Video tienda" );
+                            System.out.println( "----------------------------------" );
+                            System.out.println("1. Alquilar películas");
+                            System.out.println("2. Consultar películas disponibles");
+                            System.out.println("3. Recibir películas");
+                            System.out.println("4. Salir de la app");
+                            System.out.println( " " );
+                            System.out.println("************Elegir una opción************");
+                
+                            int opcion = sc.nextInt();
+                            String saltoLinea = sc.nextLine();
+                
+                            itrPelicula = arrayPeliculas.iterator();
+                            Peliculas pelis = itrPelicula.next();
+                            
+                            switch ( opcion ){
+                
+                                case 1:
+                                    int contIndice = 0;
+                
+                                    salir = "yes";
+                                    while ( salir.equals("yes")){
+                
+                                        while ( itrPelicula.hasNext() ){
+                                            
+                                            if ( pelis.getCantidad() > 0 ){
+                                                System.out.println( pelis.getNombre() );
+                                                pelis = itrPelicula.next();
+                                            }
+                                        }
+                                    
+                                        itrPelicula = arrayPeliculas.iterator();
+                                        System.out.println( " " );
+                                        System.out.println("************Digite la pelicula que desea alquilar :************");
+                                        String inputPeli = sc.nextLine();
+                                        inputPeli = inputPeli.toLowerCase();
+                
+                                        while ( itrPelicula.hasNext() ){
+                                            pelis = itrPelicula.next();
+                
+                                            if ( pelis.getCantidad() > 0 ){
+                                                System.out.println( pelis.getNombre() );
+                                                if ( pelis.getNombre().equals(inputPeli) ){
+                                                    regisPeliculas[cont][contIndice] = inputPeli;
+                                                    pelis.decreCantidad();
+                                                    contIndice++;
+                                                }
+                                            }
+                                        }
+                
+                                        System.out.println( " " );
+                                        System.out.println("************Desea seguir comprando ? [YES / NO]************");
+                                        salir = sc.nextLine();
+                                        salir = salir.toLowerCase();
+                                    }
+                
+                                    cont = cont + 1;
+                
+                                    System.out.println( " " );
+                                    System.out.println( "************Ingrese sus datos************\n" +
+                                                    "--------------------------" );
+                                    System.out.println( " " );
+                                    System.out.println( "Nombre completo");
+                
+                                    String inputNombre = sc.nextLine();
+                                    System.out.println( " " );
+                                    System.out.println( "Identidad" );
+                                    String inputIdentidad = sc.nextLine();
+                                    System.out.println( " " );
+                                    System.out.println( "Direcciòn");
+                                    String inputDireccion = sc.nextLine();
+                                    System.out.println( " " );
+                                    System.out.println( "Celular" );
+                                    int inputCelular = sc.nextInt();
+                                    saltoLinea = sc.nextLine();
+                                    System.out.println( " " );
+                
+                                    Usuarios u1 = new Usuarios( inputNombre, inputIdentidad, inputDireccion, inputCelular );
+                                    regisUsuarios.add(u1);
+                
+                                    break;
+                
+                                case 2:
+                                     //Recorre el arrayList e imprime las peliculas
+                                    itrPelicula = arrayPeliculas.iterator();
+                
+                                    while ( itrPelicula.hasNext() ){
+                                        pelis = itrPelicula.next();
+                
+                                        if ( pelis.getCantidad() > 0 ){
+                
+                                            System.out.println( "Titulo :" + pelis.getNombre() + "\n" +
+                                                    "Genero :" + pelis.getGenero() + "\n" +
+                                                    "Pais :" + pelis.getPais() + "\n" +
+                                                    "Cantidad :" + pelis.getCantidad() + "\n" + 
+                                                    "-------------------------------------------");
+                                        }
+                                    }
+                                    break;
+                
+                                case 3:
+                                    System.out.println( " " );
+                                    System.out.println( "************Ingrese su identificaciòn************");
+                                    inputIdentidad = sc.nextLine();
+                
+                                    Boolean bandera = false;
+                
+                                    for ( int i = 0; i < regisUsuarios.size(); i++ ){
+                                        if ( inputIdentidad.equals( regisUsuarios.get(i).getIdentidad() ) ){
+                                            for ( int j = 0; j < regisPeliculas[i].length; j++ ){
+                                                if ( regisPeliculas[i][j] == null ){
+                                                    break;
+                                                }else{
+                                                    retornaPeli( arrayPeliculas, regisPeliculas[i][j] );
+                                                    regisPeliculas[i][j] = "";
+                                                }
+                                            }
+                                            regisUsuarios.remove(i);
+                                            cont--;
+                                        } 
+                                            bandera = true;
+                                    }
+                                    
+                
+                                    if ( bandera ){
+                                        System.out.println( "************La pelicula esta en buen estado?************" );
+                                        String inputEstado = sc.nextLine();
+                                        inputEstado = inputEstado.toLowerCase();
+                                        if ( inputEstado.equals("yes") ){
+                                            System.out.println( "Recepcion correcta " );
+                                        }
+                                        else {
+                                            System.out.println( "************Ingrese detalles del mal estado************" );
+                                            String inputDaños = sc.nextLine();
+                                        }
+                
+                
+                                    }else{
+                                        System.out.println( "Identificaciòn no encontrada" );
+                                        
+                                    }
+                
+                            }
+                
+                            System.out.println( " " );
+                            System.out.println("************Desea regresar al menu ? [YES / NO]************");
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                        sc.close();
+                    }
+                
+                    public static void retornaPeli( ArrayList<Peliculas> arrayPeliculas, String pelicula ){
+                
+                        for ( int i = 0; i < arrayPeliculas.size(); i++ ){
+                            if ( arrayPeliculas.get(i).getNombre().equals( pelicula )) {
+                                arrayPeliculas.get(i).increCantidad();
+                                System.out.println( "Pelicula :\"" + pelicula + "\" Revisar el estado del producto" );
+                            }
+                        }
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio4"> >>>>> Repositorio en github</a>
+        </pre>
+
+        <h2>Ejercicio #5</h2>
+        <p>La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder facturar los
+            productos que vende a sus clientes y para ello, los productos tienen unas características que deben indicársele al
+            cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones de compra de producto,
+            consulta de precios por producto y devoluciones en caso de que se presenten.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.*;
+                import java.io.*;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        ArrayList<Medicamentos> ArrayMedicamentos = new ArrayList<Medicamentos>();
+                
+                        File file = new File("ListaMedicamentos.txt");
+                        try {
+                            Scanner leer = new Scanner(file);
+                
+                            while ( leer.hasNextLine() ){
+                                String data = leer.nextLine();
+                                String [] separarData = data.split("::");
+                
+                                Medicamentos medicamento = new Medicamentos();
+                
+                                medicamento.setNombre(separarData[0]);
+                                medicamento.setDescripcion(separarData[1]);
+                                medicamento.setFormula(separarData[2]);
+                                medicamento.setMasaMolar(separarData[3]);
+                                medicamento.setVidaMedia(separarData[4]);
+                                medicamento.setMetabolismo(separarData[5]);
+                                medicamento.setCantidad(Integer.parseInt(separarData[6]));
+                                medicamento.setPrecio( Double.parseDouble(separarData[7]));
+                                //Medicamento // Descripciòn // Fòrmula // Masa molar // Vida media // Metabolismo // Cantidad
+                
+                                ArrayMedicamentos.add( medicamento );
+                            }
+                        } catch( FileNotFoundException error ){
+                            System.out.println( "Exepcion al abrir el archivo " + error );
+                        }
+                
+                        Scanner sc = new Scanner( System.in );
+                
+                        String salir = "yes";
+                
+                        /*[usuario] [usuario]  = 0
+                                    [producto] = 1
+                                    [cantidad] = 2
+                                    [subtotal] = 3
+                        */
+                
+                        ArrayList<String> [][] regisCompras = new ArrayList[15][4];
+                        int contUsuario = 0;
+                
+                        
+                        while ( salir.equals( "yes" ) ){
+                
+                            System.out.println( "Bienvenido a la drogeria mi salud" );
+                            System.out.println( "----------------------------------" );
+                            System.out.println("1. Compra de productos");
+                            System.out.println("2. Consulta de producto");
+                            System.out.println("3. Devoluciones");
+                            System.out.println("4. Salir de la app");
+                
+                            System.out.println( " " );
+                            System.out.println("************Elegir una opción************");
+                            
+                            int opcion  = sc.nextInt();
+                            String saltoLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                
+                                case 1:
+                
+                                    salir = "yes";
+                                    Boolean flagCompro = true; 
+                
+                                    //Inicializando la posicion PRODUCTO de la matriz
+                                    regisCompras[contUsuario][1] = new ArrayList<String>();
+                                    //Inicializando la posicion CANTIDAD de la matriz
+                                    regisCompras[contUsuario][2] = new ArrayList<String>();
+                                    //Inicializando la posicion PRECIO de la matriz
+                                    regisCompras[contUsuario][3] = new ArrayList<String>();
+                
+                                    while ( salir.equals("yes") ){
+                
+                                        System.out.println( " " );
+                                        System.out.println( "************Ingrese el producto************" );
+                                        String inputProducto = sc.nextLine();
+                                        inputProducto = inputProducto.toLowerCase();
+                
+                                        for ( int i = 0; i < ArrayMedicamentos.size(); i++ ){
+                
+                                            if ( ArrayMedicamentos.get(i).getNombre().equals(inputProducto) ){
+                
+                                                System.out.println( "************Ingrese la cantidad************" );
+                                                int inputCantidad = sc.nextInt();
+                                                saltoLinea = sc.nextLine();
+                                            
+                                                if ( ArrayMedicamentos.get(i).getCantidad() >= inputCantidad ){
+                                                    
+                                                    regisCompras[contUsuario][1].add( inputProducto );
+                                                    regisCompras[contUsuario][2].add( String.valueOf( inputCantidad));
+                                                    Double subTotal = ( inputCantidad * ArrayMedicamentos.get(i).getPrecio() );
+                
+                                                    regisCompras[contUsuario][3].add( Double.toString( subTotal ));
+                                                    ArrayMedicamentos.get(i).decreCantidad( inputCantidad );
+                                                    
+                                                }else{
+                                                    System.out.println( "No hay stock" );
+                                                    flagCompro = false;
+                                                }
+                                            }else{
+                                                
+                                                flagCompro = false;
+                                            }
+                                        }
+                
+                                        if ( !flagCompro ){
+                                            System.out.println( "Producto no encontrado" );
+                                        }
+                
+                                        System.out.println( " " );
+                                        System.out.println( "************Desea seguir comprando [YES / NO]************" );
+                                        salir = sc.nextLine();
+                                        salir = salir.toLowerCase();
+                
+                                    }
+                
+                                    if ( flagCompro ){
+                
+                                        System.out.println( " " );
+                                        System.out.println( "************Ingrese sus datos************\n" +
+                                                    "--------------------------" );
+                                        System.out.println( " " );
+                                        System.out.println( "Nombre completo");
+                
+                                        String inputNombre = sc.nextLine();
+                                        System.out.println( " " );
+                                        System.out.println( "Identidad" );
+                                        String inputIdentidad = sc.nextLine();
+                                        System.out.println( " " );
+                                        System.out.println( "Direcciòn");
+                                        String inputDireccion = sc.nextLine();
+                                        System.out.println( " " );
+                                        System.out.println( "Celular" );
+                                        String inputCelular = sc.nextLine();
+                                        System.out.println( " " );
+                
+                                        regisCompras[contUsuario][0] = new ArrayList<String>();
+                
+                                        regisCompras[contUsuario][0].add(inputNombre);
+                                        regisCompras[contUsuario][0].add(inputIdentidad);
+                                        regisCompras[contUsuario][0].add(inputDireccion);
+                                        regisCompras[contUsuario][0].add(inputCelular);
+                
+                                        contUsuario++;
+                
+                                        System.out.println( "************Factura************" );
+                
+                                    }
+                
+                                    break;
+                
+                
+                                case 2:
+                                    
+                                    for ( int i = 0; i < ArrayMedicamentos.size(); i++ ){
+                                        System.out.println( "Nombre : " + ArrayMedicamentos.get(i).getNombre() + "; Precio : " + ArrayMedicamentos.get(i).getPrecio() + "; Cantidad : " + ArrayMedicamentos.get(i).getCantidad() );
+                                    }
+                                    break;
+                                         
+                                case 3:
+                
+                                    System.out.println( "************Digitar la identificaciòn************");
+                                    String inputIdentidad = sc.nextLine();
+                
+                                    Boolean flagUsuario = true;
+                
+                                    for ( int i = 0; i < contUsuario; i++ ){
+                                        if ( inputIdentidad.equals( regisCompras[i][0].get(1) )){
+                                            System.out.println( regisCompras[i][1] );
+                                            flagUsuario = false;
+                                        }
+                                    }
+                
+                                    if ( flagUsuario ){
+                                        System.out.println( "Usuario no encontrado" );
+                                    }
+                
+                                    break;
+                                    
+                                case 4:
+                            }
+                
+                            System.out.println( "Desea continuar en la pàgina? [YES / NO]" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio5"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #6</h2>
+        <p>El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas revisiones y
+            requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada motocicleta se
+            debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe existir registro
+            de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que se requiera
+            inventariar cambios repuestos en la motocicleta al entregarla.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.io.File;
+                import java.io.FileNotFoundException;
+                import java.util.ArrayList;
+                import java.util.Scanner;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        File file = new File( "repuestos.txt" );
+                
+                        ArrayList<Repuestos> repuestosArray = new ArrayList<>();
+                
+                        ArrayList<String> [][] regisServicio = new ArrayList[10][10];
+                
+                        try{
+                            Scanner leer = new Scanner(file);
+                
+                            while ( leer.hasNextLine() ){
+                                String [] separarData = new String[3];
+                                
+                                String data = leer.nextLine();
+                
+                                separarData = data.split("::");
+                
+                                Repuestos repuesto = new Repuestos();
+                
+                                repuesto.setRepuesto(separarData[0]);
+                                repuesto.setCantidad( Integer.parseInt(separarData[1]));
+                                repuesto.setPrecio( Double.parseDouble( separarData[2]) );
+                
+                                repuestosArray.add(repuesto);
+                            }
+                
+                        } catch ( FileNotFoundException error ){
+                            System.out.println( "Exepcion al archivo no encontrado " + error );
+                        }
+                
+                        System.out.println( "Bienvenido al taller el Maquinista" );
+                        System.out.println( "----------------------------------" );
+                         
+                        Scanner sc = new Scanner( System.in );
+                
+                        String salir = "yes";
+                        int contRevision = 0;
+                        int indiceDeMoto;
+                        int contRepuesto = 1;
+                        
+                        while ( salir.equals( "yes" ) ){
+                
+                            System.out.println( "1. Servicio de Revisión\n"
+                                                + "2. Ingreso de Servicio de reparaciòn\n"
+                                                + "3. Recoger motocicleta\n"
+                                                + "4. Inventario de repuestos\n"
+                                                + "5. Salir de la app");
+                    
+                            System.out.println( " " );
+                            System.out.println( "************Escoja una de las siguientes opciones************" );
+                
+                            int opcion = sc.nextInt();
+                            String saltarLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                
+                                    Persona usuario = new Persona();
+                                    crearUsuario( usuario, sc );
+                
+                                    // 0  nombre;
+                                    // 1  identidad;
+                                    // 2  celular;
+                                    // 3  direccion;
+                                    // 4  modelo;
+                                    // 5  placa;
+                                    // 6  problema;
+                
+                                    regisServicio [contRevision][0] = new ArrayList<String>();
+                                    
+                                    regisServicio [contRevision][0].add( usuario.getNombre() );
+                                    regisServicio [contRevision][0].add( usuario.getIdentidad());
+                                    regisServicio [contRevision][0].add( usuario.getCelular());
+                                    regisServicio [contRevision][0].add( usuario.getDireccion());
+                                    regisServicio [contRevision][0].add( usuario.getModelo());
+                                    regisServicio [contRevision][0].add( usuario.getPlaca());
+                                    regisServicio [contRevision][0].add( usuario.getProblema());
+                
+                                    contRevision++;
+                                    break;
+                
+                                case 2:
+                
+                                    salir = "yes";
+                                    System.out.println( "************Ingrese la placa************" );
+                                    String inputPlaca = sc.nextLine();
+                                    contRepuesto = 1;
+                
+                                    while ( salir.equals("yes") ){
+                
+                                        indiceDeMoto = buscarMoto( inputPlaca, regisServicio, contRevision );
+                                        
+                                        if ( indiceDeMoto > -1 ){
+                                            System.out.println( "************Ingrese el repuesto************" );
+                                            String inputRepuesto = sc.nextLine();
+                                            inputRepuesto = inputRepuesto.toLowerCase();
+                
+                                            ingresoRepuestos( repuestosArray, regisServicio, inputRepuesto, sc, indiceDeMoto, contRepuesto );
+                                            contRepuesto++;
+                 
+                                        }else{
+                                            System.out.println( "Placa no encontrada" );
+                                            break;
+                                        }
+                
+                                        System.out.println( " " );
+                                        System.out.println( "************Desea agregar mas repuestos [YES / NO]************" );
+                                        salir = sc.nextLine();
+                                        salir = salir.toLowerCase();
+                                    }
+                
+                                    break;
+                                
+                                case 3:
+                                    
+                                    System.out.println( "************Ingrese la placa************" );
+                
+                                    inputPlaca = sc.nextLine();
+                                    indiceDeMoto = buscarMoto( inputPlaca, regisServicio, contRevision );
+                                    
+                                    if ( indiceDeMoto > -1 ){
+                
+                                        System.out.println( regisServicio[indiceDeMoto][0].get(0) );
+                                        
+                                        int i=1;
+                                        
+                                        while ( regisServicio[indiceDeMoto][i] != null ){
+                                            System.out.println( regisServicio[indiceDeMoto][i] );
+                                            i++;
+                                        }               
+                                    }else{
+                                        System.out.println( "Placa no encontrada" );
+                                    }
+                                    break; 
+                
+                                case 4:
+                                    
+                                    for ( int i = 0; i < repuestosArray.size(); i++ ){
+                                        System.out.println( "Repuesto :" + repuestosArray.get(i).repuesto + " , Cantidad :" + repuestosArray.get(i).getCantidad() );
+                                    }
+                                }
+                
+                            System.out.println( " " );
+                            System.out.println( "************Desea seguir en la aplicaciòn [YES / NO]************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                    }
+                
+                    public static void crearUsuario( Persona createUsuario, Scanner sc ){
+                        
+                        System.out.println( " " );
+                        System.out.println( "************Ingrese sus datos************\n" +
+                                            "--------------------------" );
+                        System.out.println(" ");
+                        System.out.println("Nombre completo");
+                        String inputNombre = sc.nextLine();
+                
+                        System.out.println(" ");
+                        System.out.println("Identidad");
+                        String inputIdentidad = sc.nextLine();
+                
+                        System.out.println(" ");
+                        System.out.println("Celular");
+                        String inputCelular = sc.nextLine();
+                
+                        System.out.println(" ");
+                        System.out.println("Direcciòn");
+                        String inputDireccion = sc.nextLine();
+                
+                        System.out.println(" ");
+                        System.out.println("Modelo");
+                        String inputModelo = sc.nextLine();
+                
+                        System.out.println(" ");
+                        System.out.println("Placa");
+                        String inputPlaca = sc.nextLine();
+                
+                        System.out.println("");
+                        System.out.println("************Ingrese el detalle del problema************");
+                        String inputProblema = sc.nextLine();
+                
+                        createUsuario.setNombre(inputNombre);
+                        createUsuario.setIdentidad(inputIdentidad);
+                        createUsuario.setCelular(inputCelular);
+                        createUsuario.setDireccion(inputDireccion);
+                        createUsuario.setModelo(inputModelo);
+                        createUsuario.setPlaca(inputPlaca);
+                        createUsuario.setProblema(inputProblema); 
+                    }
+                
+                    public static int buscarMoto( String inputPlaca, ArrayList<String> [][] regisServicio, int contRevision ){
+                        
+                        int valor = -1;
+                        for ( int i = 0; i < contRevision; i++ ){
+                            if ( inputPlaca.equals( regisServicio[i][0].get(5) ) ){
+                                return i;
+                            }
+                        }
+                        return valor;
+                    }
+                
+                    public static void ingresoRepuestos( ArrayList<Repuestos> repuestosArray, ArrayList<String> [][] regisServicio ,String inputRepuesto, Scanner sc, int indiceDeMoto, int contRepuesto ){
+                        
+                        for ( int i = 0; i < repuestosArray.size(); i++ ){
+                            if ( inputRepuesto.equals( repuestosArray.get(i).getRepuesto() ) ){
+                
+                                System.out.println( "************Ingrese la cantidad************" );
+                                int inputCantidad = sc.nextInt();
+                                String saltoLinea = sc.nextLine();
+                
+                                if ( repuestosArray.get(i).getCantidad() >= inputCantidad ){
+                                                   
+                                    regisServicio[indiceDeMoto][contRepuesto] = new ArrayList<String>();
+                                    regisServicio[indiceDeMoto][contRepuesto].add( inputRepuesto );
+                                    regisServicio[indiceDeMoto][contRepuesto].add( String.valueOf( inputCantidad) ); 
+                                
+                                    Double subTotal = (repuestosArray.get(i).getPrecio() * inputCantidad);
+                                    regisServicio[indiceDeMoto][contRepuesto].add( Double.toString(subTotal) );
+                                    repuestosArray.get(i).decreCantidad( inputCantidad );
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio6"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #7</h2>
+        <p>La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa corporal)
+            y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada adicional a los datos
+            suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se encuentra (bajo peso, normal,
+            sobrepeso y obeso).
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in ); 
+                        String salir = "yes";
+                
+                        while ( salir.equals("yes") ){
+                
+                            System.out.println( "***********Ingrese su peso en kilogramos***********" );
+                            Double peso = sc.nextDouble();
+                            System.out.println( "***********Ingrese su altura en metros***********" );
+                            Double altura = sc.nextDouble();
+                            String saltoLinea = sc.nextLine();
+                
+                            Double imc = peso / (altura * altura);
+                            imc = Math.round(imc*100.0)/100.0;
+                            System.out.println( imc );
+                
+                            System.out.println( ( imc >= 30 ) ? "Se encuentra en el rango de obesidad":
+                                                ( imc >= 25) ? "Se encuentra en el rango de sobre peso":
+                                                ( imc >= 18.5) ? "Se encuentra en el rango de peso normal":
+                                                "Se encuentra en el rango de bajo de peso");
+                
+                            System.out.println( " " );
+                            System.out.println( "************Desea seguir en la aplicaciòn [YES / NO]************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                
+                        }
+                        sc.close();
+                
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio7"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #8</h2>
+        <p>El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita registrar los
+            pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características propias como
+            sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los pedidos, las tortas
+            disponibles y las ventas que se registren diariamente.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.io.File;
+                import java.io.FileNotFoundException;
+                import java.util.ArrayList;
+                import java.util.Scanner;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        File file = new File( "tortas.txt" );
+                
+                        ArrayList<Torta> tortas = new ArrayList<>();
+                        
+                        try{
+                            Scanner leer = new Scanner( file );
+                        
+                            while ( leer.hasNextLine() ){
+                                String [] separarData = new String[7];
+                                String data = leer.nextLine();
+                            
+                                separarData = data.split("::");
+                                Torta torta = new Torta();
+                
+                                torta.setNombre(separarData[0]);
+                                torta.setSabor(separarData[1]);
+                                torta.setRelleno(separarData[2]);
+                                torta.setDecoracion(separarData[3]);
+                                torta.setPorciones(separarData[4]);
+                                torta.setPrecio( Double.parseDouble(separarData[5]));
+                                torta.setCantidad( Integer.parseInt(separarData[6]));
+                                
+                                tortas.add(torta);             
+                            }
+                
+                            leer.close();
+                
+                        }catch (FileNotFoundException error) {
+                            System.out.println( "Exepcion al archivo no encontrado " + error );
+                        }
+                
+                        ArrayList<Usuarios> registroClientes = new ArrayList<>();
+                        ArrayList<Torta> registroVentas = new ArrayList<>();
+                        Double total = 0.0;
+                
+                        Scanner sc = new Scanner (System.in);
+                        String salir = "yes";
+                
+                        while ( salir.equals( "yes" ) ){
+                
+                            System.out.println("1. Programar pedido\n" +
+                                            "2. Tortas disponibles\n" +
+                                            "3. Venta diaria\n" +
+                                            "4. Salir");
+                
+                            System.out.println( " " );
+                            System.out.println( "************Escoja una de las siguientes opciones************" );
+                            int opcion = sc.nextInt();
+                            String saltarLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                
+                                    System.out.println( " " );
+                                    System.out.println( "************Ingrese la torta************" );
+                                    String inputTorta = sc.nextLine();
+                                    inputTorta = inputTorta.toLowerCase();
+                
+                                    Boolean existeTorta = false;
+                                    Boolean existeStock = false;
+                
+                                    for ( int i = 0; i < tortas.size(); i++ ){
+                                        if ( inputTorta.equals( tortas.get(i).getNombre() ) ){
+                
+                                            existeTorta = true;
+                
+                                            System.out.println( "************Ingrese la cantidad************" );
+                                            int inputCantidad = sc.nextInt();
+                                            saltarLinea = sc.nextLine();
+                                            
+                                            if ( inputCantidad <= tortas.get(i).getCantidad() ){
+                                                
+                                                existeStock = true;
+                
+                                                Double subTotal = tortas.get(i).getPrecio();
+                                                tortas.get(i).setDescontar(inputCantidad);
+                                                subTotal = subTotal * inputCantidad;
+                                                total = total + subTotal;
+                
+                                                Torta tortaVenta = new Torta();
+                                                tortaVenta.setNombre(inputTorta);
+                                                tortaVenta.setCantidad(inputCantidad);
+                                                tortaVenta.setPrecio(subTotal); 
+                                                registroVentas.add(tortaVenta);
+                                            }
+                                        }
+                                    }
+                                    
+                                    if ( existeTorta & existeStock ){
+                
+                                        System.out.println( " " );
+                                        System.out.println( "************Ingrese sus datos************\n" +
+                                                    "--------------------------" );
+                                        System.out.println( " " );
+                                        System.out.println( "Nombre completo");
+                
+                                        String inputNombre = sc.nextLine();
+                                        System.out.println( " " );
+                                        System.out.println( "Identidad" );
+                                        String inputIdentidad = sc.nextLine();
+                                        System.out.println( " " );
+                                        System.out.println( "Direcciòn");
+                                        String inputDireccion = sc.nextLine();
+                                        System.out.println( " " );
+                                        System.out.println( "Celular" );
+                                        String inputCelular = sc.nextLine();
+                                        System.out.println( " " );
+                
+                                        Usuarios newUsuario = new Usuarios(inputNombre, inputIdentidad, inputDireccion, inputCelular);
+                
+                                        registroClientes.add(newUsuario);
+                                    }
+                
+                                    System.out.println( "No se encontro la torta o no hay en stock" );
+                
+                                    break;    
+                
+                
+                                case 2:
+                
+                                    for ( int i = 0; i < tortas.size(); i++ ){
+                                        System.out.println( "Torta : " + tortas.get(i).getNombre() +
+                                        ", Sabor : " + tortas.get(i).getSabor() + ", Porciones : " + tortas.get(i).getPorciones() +
+                                        ", Cantidad : " + tortas.get(i).getCantidad() + ", Precio : " + tortas.get(i).getPrecio());
+                                    }
+                
+                                    break;
+                                    
+                                case 3:
+                                    
+                                    System.out.println( "Venta del dia : " + total + " dolares" );
+                
+                                    break;
+                
+                                case 4:
+                                    salir = "no";
+                                    return;
+                            }
+                
+                            System.out.println( " " );
+                            System.out.println( "************¿Desea continuar en la app [YES / NO]?************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                            
+                        }
+                        sc.close();
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio8"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #9</h2>
+        <p>El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes figuras
+            geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los valores al estudiante.
+            La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un rectángulo, triángulo o
+            trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar su respectivo resultado.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.Scanner;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                
+                
+                        String salir = "yes";
+                
+                        while ( salir.equals( "yes" ) ){
+                            System.out.println("Aplicación que cálcula el área");
+                            System.out.println( "---------------------------" );
+                            System.out.println( "1. Área de un rectángulo \n" +
+                                            "2. Área de un triángulo \n" +
+                                            "3. Área de un trapecio \n" +
+                                            "4. Salir" );
+                            
+                            System.out.println( " " );
+                            System.out.println( "************Escoja una de las siguientes opciones a calcular************" );
+                            int opcion = sc.nextInt();
+                            String saltarLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                
+                                    System.out.println( "Área de un rectángulo" );
+                                    System.out.println( "---------------------------" );
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la base del rectángulo" );
+                                    int base = sc.nextInt();
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la altura del rectángulo" );
+                                    int altura = sc.nextInt();
+                                    saltarLinea = sc.nextLine();
+                                    System.out.println( " " );
+                
+                                    int area = (base * altura);
+                                    System.out.println( "El àrea del rectangulo es : " + area + " m2" );
+                
+                                    break;
+                
+                                case 2:
+                
+                                    System.out.println( "Área de un triángulo" );
+                                    System.out.println( "---------------------------" );
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la base del rectángulo" );
+                                    base = sc.nextInt();
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la altura del rectángulo" );
+                                    altura = sc.nextInt();
+                                    saltarLinea = sc.nextLine();
+                                    System.out.println( " " );
+                
+                                    area = (base * altura)/2;
+                                    System.out.println( "El àrea del triángulo es : " + area + " m2");
+                
+                                    break;
+                
+                                case 3:
+                
+                                    System.out.println( "Área de un trapecio" );
+                                    System.out.println( "---------------------------" );
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la base menor del trapecio" );
+                                    int baseMenor = sc.nextInt();
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la base mayor del trapecio" );
+                                    int baseMayor = sc.nextInt();
+                                    System.out.println( " " );
+                
+                                    System.out.println( "Ingresar la altura del trapecio" );
+                                    altura = sc.nextInt();
+                                    saltarLinea = sc.nextLine();
+                                    System.out.println( " " );
+                                    
+                                    area = ((baseMenor + baseMayor)/2)*altura;
+                                    System.out.println( "El àrea del trapecio es : " + area + " m2");
+                
+                                    break;
+                
+                                case 4:
+                                    salir = "no";
+                                    return;
+                                    
+                            }
+                            System.out.println( " " );
+                            System.out.println( "************¿Desea continuar en la app [YES / NO]?************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                        sc.close();
+                    }
+                }
+                
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio9"> >>>>> Repositorio en github</a>
+        </pre>
+
+        <h2>Ejercicio #10</h2>
+        <p>El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las
+            cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada
+            cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden
+            insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.ArrayList;
+                import java.util.Scanner;
+                
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        
+                        Scanner sc = new Scanner( System.in );
+                
+                        ArrayList<Cuenta> cliente = new ArrayList<>();
+                
+                        String salir = "yes";
+                
+                        while ( salir.equals(salir) ){
+                
+                            System.out.println( "Bienvenido a la app el Banco Fiel" );
+                            System.out.println( "---------------------------" );
+                            System.out.println( "1. Crear una cuenta nueva \n" +
+                                            "2. Ingresa a tu cuenta \n" +
+                                            "3. Salir" );
+                            
+                            System.out.println( " " );
+                            System.out.println( "************Escoja una de las siguientes opciones************" );
+                            int opcion = sc.nextInt();
+                            String saltarLinea = sc.nextLine();
+                
+                            switch ( opcion ){
+                                case 1:
+                                    System.out.println( "Ingrese sus datos" );
+                                    System.out.println( "---------------------------" );
+                
+                                    System.out.println(" ");
+                                    System.out.println("Nombre completo");
+                                    String inputNombre = sc.nextLine();
+                
+                                    System.out.println(" ");
+                                    System.out.println("Identidad");
+                                    String inputIdentidad = sc.nextLine();
+                
+                                    System.out.println(" ");
+                                    System.out.println("Direcciòn");
+                                    String inputDireccion = sc.nextLine();
+                
+                                    System.out.println(" ");
+                                    System.out.println("Celular");
+                                    String inputCelular = sc.nextLine();
+                
+                                    System.out.println(" ");
+                                    System.out.println("Contraseña");
+                                    String inputContraseña = sc.nextLine();
+                
+                                    Cuenta addCliente = new Cuenta();
+                                    addCliente.setNombre(inputNombre);
+                                    addCliente.setIdentificacion(inputIdentidad);
+                                    addCliente.setDireccion(inputDireccion);
+                                    addCliente.setCelular(inputCelular);
+                                    addCliente.setContraseña(inputContraseña);
+                
+                                    cliente.add(addCliente);
+                
+                                    break;
+                
+                                case 2:
+                                    
+                                    Boolean existeUsuario = false;
+                
+                                    System.out.println( "*******Ingresa el numero de identidad*******" );
+                                    inputIdentidad = sc.nextLine();
+                
+                                    int indice = buscarCuenta( cliente, sc, inputIdentidad);
+                
+                                    
+                
+                                    if ( indice > -1 ){
+                
+                                        salir = "yes";
+                                        while ( salir.equals("yes") ){
+                
+                                            
+                                            System.out.println(" ");
+                                            System.out.println( "1. Depositar \n" +
+                                                                "2. Retirar \n" +
+                                                                "3. Consulta de saldo \n" + 
+                                                                "4. Salir" );
+                                        
+                                            System.out.println( " " );
+                                        
+                                            opcion = sc.nextInt();
+                                            saltarLinea = sc.nextLine();
+                
+                                            switch ( opcion ){
+                                                case 1:
+                                                
+                                                    System.out.println( "************Ingrese la cantidad a depositar************" );
+                                                    Double inputDinero = sc.nextDouble();
+                
+                                                    if ( inputDinero > 0 ){
+                                                        cliente.get(indice).depositar(inputDinero);
+                
+                                                    }else {
+                                                        System.out.println( "Ingrese numeros mayores a cero" );
+                                                    }
+                
+                                                    break;
+                
+                                                case 2:
+                
+                                                    System.out.println( "************Ingrese la cantidad a retirar************" );
+                                                    inputDinero = sc.nextDouble();
+                
+                                                    if ( inputDinero > 0 & inputDinero <= cliente.get(indice).consulta() ){
+                
+                                                        cliente.get(indice).retirar(inputDinero);
+                                                    }else {
+                                                        System.out.println( "Ingrese numeros mayores a cero y menor al saldo actual" );
+                                                    }
+                
+                
+                                                    break;
+                
+                                                case 3:
+                
+                                                    System.out.println("---------------------------------------------------------");
+                                                    System.out.println( "El saldo actual es de : " + cliente.get(indice).consulta() + " dolares" );
+                                                    System.out.println("---------------------------------------------------------");
+                                                    break;
+                
+                                                case 4:
+                                                    salir = "no";
+                                                    return;
+                                            }
+                                        }
+                                    }else{
+                                        System.out.println( "Identidad no encontrada" );
+                                    }
+                                    break;
+                
+                                case 3:
+                
+                                    salir = "no";
+                                    return;
+                
+                            }
+                
+                            System.out.println( " " );
+                            System.out.println( "************¿Desea continuar en la app [YES / NO]?************" );
+                            salir = sc.nextLine();
+                            salir = salir.toLowerCase();
+                        }
+                        sc.close();       
+                    }
+                
+                    public static int buscarCuenta( ArrayList<Cuenta> cliente, Scanner sc, String inputIdentidad ){
+                        
+                        int indice = -1;
+                
+                        for ( int i = 0; i < cliente.size(); i++ ){
+                            if ( inputIdentidad.equals( cliente.get(i).getIdentificacion() ) ){
+                                
+                                System.out.println( "*******Ingrese la contraseña*******" );
+                                String inputContraseña = sc.nextLine();
+                
+                                if ( inputContraseña.equals( cliente.get(i).getContraseña() ) )
+                                    indice = i;
+                                    System.out.println( "************Escoja una de las siguientes opciones***********" );
+                            }
+                
+                        }
+                        return indice;
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller2/ejercicio10"> >>>>> Repositorio en github</a>
+        </pre>
+
+    </section>
+</body>
+    <script src="/js/rainbow-custom.min.js" ></script>
+    <script src="/js/taller.js"></script>
+</html>

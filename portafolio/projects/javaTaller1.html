@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html class="html--taller" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/blackboard.css">
+    <link rel="stylesheet" href="/css/estylos.css">
+
+</head>
+<body class="body body--taller">
+    <button class="regresar">
+        <a href="/portafolio/project.html">Regresar</a>
+    </button>
+    
+    <h1>Taller de variables e impresión</h1>
+
+    <section class="section__taller">
+        <h2>Ejercicio #1</h2>
+        <p>Realizar un programa el cual solicite su nombre y apellidos.</p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java">
+                //Taller-7-Java/Taller1/ejercicio1/src/ 
+                import java.util.*;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        Scanner input = new Scanner(System.in);
+                
+                        System.out.println("Ingrese su nombre");
+                        String nombre = input.nextLine();
+                
+                        System.out.println("Ingrese su apellido");
+                        String apellido = input.nextLine();
+                
+                        System.out.println("Nombre :" + nombre + " , apellido :" + apellido);
+                
+                        input.close();
+                    }
+                }
+
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller1/ejercicio1"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+
+        <h2>Ejercicio #2</h2>
+        <p>Realizar un programa el cual solicite su nombre, apellidos, edad y estatura.</p>
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.*;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                    Scanner input = new Scanner(System.in);
+                
+                    System.out.println("Ingrese su nombre");
+                    String nombre = input.nextLine();
+                
+                    System.out.println("Ingrese su apellido");
+                    String apellido = input.nextLine();
+                
+                    System.out.println("Ingrese su edad");
+                    Integer edad = input.nextInt();
+                
+                    System.out.println("Ingrese su estatura");
+                    Float estatura = input.nextFloat();
+                
+                    input.close();
+                
+                    System.out.println("Nombre :" + nombre);
+                    System.out.println("Apellido :" + apellido);
+                    System.out.println("Edad :" + edad);
+                    System.out.println("Estatura :" + estatura + "m");
+                    }
+                }
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller1/ejercicio2"> >>>>> Repositorio en github</a>
+        </pre>
+         
+
+        <h2>Ejercicio #3</h2>
+        <p>Realizar un programa el cual solicite su nombre y apellidos, también debe capturar nombre y apellidos de su padre y
+            madre. Al finalizar debe imprimir en pantalla el siguiente mensaje "Yo [Nombre Completo], soy hijo de [Nombre de la
+            Madre] y [Nombre del Padre].
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.*;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        Scanner input = new Scanner(System.in);
+                
+                        System.out.println("Ingrese su nombre completo");
+                        String nombreCompleto = input.nextLine();
+                
+                        System.out.println("Ingrese el nombre de su madre");
+                        String nombreMama = input.nextLine();
+                
+                        System.out.println("Ingrese el apellido de su madre");
+                        String apellidoMama = input.nextLine();
+                
+                        System.out.println("Ingrese el nombre de su padre");
+                        String nombrePapa = input.nextLine();
+                
+                        System.out.println("Ingrese el apellido de su padre");
+                        String apellidoPapa = input.nextLine();
+                
+                        input.close();
+                
+                        System.out.println("Yo " + nombreCompleto + ", soy hijo de " + nombreMama + " y " + nombrePapa);
+                    }
+                }
+                
+
+            </code>
+                <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller1/ejercicio3"> >>>>> Repositorio en github</a>
+        </pre>
+
+
+        <h2>Ejercicio #4</h2>
+        <p>Realizar un programa el cual solicite el nombre de una ciudad capital y el país. Al finalizar debe imprimir en
+            pantalla el siguiente mensaje "La ciudad [Nombre de la Ciudad], es la capital del país [Nombre del País]
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.*;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        Scanner input = new Scanner(System.in);
+                
+                        System.out.println("Ingrese su pais");
+                        String pais = input.nextLine();
+                
+                        System.out.println("Ingrese la capital");
+                        String capital = input.nextLine();
+                
+                        input.close();
+                
+                        System.out.println("La ciudad " + capital + " es la capital del país " + pais);
+                    }
+                }
+            </code>
+            <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller1/ejercicio4"> >>>>> Repositorio en github</a>
+        </pre>
+
+        <h2>Ejercicio #5</h2>
+        <p>Realizar un programa el cual solicite el nombre de su mascota, edad de la mascota, el tipo de mascota y su nombre
+            completo. Al finalizar el sistema debe e imprimir en pantalla el siguiente mensaje: [Nombre de Mascota] es un(a)
+            [Tipo de Mascota], el cual, tiene [Edad de la Mascota] años de edad y [Nombre Completo] es actualmente su dueño(a).
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+                import java.util.*;
+
+                public class App {
+                    public static void main(String[] args) throws Exception {
+                        Scanner input = new Scanner(System.in);
+                
+                        System.out.println("Cúal es el nombre de su mascota");
+                        String nombreMascota = input.nextLine();
+                
+                        System.out.println("¿Cúal es la edad de la mascota?");
+                        Integer edadMascota = input.nextInt();
+                        String saltoDeLinea = input.nextLine();
+                        System.out.println("¿Qué tipo es su mascota?");
+                        String tipoMascota = input.nextLine();
+                
+                        System.out.println("Introduzca su nombre completo");
+                        String nombreCompleto = input.nextLine();
+                
+                        input.close();
+                        
+                        System.out.println( nombreMascota + ", es un(a) " + tipoMascota + " el cual, tiene " + edadMascota + " años de edad y \n"
+                                        + nombreCompleto + " es actualmente su dueño(a).");
+                    }
+                }
+            </code>
+            <a href="https://github.com/Ruben-Rey/Taller-7-Java/tree/master/Taller1/ejercicio5"> >>>>> Repositorio en github</a>
+        </pre>
+
+    </section>
+</body>
+    <script src="/js/rainbow-custom.min.js" ></script>
+    <script src="/js/taller.js"></script>
+</html>

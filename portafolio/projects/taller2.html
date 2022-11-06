@@ -1,0 +1,2643 @@
+<!DOCTYPE html>
+<html class="html--taller" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/blackboard.css">
+    <link rel="stylesheet" href="/css/estylos.css">
+</head>
+<body class="body body--taller">
+
+    <button class="regresar">
+        <a href="/portafolio/project.html">Regresar</a>
+    </button>
+    
+    <h1>Taller de condicionales</h1>
+
+    <section class="section__taller">
+        <h2>Ejercicio #1</h2>
+        <p>Realizar un programa en el cual se solicite la edad de una persona. Si la persona es mayor o igual a 18 años, deberá
+            mostrar en pantalla: Usted es mayor de edad.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir edad Como Entero;
+	
+                Escribir "Ingrese su edad";
+                Leer edad;
+            
+                Si ( edad >= 18 ) Entonces
+                    Escribir "Usted es mayor de edad";
+                FinSi
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                SubProceso mayorDeEdad ( edad )
+                    SI edad >= 18 Entonces
+                        Escribir "Usted es mayor de edad";
+                    FinSi
+                FinSubProceso
+            
+            Proceso sin_titulo
+                Definir edad Como Entero;
+                
+                Escribir "Ingrese la edad";
+                Leer edad;
+                mayorDeEdad(edad);
+            FinProceso
+            </code>
+        </pre>
+
+        <h2>Ejercicio #2</h2>
+        <p>Realizar un programa en el cual se solicite la edad de una persona. Si la persona es menor a 18 años, deberá mostrar en pantalla: Usted aún es un niño(a).</p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir edad Como Entero;
+	
+                Escribir "Ingrese su edad";
+                Leer edad;
+            
+                Si ( edad < 18 ) Entonces
+                    Escribir "Usted es menor de edad";
+                FinSi
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            SubProceso menorDeEdad ( edad )
+                SI edad < 18 Entonces
+                    Escribir "Usted aún es un niño(a)";
+                FinSi
+            FinSubProceso
+            
+            
+            Proceso sin_titulo
+                
+                Definir edad Como Entero;
+                
+                Escribir "Ingrese la edad";
+                Leer edad;
+                menorDeEdad(edad);
+            FinProceso
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #3</h2>
+        <p>Realizar un programa en el cual se solicite el nombre, apellidos y edad de la persona. Si la persona es mayor o igual
+            a 18 años, entonce se deberá imprimir en pantalla [Nombre completo] usted es mayor de edad, por lo tanto puede
+            entrar a la fiesta. Si la edad de la persona es menor que 18 años, entonces, deberá imprimirse el siguiente mensaje:
+            [Nombre completo] usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto Como Caracter;
+                Definir edad Como Entero;
+            
+                Escribir "Ingrese su nombre completo";
+                Leer nombreCompleto;
+            
+                Escribir "Ingrese su edad";
+                Leer edad;
+            
+                Si ( edad >= 18 ) Entonces
+                    Escribir nombreCompleto, " usted es mayor de edad, por lo tanto puede entrar a la fiesta.";	
+                SiNo
+                    Escribir nombreCompleto, " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.";
+                FinSi
+            FinProceso
+
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+            Proceso sin_titulo
+	
+                Definir edad Como Entero;
+                Definir nombre, apellidos Como Caracter;
+                
+                Escribir "Ingrese los datos personales";
+                Escribir "Nombre";
+                Leer nombre;
+                Escribir "Apellidos";
+                Leer apellidos;
+                Escribir "Edad";
+                Leer edad;
+                
+                mayorDeEdad(edad, nombre, apellidos);
+            FinProceso
+            
+            // Funcion si es mayor de edad
+            SubProceso mayorDeEdad ( edad, nombre, apellidos )
+            
+                SI edad >= 18 Entonces
+                    Escribir nombre, " ", apellidos, " usted es mayor de edad, por lo tanto puede entrar a la fiesta.";
+                SiNo
+                    Escribir nombre, " ", apellidos, " usted es menor de edad, por lo tanto, no puede entrar a la fiesta, por favor devuélvase a su casa.";
+                FinSi
+            FinSubProceso
+            
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #4</h2>
+        <p>La video tienda que presta sus servicios de alquiler de películas a los usuarios del barrio el Porvenir, requiere de
+            una aplicación que permita registrar el alquiler de las películas que adquieren sus usuarios. Para cada usuario se
+            debe permitir la opción de alquilar película, consultar películas disponibles y recibir película en la video tienda
+            con la opción de realizar anotaciones sobre estas si se llegan a presentar daños u otra novedad sobre la película.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+            Definir nombreCompleto, direccion Como Caracter;
+            Definir identificacion, celular Como Entero;
+            
+            Definir opcion, opcion2, opcionGenero, opcionPelicula, opcionRetiro Como Entero;
+            Definir peliAccion_1, peliAccion_2, peliAccion_3, peliAccion_4 Como Entero;
+            Definir peliTerror_1, peliTerror_2, peliTerror_3, peliTerror_4 Como Entero;
+            Definir peliDrama_1, peliDrama_2, peliDrama_3, peliDrama_4 Como Entero;
+            Definir pelicula, sugerencia, reclamo Como Caracter;
+            Definir estado, stock Como Logico;
+            estado <- Verdadero;
+            stock <- Verdadero;
+            
+            Escribir "Bienvenido a la Video Tienda";
+            Escribir " ";
+                
+            Escribir "Elegir una opción";
+            Escribir "1. Alquilar películas";
+            Escribir "2. Consultar películas disponibles";
+            Escribir "3. Recibir películas";
+        
+            peliAccion_1 <- 1;   //	Sniper: Rogue Mission
+            peliAccion_2 <- 0;	 // Cazando a Ava Bravo
+            peliAccion_3 <- 15;	 // Codigo Emperador
+            peliAccion_4 <- 10;   // Turno de día
+            
+            peliTerror_1 <- 30;   //	They/Them
+            peliTerror_2 <- 10;	 // X
+            peliTerror_3 <- 10;	 // The Power
+            peliTerror_4 <- 2;   // Hasta que mueras
+            
+            peliDrama_1 <- 3;   //	365 Días más
+            peliDrama_2 <- 0;	 // Alcarrás
+            peliDrama_3 <- 10;	 // Blood Brothers
+            peliDrama_4 <-  7;   // Royalteen: Arvingen
+        
+            
+            Leer opcion;
+            Limpiar Pantalla;
+            Segun opcion Hacer
+                1:
+                    Escribir "Escoja el género";
+                    Escribir "1. Acción";
+                    Escribir "2. Terror";
+                    Escribir "3. Drama";
+                    Leer opcionGenero;
+                    Limpiar Pantalla;
+                    
+                    Segun opcionGenero Hacer
+                        1:
+                            Escribir "Escoja la pelicula";
+                            Escribir "1. Sniper: Rogue Mission";
+                            pelicula <- "Sniper: Rogue Mission";
+                            Escribir "2. Cazando a Ava Bravo";
+                            pelicula <- "Cazando a Ava Bravo";
+                            Escribir "3. Codigo Emperador";
+                            pelicula <- "Codigo Emperador";
+                            Escribir "4. Turno de día";
+                            pelicula <- "Turno de día";
+                            Leer opcionPelicula;
+                            
+                            Limpiar Pantalla;
+                            Segun opcionPelicula Hacer
+                                1:	
+                                    SI peliAccion_1 > 0 Entonces
+                                        peliAccion_1 <- peliAccion_1 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Sniper: Rogue Mission";
+                                        Escribir "Género: Acción, Misterio, Suspense";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 96";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: Oliver Thompson";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                2:
+                                    SI peliAccion_2 > 0 Entonces
+                                        peliAccion_2 <- peliAccion_2 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Cazando a Ava Bravo";
+                                        Escribir "Género: Acción, Suspense, Terror";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 90";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: Gary Auerbach";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                                                
+                                3:
+                                    SI peliAccion_3 > 0 Entonces
+                                        peliAccion_3 <- peliAccion_3 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Codigo Emperador";
+                                        Escribir "Género: Acción, Crimen, Suspense";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 106";
+                                        Escribir "Países: Spain";
+                                        Escribir "Director: Jorge Coira";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                4:
+                                    SI peliAccion_4 > 0 Entonces
+                                        peliAccion_4 <- peliAccion_4 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Turno de día";
+                                        Escribir "Género: Acción, Fantasía, Terror";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 113";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: J.J. Perry";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                                                
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                                    estado <- Falso;
+                            FinSegun
+                        
+                        2:
+                            Escribir "Escoja la pelicula";
+                            Escribir "1. They/Them";
+                            pelicula <- "They/Them";
+                            Escribir "2. X";
+                            pelicula <- "X";
+                            Escribir "3. The Power";
+                            pelicula <- "The Power";
+                            Escribir "4. Hasta que mueras";
+                            pelicula <- "Hasta que mueras";
+                            Leer opcionPelicula;
+                            Limpiar Pantalla;		
+                            Segun opcionPelicula Hacer
+                                1:	
+                                    SI peliTerror_1 > 0 Entonces
+                                        peliTerror_1 <- peliTerror_1 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "They/Them";
+                                        Escribir "Género: Terror, Suspense";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 90";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: John Logan";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                2:
+                                    SI peliTerror_2 > 0 Entonces
+                                        peliTerror_2 <- peliTerror_2 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "X";
+                                        Escribir "Género: Misterio, Suspense, Terror";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 106";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: Ti West";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                3:
+                                    SI peliTerror_3 > 0 Entonces
+                                        peliTerror_3 <- peliTerror_3 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "The Power";
+                                        Escribir "Género: Terror";
+                                        Escribir "Año: 2021";
+                                        Escribir "Duración: 92";
+                                        Escribir "Países: United Kingdom";
+                                        Escribir "Director: Corinna Faith";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                4:
+                                    SI peliTerror_4 > 0 Entonces
+                                        peliTerror_4 <- peliTerror_4 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Hasta que mueras";
+                                        Escribir "Género: Suspense, Terror";
+                                        Escribir "Año: 2021";
+                                        Escribir "Duración: 88";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: SK Dale";
+        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                                                
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                                    estado <- Falso;
+                            FinSegun
+                            
+                        3:
+                            Escribir "Escoja la pelicula";
+                            Escribir "1. 365 Días más";
+                            pelicula <- "365 Días más";
+                            Escribir "2. Alcarrás";
+                            pelicula <- "Alcarrás";
+                            Escribir "3. Blood Brothers";
+                            pelicula <- "Blood Brothers";
+                            Escribir "4. Royalteen: Arvingen";
+                            pelicula <- "Royalteen: Arvingen";
+                            Leer opcionPelicula;
+                            Limpiar Pantalla;
+                            Segun opcionPelicula Hacer
+                                1:	
+                                    SI peliDrama_1 > 0 Entonces
+                                        peliDrama_1 <- peliDrama_1 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "365 Días más";
+                                        Escribir "Género: Drama, Romance";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 112";
+                                        Escribir "Países: Poland";
+                                        Escribir "Director: Barbara Bialowas";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                2:
+                                    SI peliDrama_2 > 0 Entonces
+                                        peliDrama_2 <- peliDrama_2 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Alcarrás";
+                                        Escribir "Género: Drama";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 115";
+                                        Escribir "Países: Spain";
+                                        Escribir "Director: Carla Simón";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+        
+                                3:
+                                    SI peliDrama_3 > 0 Entonces
+                                        peliDrama_3 <- peliDrama_3 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Blood Brothers";
+                                        Escribir "Género: Drama";
+                                        Escribir "Año: 2021";
+                                        Escribir "Duración: 111";
+                                        Escribir "Países: United Kingdom";
+                                        Escribir "Director: Jay Craven";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                4:
+                                    SI peliDrama_4 > 0 Entonces
+                                        peliDrama_4 <- peliDrama_4 - 1;
+                                        Escribir "Detalles del producto: ";
+                                        Escribir " ";
+                                        Escribir "Royalteen: Arvingen";
+                                        Escribir "Género: Drama, Romance";
+                                        Escribir "Año: 2022";
+                                        Escribir "Duración: 108";
+                                        Escribir "Países: United States of America";
+                                        Escribir "Director: Per-Olav Sorensen";
+                                        
+                                    SiNo
+                                        Escribir "No hay unidades en stock";
+                                        stock <- Falso;
+                                    FinSi
+                
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                                    estado <- Falso;
+                            FinSegun
+                            
+                        De Otro Modo:
+                            Escribir "La opción elegida no existe";	
+                            estado <- Falso;
+                    FinSegun
+                    
+                    SI estado Entonces
+                        SI stock Entonces
+                            Escribir "Favor de ingresar sus datos";
+                            Escribir "Ingrese su nombre completo";
+                            Leer nombreCompleto;
+                            Escribir " ";
+                            Escribir "Ingrese su identificación";
+                            Leer identificacion;
+                            Escribir "Ingrese su dirección actual";
+                            Leer direccion;
+                            
+                            Escribir " ";
+                            Escribir "Hola ", nombreCompleto, " acerquese al área de almacén donde se hara la entrega de la pelicula :", pelicula, ". Gracias por confiar en nosostros";
+                        FinSi
+                        
+                    FinSi
+                    
+                    
+                    
+                2:
+                    Escribir "Peliculas disponibles por género";
+                    Escribir " ";
+                    Escribir "------Acción------";
+                    
+                    SI peliAccion_1 > 0 Entonces
+                        Escribir peliAccion_1, " uni. Sniper: Rogue Mission";
+                    FinSi
+                    
+                    SI peliAccion_2 > 0 Entonces
+                        Escribir peliAccion_2, " uni. Cazando a Ava Bravo";
+                    FinSi
+                    
+                    SI peliAccion_3 > 0 Entonces
+                        Escribir peliAccion_3, " uni. Codigo Emperador";
+                    FinSi
+                    
+                    SI peliAccion_4 > 0 Entonces
+                        Escribir peliAccion_4, " uni. Turno de día";
+                    FinSi
+                                
+                    Escribir " ";
+                    Escribir "-----Terror-------";
+                    
+                    SI peliTerror_1 > 0 Entonces
+                        Escribir peliTerror_1, " uni. They/Them";
+                    FinSi
+                    
+                    SI peliTerror_2 > 0 Entonces
+                        Escribir peliTerror_2, " uni. X";
+                    FinSi
+                    
+                    SI peliTerror_3 > 0 Entonces
+                        Escribir peliTerror_3, " uni. The Power";
+                    FinSi
+                    
+                    SI peliTerror_4 > 0 Entonces
+                        Escribir peliTerror_4, " uni. Hasta que mueras";
+                    FinSi
+                    
+                    Escribir " ";
+                    Escribir "------Drama--------";
+                    
+                    SI peliDrama_1 > 0 Entonces
+                        Escribir peliDrama_1, " uni. 365 Días más";
+                    FinSi
+                    
+                    SI peliDrama_2 > 0 Entonces
+                        Escribir peliDrama_2, " uni. Alcarrás";
+                    FinSi
+                    
+                    SI peliDrama_3 > 0 Entonces
+                        Escribir peliDrama_3, " uni. Blood Brothers";
+                    FinSi
+                    
+                    SI peliDrama_4 > 0 Entonces
+                        Escribir peliDrama_4, " uni. Royalteen: Arvingen";
+                    FinSi
+                    
+                3:
+                    Escribir "Alguna sugerencia o reclamo sobre el producto";
+                    Escribir " ";
+                    Escribir "1. Sugerencia";
+                    Escribir "2. Reclamo";
+                    Escribir "3. Salir";
+                    Leer opcionRetiro;
+                    Limpiar Pantalla;
+                    Segun opcionRetiro Hacer
+                        1:	
+                            Escribir "Ingrese la sugerencia";
+                            Leer sugerencia;
+                            Escribir "Gracias por su sugerencia, seguiremos trabajando por mejorar para ustedes.";
+                            
+                        2:	
+                            Escribir "Ingrese su nombre completo";
+                            Leer nombreCompleto;
+                            Escribir " ";
+                            Escribir "Ingrese su identificación";
+                            Leer identificacion;
+                            Escribir "Ingrese su numero de celular para podernos comunicar con usted";
+                            Leer celular;
+                            
+                            Escribir "Ingrese el reclamo";
+                            Leer reclamo;
+                            Escribir "Hola, ", nombreCompleto,  " disculpe las molestias, nos comunicaremos y resolveremos su caso lo mas pronto posible.";
+                            
+                        3:
+                            Escribir "Gracias por confiar en nosotros.";
+                        De Otro Modo:
+                            Escribir "La opción elegida no existe";
+                    FinSegun
+                De Otro Modo:
+                    Escribir "La opción elegida no existe";	
+            
+            FinSegun
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            SubProceso posicion <- buscar_pelicula (pelicula, peliculas )
+	
+                Definir indice, posicion Como Entero;
+                
+                Para indice <- 0 Hasta 11 Con Paso 1 Hacer
+                    
+                    SI pelicula = peliculas[indice] Entonces
+                        posicion <- indice;
+                    FinSi
+                FinPara
+            FinSubProceso
+            
+            // Funcion muestra en pantalla las peliculas 
+            SubProceso mostrar_peliculas ( )
+                Escribir "Peliculas por categoria";
+                Escribir "------------------------";
+                Escribir " ACCIÓN ";
+                Escribir "------------------------";
+                Escribir "- Sniper: Rogue Mission";
+                Escribir "- Cazando a Ava Bravo";
+                Escribir "- Codigo Emperador";
+                Escribir "- Turno de día";
+                Escribir " ";
+                Escribir "------------------------";
+                Escribir " TERROR ";
+                Escribir "------------------------";
+                Escribir "- They/Them";
+                Escribir "- X";
+                Escribir "- The Power";
+                Escribir "- Hasta que mueras";
+                Escribir " ";
+                Escribir "------------------------";
+                Escribir " DRAMA ";
+                Escribir "------------------------";
+                Escribir "- 365 Días más";
+                Escribir "- Alcarrás";
+                Escribir "- Blood Brothers";
+                Escribir "- Royalteen: Arvingen";
+            FinSubProceso
+            
+            // Funcion guarda los datos personales de usuarios
+            SubProceso solicitud_datos ( nombreCompleto Por Referencia, identificacion Por Referencia, celular Por Referencia )
+                Escribir "Nombre completo";
+                Leer nombreCompleto;
+                Escribir " ";
+                Escribir "Identificación";
+                Leer identificacion;
+                Escribir "Celular";
+                Leer celular;
+            FinSubProceso
+            
+            Proceso sin_titulo
+                
+                    Definir peliculas, pelicula, salir, sugerencia, reclamo, nombreCompleto, identificacion Como Caracter;
+                    Definir cantidades, opcion, opcionRetiro, indice, descontar, celular Como Entero;
+            
+                    Dimension peliculas[13];
+                    Dimension cantidades[13];
+                    
+                peliculas[0] <- " ";
+                peliculas[1] <- "Sniper Rogue Mission";
+                peliculas[2] <- "Cazando a Ava Bravo";
+                peliculas[3] <- "Codigo Emperador";
+                peliculas[4] <- "Turno de día";
+                peliculas[5] <- "They/Them";
+                peliculas[6] <- "X";
+                peliculas[7] <- "The Power";
+                peliculas[8] <- "Hasta que mueras";
+                peliculas[9] <- "365 Días más";
+                peliculas[10] <- "Alcarrás";
+                peliculas[11] <- "Blood Brothers";
+                peliculas[12] <- "Royalteen: Arvingen";
+                
+                cantidades[0] <- 0;
+                cantidades[1] <- 3;
+                cantidades[2] <- 4;
+                cantidades[3] <- 5;
+                cantidades[4] <- 6;
+                cantidades[5] <- 0;
+                cantidades[6] <- 8;
+                cantidades[7] <- 9;
+                cantidades[8] <- 2;
+                cantidades[9] <- 4;
+                cantidades[10] <- 6;
+                cantidades[11] <- 3;
+                cantidades[12] <- 3;
+                
+                Repetir
+                    
+                    Escribir "Bienvenido a la Video Tienda";
+                    Escribir " ";
+                    
+                    Escribir "Elegir una opción";
+                    Escribir "1. Alquilar películas";
+                    Escribir "2. Consultar películas disponibles";
+                    Escribir "3. Recibir películas";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        
+                        1:
+                                mostrar_peliculas();
+                                
+                                Escribir " ";
+                                Escribir "Ingresa el nombre de la pelicula";
+                                Leer pelicula;
+                                Limpiar Pantalla;
+                                indice <- buscar_pelicula(pelicula, peliculas );
+                                
+                                SI indice > 0 Entonces
+                                    descontar <- cantidades[indice];
+                                    descontar <- descontar - 1;
+                                    SI descontar < 0 Entonces
+                                        Escribir "No hay unidades disponible";
+                                    SiNo
+                                        Escribir "Se agrego al carrito de compras la pelicula : ",peliculas[indice]; 
+                                        cantidades[indice] <- descontar; 
+                                        
+                                        Escribir "Ingrese sus datos para generar la factura";
+                                        solicitud_datos( nombreCompleto, identificacion, celular );
+                                        Limpiar Pantalla;
+                                        Escribir "Acercarse a caja a recoger el producto";
+                                        Escribir "1 uni de la pelicula :", pelicula;
+                                    FinSi
+                                SiNo
+                                    Escribir "Pelicula no encontrada";
+                                FinSi
+                                
+                                Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                Escribir " ";
+                            
+                        2:
+                            Repetir
+                                
+                                mostrar_peliculas();
+                                
+                                Escribir "Ingresa el nombre de la pelicula";
+                                Leer pelicula;
+                                Limpiar Pantalla;
+                                
+                                indice <- buscar_pelicula(pelicula, peliculas );
+                                
+                                SI indice > 0 Entonces
+                                    Escribir cantidades[indice], "pz en Stock de la pelicula : ",peliculas[indice]; 
+                                FinSi
+                                
+                                Escribir "Para salir presione la tecla x o cualquier tecla para seguir buscando";
+                                Leer salir;
+                                
+                            Hasta Que salir = "x";
+                        3:
+                            Escribir "Alguna sugerencia o reclamo sobre el producto";
+                            Escribir " ";
+                            Escribir "1. Sugerencia";
+                            Escribir "2. Reclamo";
+                            Escribir "3. Salir";
+                            Leer opcionRetiro;
+                            Limpiar Pantalla;
+                            
+                            Segun opcionRetiro Hacer
+                                1:	
+                                    Escribir "Ingrese la sugerencia";
+                                    Leer sugerencia;
+                                    Escribir "Gracias por su sugerencia, seguiremos trabajando por mejorar para ustedes.";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir " ";
+                                    
+                                2:	
+                                    solicitud_datos( nombreCompleto, identificacion, celular );
+                                    
+                                    Escribir "Ingrese el reclamo";
+                                    Leer reclamo;
+                                    
+                                    Escribir "Hola, ", nombreCompleto,  " disculpe las molestias, nos comunicaremos y resolveremos su caso lo mas pronto posible.";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir " ";
+                                3:
+                                    Escribir "Gracias por confiar en nosotros.";
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                            FinSegun
+                    FinSegun
+                Hasta Que opcion = 4 
+                    
+            FinProceso
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #5</h2>
+        <p>La Droguería Mi Salud presta sus servicios en la localidad de Suba y requiere una aplicación para poder facturar los
+            productos que vende a sus clientes y para ello, los productos tienen unas características que deben indicársele al
+            cliente para que pueda escoger el producto a comprar. Para cada cliente, se tienen las opciones de compra de producto,
+            consulta de precios por producto y devoluciones en caso de que se presenten.
+        </p>
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto, medicamento, mensajeDevolucion Como Caracter;
+                Definir identificacion, celular Como Entero;
+                
+                Definir opcion, opcionTipos, opcionMedicamento, cantidad Como Entero;
+                Definir cantIbu, cantPara, cantMeta, cantCeti, cantDes, cantFexo Como Entero;
+                Definir stock, estado Como Logico;
+                stock <- Verdadero;
+                estado <- Verdadero;
+                Definir precio, precioIbu, precioPara, precioMeta, medicamentoPrecio Como Real;
+                precioIbu <- 0.25;
+                precioPara <- 0.15;
+                precioMeta <- 0.35;
+                
+                Definir precioCeti, precioDes, precioFexo Como Real;
+                precioCeti <- 0.25;
+                precioDes <- 0.15;
+                precioFexo <- 0.35;
+                
+                cantIbu <- 0;
+                cantPara <- 40;
+                cantMeta <- 40;
+                cantCeti <- 40;
+                cantDes <- 40;
+                cantFexo <- 40;
+                    
+                Escribir "Bienvenido a la drogeria mi salud";
+                Escribir " ";
+                    
+                Escribir "Escoja una de las siguientes opciones";
+                Escribir "1. Compra de productos";
+                Escribir "2. Consulta de precios por producto";
+                Escribir "3. Devolución";
+                Leer opcion;
+                
+                Limpiar Pantalla;
+                
+                Segun opcion Hacer
+                    1:
+                        Escribir "";
+                        Escribir "Tipos de medicamentos";
+                        Escribir " ";
+                        Escribir "1. Analgésicos";
+                        Escribir "2. Antialérgicos";
+                        Leer opcionTipos;
+                        Limpiar Pantalla;
+                        
+                        Segun opcionTipos Hacer
+                            1: 
+                                Escribir "Se detalla los siguientes Analgésicos :";
+                                Escribir " ";
+                                
+                                Escribir "1. Ibuprofeno";
+                                Escribir " ";
+                                Escribir "El ibuprofeno es un antiinflamatorio no esteroideo, utilizado frecuentemente como antipirético, analgésico y antiinflamatorio";
+                                Escribir "Fórmula: C13H18O2";
+                                Escribir "Masa molar: 206,29 g/mol";
+                                Escribir "Punto de ebullición: 157 °C";
+                                Escribir "Nombre comercial: Brufen, genéricos";
+                                Escribir "Vida media: 1.8 a 2 horas";
+                                Escribir "Metabolismo: Hepático (CYP2C9)";
+                                Escribir " ";
+                                
+                                Escribir "2. Paracetamol";
+                                Escribir " ";
+                                Escribir "El paracetamol, es un fármaco con propiedades analgésicas y antipiréticas utilizado principalmente para tratar la fiebre y el dolor leve y moderado.";
+                                Escribir "Fórmula: C8H9NO2";
+                                Escribir "Masa molar: 151,163 g/mol";
+                                Escribir "Densidad: 1,26 g/cm³";
+                                Escribir "Vida media: 1-4 h";
+                                Escribir "Metabolismo: 90-95 % Hepático";
+                                Escribir " ";
+                                
+                                Escribir "3. Metamizol";
+                                Escribir " ";
+                                Escribir "El metamizol, es utilizado en muchos países como un potente analgésico, antipirético y espasmolítico";
+                                Escribir "Fórmula: C13H16N3NaO4S";
+                                Escribir "Masa molar: 333,341 g/mol";
+                                Escribir "Metabolismo: AM404, P Cytochrome P 450, glutation";
+                                Escribir "Vida media: 4 horas";
+                                Escribir "Biodisponibilidad: 100%";
+                                Escribir " ";
+                                
+                                Escribir "Si desea algun medicamento escoja una de las opciones";
+                                Leer opcionMedicamento;
+                                
+                                SI opcionMedicamento > 3 o opcionMedicamento < 0 Entonces
+                                    Escribir "La opción elegida no existe.";
+                                    estado <- Falso;
+                                SiNo
+                                    
+                                    Limpiar Pantalla;
+                                
+                                    Segun opcionMedicamento Hacer
+                                        1:
+                                            medicamento <- "Ibuprofeno";
+                                            medicamentoPrecio <- precioIbu;
+                                        2:
+                                            medicamento <- "Paracetamol";
+                                            medicamentoPrecio <- precioPara;
+                                        3:
+                                            medicamento <- "Metamizol";
+                                            medicamentoPrecio <- precioMeta;			
+                                            
+                                        De Otro Modo:
+                                            Escribir "La opción elegida no existe.";
+                                            estado <- Falso;
+                                    FinSegun
+                                FinSi
+                                
+                            2: 
+                                Escribir "Se detalla los siguientes Antialérgicos :";
+                                Escribir " ";
+                                
+                                Escribir "1. Cetirizina";
+                                Escribir " ";
+                                Escribir "La cetirizina es un fármaco utilizado para el tratamiento de la alergia. Es un antihistamínico considerado de segunda generación por no provocar somnolencia.";
+                                Escribir "Fórmula: C21H25N2ClO3";
+                                Escribir "Masa molar: 388,89 g/mol";
+                                Escribir "Nombre comercial: Alercet, Reactine, Zyrtec";
+                                Escribir "Vida media: 8.3 horas";
+                                Escribir " ";
+                                
+                                Escribir "2. Desloratadina";
+                                Escribir " ";
+                                Escribir "La desloratadina es un fármaco antihistamínico utilizado para tratar alergias. La desloratadina actúa como agonista inverso de los receptores H1 de la histamina porque la sustancia no penetra en el sistema nervioso central.";
+                                Escribir "Fórmula: C19H19ClN2";
+                                Escribir "Masa molar: 310,82 g/mol";
+                                Escribir "Vida media: 27 h";
+                                Escribir "Metabolismo: Hepático";
+                                Escribir " ";
+                                
+                                Escribir "3. Fexofenadina";
+                                Escribir " ";
+                                Escribir "La fexofenadina, es un fármaco antihistamínico utilizado en el tratamiento de los síntomas de alergia, como la fiebre del heno y la urticaria.";
+                                Escribir "Fórmula: C32H39NO4";
+                                Escribir "Masa molar: 501,68 g/mol";
+                                Escribir "Metabolismo: AM404, P Cytochrome P 450, glutation";
+                                Escribir "Vida media: 14.4 horas";
+                                Escribir " ";
+                                
+                                Escribir "Si desea algun medicamento escoja una de las opciones";
+                                Leer opcionMedicamento;
+                                
+                                SI opcionMedicamento > 3 o opcionMedicamento < 0 Entonces
+                                    Escribir "La opción elegida no existe.";
+                                    estado <- Falso;
+                                SiNo
+                                                        
+                                    Limpiar Pantalla;
+                                
+                                    Segun opcionMedicamento Hacer
+                                        1:
+                                            medicamento <- "Cetirizina";
+                                            medicamentoPrecio <- precioCeti;
+                                        2:
+                                            medicamento <- "Desloratadina";
+                                            medicamentoPrecio <- precioDes;
+                                        3:
+                                            medicamento <- "Fexofenadina";
+                                            medicamentoPrecio <- precioFexo;			
+                                            
+                                        De Otro Modo:
+                                            Escribir "La opción elegida no existe.";
+                                            estado <- Falso;
+                                    FinSegun
+                                FinSi
+                            
+                            De Otro Modo:
+                                Escribir "La opción elegida no existe.";
+                                estado <- Falso;
+                        FinSegun
+                                    
+                        SI estado Entonces
+                            Escribir "Ingrese la cantidad que desea";
+                            Leer cantidad;
+                            
+                            SI medicamento = "Ibuprofeno" Entonces
+                                SI cantIbu >= cantidad y cantIbu > 0 Entonces
+                                    cantIbu <- cantIbu - cantidad;
+                                SiNo
+                                    Escribir "No tenenmos en stock esa cantidad";
+                                    stock <- Falso;
+                                FinSi
+                                
+                            SiNo
+                                SI medicamento = "Paracetamol" Entonces
+                                    SI cantPara >= cantidad y cantPara > 0 Entonces
+                                        cantPara <- cantPara - cantidad;
+                                    SiNo
+                                        Escribir "No tenemos en stock esa cantidad";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                SiNo
+                                    SI medicamento = "Metamizol" Entonces
+                                        SI cantMeta >= cantidad y cantMeta > 0 Entonces
+                                            cantMeta <- cantMeta - cantidad;
+                                        SiNo
+                                            Escribir "No tenemos en stock esa cantidad";
+                                            stock <- Falso;
+                                        FinSi
+                                        
+                                    SiNo
+                                        SI medicamento = "Cetirizina" Entonces
+                                            SI cantCeti >= cantidad y cantCeti > 0 Entonces
+                                                cantCeti <- cantCeti - cantidad;
+                                            SiNo
+                                                Escribir "No tenemos en stock esa cantidad";
+                                                stock <- Falso;
+                                            FinSi
+                                            
+                                        SiNo
+                                            SI medicamento = "Desloratadina" Entonces
+                                                SI cantDes >= cantidad y cantDes > 0 Entonces
+                                                    cantDes <- cantDes - cantidad;
+                                                SiNo
+                                                    Escribir "No tenemos en stock esa cantidad";
+                                                    stock <- Falso;
+                                                FinSi
+                                            SiNo
+                                                SI medicamento = "Fexofenadina" Entonces
+                                                    SI cantFexo >= cantidad y cantFexo > 0 Entonces
+                                                        cantFexo <- cantFexo - cantidad;
+                                                    SiNo
+                                                        Escribir "No tenemos en stock esa cantidad";
+                                                        stock <- Falso;
+                                                    FinSi
+                                                    
+                                                FinSi		
+                                            FinSi	
+                                        FinSi
+                                    FinSi
+                                FinSi
+                            FinSi
+                            
+                            SI stock Entonces
+                                Escribir "Ingrese su nombre completo";
+                                Leer nombreCompleto;
+                                Escribir "Ingrese su identificación";
+                                Leer identificacion;
+                                
+                                precio <- medicamentoPrecio * cantidad;
+                                Escribir "Fecha: 21/08/2022, Hora: 06:45, Cliente : ", nombreCompleto;
+                                Escribir medicamento, " ", cantidad, " uni el total del producto es : $", precio;
+                                Escribir "Gracias por su compra";
+                            FinSi	
+            
+                        FinSi
+                    
+                    2:
+                        Escribir "Se lista los precios de los productos por categoria, escoja una opción";
+                        Escribir "1. Analgésicos";
+                        Escribir "2. Antialérgicos";
+                        Leer opcionTipos;
+                        
+                        Segun opcionTipos Hacer
+                            1:
+                                Escribir cantIbu, " pz - Ibuprofeno, precio :$", precioIbu;
+                                Escribir cantPara, " pz - Paracetamol, precio :$", precioPara;
+                                Escribir cantMeta ," pz - Metamizol, precio :$", precioMeta;
+                            2:
+                                Escribir cantCeti, " pz - Cetirizina, precio :$", precioCeti;
+                                Escribir cantDes,  " pz - Desloratadina, precio :$", precioDes;
+                                Escribir cantFexo, " pz - Fexofenadina, precio :$", precioFexo;
+                                
+                            De Otro Modo:
+                                Escribir "La opción elegida no existe.";	
+                            
+                        FinSegun
+                        
+                    3:
+                        Escribir "Ingrese su nombre completo";
+                        Leer nombreCompleto;
+                        Escribir "Ingrese su nombre identificacion";
+                        Leer identificacion;
+                        Escribir "Ingrese su numero de celular";
+                        Leer celular;
+                        Limpiar Pantalla;
+                        
+                        Escribir "Hola, ", nombreCompleto, " Disculpe las molestia, favor de ingresar el motivo de la devolución del producto.";
+                        Leer mensajeDevolucion;
+                        Escribir "En breve un asistente se acercara y le podra ayudar, gracias.";
+                    De Otro Modo:
+                        Escribir "La opción elegida no existe.";
+                FinSegun
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+            SubProceso mostrar_medicamentos ()
+                Escribir "Medicamento por categoria";
+                Escribir "------------------------";
+                Escribir " Analgésicos ";
+                Escribir "------------------------";
+                Escribir "- Ibuprofeno";
+                Escribir "- Paracetamol";
+                Escribir "- Metamizol";
+                Escribir " ";
+                Escribir "------------------------";
+                Escribir " Antialérgicos ";
+                Escribir "------------------------";
+                Escribir "- Cetirizina";
+                Escribir "- Desloratadina";
+                Escribir "- Fexofenadina";
+            FinSubProceso
+            
+            // Funcion busca los medicamentos en un arreglo bidimensional y retorna el indice(posicion)
+            SubProceso posicion <- buscar_medicamento ( inputMedicamento, medicamentos )
+                Definir posicion, indice Como Entero;
+                
+                Para indice <- 0 Hasta 5 Con Paso 1 Hacer
+                    SI inputMedicamento = medicamentos[indice, 0] Entonces
+                        posicion <- indice;
+                    FinSi
+                FinPara
+                
+            FinSubProceso
+            
+            // Funcion guarda los datos personales de usuarios
+            SubProceso solicitudDatos ( nombreCompleto Por Referencia, identificacion Por Referencia, celular Por Referencia )
+                
+                Escribir "Nombre completo";
+                Leer nombreCompleto;
+                Escribir " ";
+                Escribir "Identificación";
+                Leer identificacion;
+                Escribir "Numero de celular";
+                Leer celular;
+                
+            FinSubProceso
+            
+                Proceso sin_titulo
+                
+                    Definir cantidad, medicamentos, carroCompras, salir, sugerencia, reclamo, nombreCompleto, identificacion, inputMedicamento Como Caracter;
+                    Definir cantidades, opcion, opcionRetiro, colum, indice,  descontar, celular, cont, contadorProducto Como Entero;
+                    Definir estadoFactura Como Logico;
+                    Definir precios, cantidadNumber, operacion, total Como Real;
+                    cont <- 0;
+                    total <- 0;
+                    
+                    Dimension medicamentos[7,7];
+                    Dimension cantidades[7];
+                    Dimension precios[7];
+                    Dimension carroCompras[9,9];
+                    
+                    
+                    medicamentos[0,0] <- " ";
+                    
+                    medicamentos[1,0] <- "Ibuprofeno";
+                    medicamentos[1,1] <- "El ibuprofeno es un antiinflamatorio no esteroideo, utilizado frecuentemente como antipirético, analgésico y antiinflamatorio.";
+                    medicamentos[1,2] <- "Fórmula: C13H18O2";
+                    medicamentos[1,3] <- "Masa molar: 206,29 g/mol";
+                    medicamentos[1,4] <- "Punto de ebullición: 157 °C";
+                    medicamentos[1,5] <- "Vida media: 1.8 a 2 horas";
+                    medicamentos[1,6] <- "Metabolismo: Hepático (CYP2C9)";
+                    
+                    medicamentos[2,0] <- "Paracetamol";
+                    medicamentos[2,1] <- "El paracetamol, es un fármaco con propiedades analgésicas y antipiréticas utilizado principalmente para tratar la fiebre y el dolor leve y moderado.";
+                    medicamentos[2,2] <- "Fórmula: C8H9NO2";
+                    medicamentos[2,3] <- "Masa molar: 151,163 g/mol";
+                    medicamentos[2,4] <- "Densidad: 1,26 g/cm³";
+                    medicamentos[2,5] <- "Vida media: 1-4 h";
+                    medicamentos[2,6] <- "Metabolismo: 90-95 % Hepático";
+                    
+                    medicamentos[3,0] <- "Metamizol";
+                    medicamentos[3,1] <- "El metamizol, es utilizado en muchos países como un potente analgésico, antipirético y espasmolítico.";
+                    medicamentos[3,2] <- "Fórmula: C13H16N3NaO4S";
+                    medicamentos[3,3] <- "Masa molar: 333,341 g/mol";
+                    medicamentos[3,4] <- "Biodisponibilidad: 100%";
+                    medicamentos[3,5] <- "Vida media: 4 horas";
+                    medicamentos[3,6] <- "Metabolismo: AM404, P Cytochrome P 450, glutation";
+                    
+                    medicamentos[4,0] <- "Cetirizina";
+                    medicamentos[4,1] <- "La cetirizina es un fármaco utilizado para el tratamiento de la alergia. Es un antihistamínico considerado de segunda generación por no provocar somnolencia.";
+                    medicamentos[4,2] <- "Fórmula: C21H25N2ClO3";
+                    medicamentos[4,3] <- "Masa molar: 388,89 g/mol";
+                    medicamentos[4,4] <- "Nombre comercial: Alercet, Reactine, Zyrtec";
+                    medicamentos[4,5] <- "Vida media: 8.3 horas";
+                    medicamentos[4,6] <- "";
+                    
+                    medicamentos[5,0] <- "Desloratadina";
+                    medicamentos[5,1] <- "La desloratadina es un fármaco antihistamínico utilizado para tratar alergias. La desloratadina actúa como agonista inverso de los receptores H1 de la histamina porque la sustancia no penetra en el sistema nervioso central.";
+                    medicamentos[5,2] <- "Fórmula: C19H19ClN2";
+                    medicamentos[5,3] <- "Masa molar: 310,82 g/mol";
+                    medicamentos[5,4] <- "";
+                    medicamentos[5,5] <- "Vida media: 27 h";
+                    medicamentos[5,6] <- "Metabolismo: Hepático";
+                    
+                    medicamentos[6,0] <- "Fexofenadina";
+                    medicamentos[6,1] <- "La fexofenadina, es un fármaco antihistamínico utilizado en el tratamiento de los síntomas de alergia, como la fiebre del heno y la urticaria.";
+                    medicamentos[6,2] <- "Fórmula: C32H39NO4";
+                    medicamentos[6,3] <- "Masa molar: 501,68 g/mol";
+                    medicamentos[6,4] <- "";
+                    medicamentos[6,5] <- "Vida media: 14.4 horas";
+                    medicamentos[6,6] <- "Metabolismo: AM404, P Cytochrome P 450, glutation";
+                    
+                    cantidades[0] <- 0;
+                    cantidades[1] <- 10;
+                    cantidades[2] <- 10;
+                    cantidades[3] <- 10;
+                    cantidades[4] <- 10;
+                    cantidades[5] <- 10;
+                    cantidades[6] <- 10;
+                    
+                    precios[0] <- 1;
+                    precios[1] <- 2;
+                    precios[2] <- 3;
+                    precios[3] <- 4;
+                    precios[4] <- 5;
+                    precios[5] <- 6;
+                    precios[6] <- 3;
+            
+                Repetir
+                    
+                    Escribir "Bienvenido a la drogeria mi salud";
+                    Escribir " ";
+                    
+                    Escribir "Escoja una de las siguientes opciones";
+                    Escribir "1. Compra de medicamentos";
+                    Escribir "2. Consulta de precios";
+                    Escribir "3. Devolución";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        
+                        1:
+                            contadorProducto <- - 1;
+                            
+                            Repetir
+                                
+                                mostrar_medicamentos();
+                                
+                                Escribir "Ingresa el nombre del medicamento";
+                                Leer inputMedicamento;
+                                
+                                indice <- buscar_medicamento(inputMedicamento, medicamentos);
+                                
+                                SI indice > 0 Entonces
+                                            
+                                    Escribir "Ingrese la cantidad";
+                                    Leer cantidad;
+                                    Limpiar Pantalla;
+                                                                            
+                                    descontar <- cantidades[indice];
+                                    cantidadNumber <- ConvertirANumero(cantidad);
+                                    descontar <- descontar - cantidadNumber;
+                                            
+                                    SI descontar < 0 Entonces
+                                        Escribir "No hay unidades disponible";
+                                    SiNo
+                                        Escribir "Se agrego al carrito de compras el medicamento : ", medicamentos[indice,0]; 
+                                        carroCompras[cont,0] <- medicamentos[indice,0];
+                                        carroCompras[cont,1] <- cantidad;
+                                                
+                                        operacion <- precios[indice] * cantidadNumber;
+                                        carroCompras[cont,2] <- ConvertirATexto(operacion);
+                                                
+                                        total <- total + operacion;
+                                                
+                                        cantidades[indice] <- descontar; 
+                                        contadorProducto <- contadorProducto + 1; //Mostrar producto
+                                        cont <- cont + 1; //aumentar slot de carrito de compras
+                                                    
+                                    FinSi
+                                FinSi					
+                                
+                                Escribir "Para salir presione la tecla x o cualquier tecla para seguir comprando";
+                                Leer salir;
+                                
+                            Hasta Que salir = "x";
+                            
+                            SI cont > 0 Entonces
+                                
+                                Escribir "Ingrese los datos para generar la factura";
+                                solicitudDatos( nombreCompleto, identificacion, celular );
+                                
+                                Escribir "Acercarse a caja a recoger el producto";
+                                Para colum <- 0 Hasta contadorProducto Con Paso 1 Hacer
+                                    
+                                    Escribir carroCompras[colum,1], " uni de ", carroCompras[colum,0], " cuesta : ", carroCompras[colum,2] , " dolares.";
+                                    
+                                FinPara
+                                
+                                Escribir "Total a pagar :", total, " dolares.";
+                                
+                                nombreCompleto <- " ";
+                                identificacion <- " ";
+                                celular <- 0;
+                                cont <- 0;
+                                descontar <- 0;
+                                contadorProducto <- - 1;
+                                total <- 0;
+                                
+                            SiNo
+                                Escribir "Producto no encontrado";
+                                
+                            FinSi
+                        2:
+                            Repetir
+                                
+                                mostrar_medicamentos();
+                                Escribir " ";
+                                
+                                Escribir "Ingresa el nombre del medicamento";
+                                Leer inputMedicamento;
+                                
+                                indice <- buscar_medicamento(inputMedicamento, medicamentos);
+                                Limpiar Pantalla;
+                                
+                                SI indice > 0 Entonces
+                                    Escribir cantidades[indice], " pz en Stock del medicamento : ",medicamentos[indice,0], " - Precio x unidad : ", precios[indice], " dolares."; 
+                                FinSi
+                                                    
+                                Escribir "Para salir presione la tecla x o cualquier tecla para seguir buscando";
+                                Leer salir;
+                                
+                            Hasta Que salir = "x";
+                            
+                        3:
+                            Escribir "Alguna sugerencia o reclamo sobre el producto";
+                            Escribir " ";
+                            Escribir "1. Sugerencia";
+                            Escribir "2. Reclamo";
+                            Escribir "3. Salir";
+                            Leer opcionRetiro;
+                            Limpiar Pantalla;
+                            
+                            Segun opcionRetiro Hacer
+                                1:	
+                                    Escribir "Ingrese la sugerencia";
+                                    Leer sugerencia;
+                                    Escribir "Gracias por su sugerencia, seguiremos trabajando por mejorar para ustedes.";
+                                    
+                                2:	
+                                    solicitudDatos( nombreCompleto, identificacion, celular );
+                                    Escribir "Ingrese el reclamo";
+                                    Leer reclamo;
+                                    
+                                    Escribir "Hola, ", nombreCompleto,  " disculpe las molestias, nos comunicaremos y resolveremos su caso lo mas pronto posible.";
+                                    Escribir " ";
+                                    Escribir " ";
+                                    Escribir " ";
+                                    Escribir " ";
+                                    Escribir " ";
+                                    Escribir " ";
+                                    
+                                3:
+                                    Escribir "Gracias por confiar en nosotros.";
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                            FinSegun
+                            
+                        De Otro Modo:
+                            Escribir "La opción elegida no existe";	
+                    FinSegun
+                
+                Hasta Que opcion = 4 
+                    
+            FinProceso
+            
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #6</h2>
+        <p>El taller de motos "El Maquinista" recibe motocicletas de alto cilindraje para realizar las respectivas revisiones y
+            requiere una aplicación que le permita registrar los servicios generados a sus clientes. Para cada motocicleta se
+            debe tener registro del ingreso al taller y las observaciones por parte del cliente. También debe existir registro
+            de salida del taller con las novedades y otra de arreglos hechos por el mecánico en caso de que se requiera
+            inventariar cambios repuestos en la motocicleta al entregarla.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+                Proceso primer_app
+                    Definir nombreCompleto, direccion, modelMoto, placaMoto, probleMoto, recoPlacaMoto, fechaIngreso Como Caracter;
+                    Definir identificacion, componentes Como Entero;
+                    Definir opcion	Como Entero;
+                    Definir servicio Como Logico;
+                    
+                    Definir precioTotal Como Real;
+                    Definir precioRevision Como Real;
+                    Definir precioMantenimiento Como Real;
+                    Definir precioReparacion Como Real;
+                    precioRevision <- 50;
+                    precioMantenimiento <- 70;
+                    precioReparacion <- 40;
+                    
+                    Definir precioBujia Como Real;
+                    Definir precioPastillasFreno Como Real;
+                    Definir precioBateria Como Real;
+                    Definir precioNeumaticos Como Real;
+                    precioBujia <- 10;
+                    precioPastillasFreno <- 20;
+                    precioBateria <- 50;
+                    precioNeumaticos <- 40;
+                    
+                    Definir cantidadBujia, inputBujia Como Entero;
+                    Definir cantidadPastillas, inputPastilla Como Entero;
+                    Definir cantidadBateria Como Entero;
+                    Definir cantidadNeumaticos Como Entero;
+                    
+                    cantidadBujia <- 10;
+                    cantidadPastillas <- 2;
+                    cantidadBateria <- 1;
+                    cantidadNeumaticos <-3;
+                    
+                    placaMoto <- "1456";
+                    
+                    Escribir "Bienvenido al taller el Maquinista";
+                    Escribir "Escoja una de las siguientes opciones";
+                    Escribir "1. Servicio de Revisión";
+                    Escribir "2. Recoger motocicleta";
+                    Escribir "3. Inventario de repuestos";
+                    Leer opcion;	
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Ingrese el nombre completo del usuario";
+                            Leer nombreCompleto;
+                            Escribir "Ingrese la identificación del usuario";
+                            Leer identificacion;
+                            Escribir "Ingrese la dirección del usuario";
+                            Leer direccion;
+                            Escribir "Ingrese el modelo de la motocicleta";
+                            Leer modelMoto;
+                            Escribir "Ingrese la placa de la motocicleta";
+                            Leer placaMoto;
+                            Escribir "Fecha de ingreso";
+                            Leer fechaIngreso;
+                            
+                            Escribir "Ingrese algunos detalles del problema";
+                            Leer probleMoto;
+                            
+                            Escribir "El tiempo estimado de la revisión es de 30 a 45m, favor de esperar, gracias";
+                            Escribir "Se realizó la revisión de la moto, se necesita realizar lo siguiente : ";
+                            Escribir "El cambio de 02 piezas de bujia y la limpieza de los filtros(mant.) ";
+                            Escribir "Para generar la cotización ingrese al sistema los repuestos que se necesitan";
+                            
+                            Escribir "1. Bujias";  //incluye Man y Reparación
+                            Escribir "2. Pastillas de freno";  //incluye Man y Reparación
+                            Escribir "3. Mantenimiento";
+                            Leer componentes;
+                            
+                            Segun componentes Hacer
+                                1:
+                                    Escribir "Ingrese la cantidad de bujias";
+                                    Leer inputBujia;
+                                    
+                                    SI inputBujia <= cantidadBujia Entonces
+                                        precioTotal <- (precioBujia * inputBujia) + precioMantenimiento + precioReparacion;
+                                        
+                                        Escribir "El precio del servicio es : $", precioTotal, " dolares.";
+                                        Escribir "¿Desea que realicemos el servicio de Reparación?";
+                                        Leer servicio;
+                                        
+                                        Si servicio Entonces
+                                            cantidadBujia <- cantidadBujia - inputBujia;
+                                            Escribir "Se iniciara el servicio de reparación";
+                                            Escribir "Acerquese a caja a realizar el pago del servicio, gracias";
+                                        SiNo
+                                            Escribir "Favor de pasar al area de entrega";
+                                        FinSi
+                                    SiNo
+                                        Escribir "No tenemos esa cantidad en stock";
+                                    FinSi
+                                    
+                                2:
+                                    Escribir "Ingrese la cantidad de pastillas de freno";
+                                    Leer inputPastilla;
+                                    
+                                    SI inputPastilla <= cantidadPastillas Entonces
+                                        precioTotal <- (precioPastillasFreno * inputPastilla) + precioMantenimiento + precioReparacion;
+                                        
+                                        Escribir "El precio del servicio es : $", precioTotal, " dolares.";
+                                        Escribir "¿Desea que realicemos el servicio de Reparación?";
+                                        Leer servicio;
+                                        
+                                        Si servicio Entonces
+                                            cantidadPastillas <- cantidadPastillas - inputPastilla;
+                                            Escribir "Se iniciara el servicio de reparación";
+                                            Escribir "Acerquese a caja a realizar el pago del servicio, gracias";
+                                        SiNo
+                                            Escribir "Favor de pasar al area de entrega";
+                                        FinSi
+                                    SiNo
+                                        Escribir "No tenemos esa cantidad en stock";
+                                    FinSi
+                                
+                                3:
+                                    Escribir "El precio del mantenimiento es : $", precioMantenimiento, " dolares.";
+                                    
+                                De Otro Modo:
+                                    Escribir "La opción elegida no existe";
+                            FinSegun
+                            
+                        2:
+                            
+                            Escribir "Area de entrega de motocicleta";
+                            Escribir "Ingrese el numero de placa";
+                            Leer recoPlacaMoto;
+                            
+                            Si placaMoto = recoPlacaMoto Entonces
+                                Escribir "Su motocicleta esta reparada, se lista el detalle de la reparación :";
+                                Escribir "Cambio de 02 pz de bujia(Reparacion) y mantenimiento";
+                            SiNo
+                                Escribir "Placa incorrecta, vuelva a ingresar";
+                            FinSi
+                            
+                        3:
+                            Escribir "Inventario";
+                            Escribir cantidadBujia, " pz Bujias";
+                            Escribir cantidadPastillas, " pz Pastillas de frenos";
+                            Escribir cantidadBateria, " pz Baterias";
+                            Escribir cantidadNeumaticos, " pz Neumaticos";
+                            
+                        De Otro Modo:
+                            Escribir "La opción elegida no existe";
+                            
+                    FinSegun
+                FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            SubProceso posicion <- buscar_moto ( placa, ingresoMoto, cont )
+                Definir indice, posicion Como Entero;
+                cont <- cont -1;
+                Para indice <- 0 Hasta cont Con Paso 1 Hacer
+                    
+                    SI placa = ingresoMoto[indice,0] Entonces
+                        posicion <- indice; 
+                    FinSi
+                    
+                FinPara
+            
+            FinSubProceso
+            
+            // Funcion guarda los datos personales de usuarios en un arreglo bidimensional
+            SubProceso solicitudDatos ( nombreCompleto Por Referencia, identificacion Por Referencia, direccion Por Referencia, modelMoto Por Referencia, placaMoto Por Referencia, fechaIngreso Por Referencia, probleMoto Por Referencia )
+                Escribir "Nombre completo.";
+                Leer nombreCompleto;
+                Escribir "Identificación";
+                Leer identificacion;
+                Escribir "Direccion";
+                Leer direccion;
+                Escribir "Modelo de la motocicleta";
+                Leer modelMoto;
+                Escribir "Placa de la motocicleta";
+                Leer placaMoto;
+                Escribir "Fecha de ingreso";
+                Leer fechaIngreso;
+                Escribir "Ingrese algunos detalles del problema";
+                Leer probleMoto;
+            FinSubProceso
+            
+                Proceso sin_titulo
+                    
+                    Definir nombreCompleto, direccion, modelMoto, placaMoto, inputPlaca, fechaIngreso, probleMoto, ingresoMoto, identificacion, diagnostico, repuesto, repuestos, inputRepuestos, cotizaRepuestos, salir, servicioRealizado Como Caracter;
+                    Definir opcion, opcion1, cont, cantidad, cantidades, inputCantidad, indice, indiceMoto, indice1, contador Como Entero;
+                    Definir precios, resultado, total Como Real;
+                    Dimension cantidades[9];
+                    Dimension repuestos[9];
+                    Dimension cotizaRepuestos[20,20];
+                    Dimension precios[9];
+                    Dimension ingresoMoto[20,20];
+                    cont <- 1;
+                    total <- 0;
+                    ingresoMoto[0,0] <- " ";
+            
+                    repuestos[0] <- "Bujia";
+                    repuestos[1] <- "Pastillas de Freno";
+                    repuestos[2] <- "Bateria";
+                    repuestos[3] <- "Neumaticos";
+                    repuestos[4] <- "Filtros";
+                    repuestos[5] <- "Cadena";
+                    repuestos[6] <- "Revision";
+                    repuestos[7] <- "Mantenimiento";
+                    repuestos[8] <- "Reparacion";
+                    
+                    cantidades[0] <- 10; // Bujia
+                    cantidades[1] <- 10; // Pastillas de Freno
+                    cantidades[2] <- 10; // Bateria
+                    cantidades[3] <- 10; // Neumaticos
+                    cantidades[4] <- 10; // Filtros
+                    cantidades[5] <- 10; // Cadena
+                    cantidades[6] <- 100; // Revision
+                    cantidades[7] <- 100; // Mantenimiento
+                    cantidades[8] <- 100; // Reparacion
+                    
+                    precios[0] <- 20; // Bujia
+                    precios[1] <- 40; // Pastillas de Freno
+                    precios[2] <- 60; // Bateria
+                    precios[3] <- 50; // Neumaticos
+                    precios[4] <- 20; // Filtros
+                    precios[5] <- 30; // Cadena
+                    
+                    precios[6] <- 50; // Revision
+                    precios[7] <- 100; // Mantenimiento
+                    precios[8] <- 50; // Reparacion
+            
+                    
+                Repetir
+                    Escribir "Bienvenido al taller el Maquinista";
+                    Escribir " ";
+                    
+                    Escribir "Escoja una de las siguientes opciones";
+                    Escribir "1. Servicio de Revisión";
+                    Escribir "2. Recoger motocicleta";
+                    Escribir "3. Inventario de repuestos";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "1. Revisión";
+                            Escribir "2. Ingreso del diagnostico";
+                            Leer opcion1;
+                            
+                            Segun opcion1 Hacer
+                                1:
+                                    solicitudDatos( nombreCompleto, identificacion, direccion, modelMoto, placaMoto, fechaIngreso, probleMoto );
+                                    Limpiar Pantalla;
+                                    
+                                    Escribir "La revisión puede demorar 1 hora";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir " ";
+                                    
+                                    ingresoMoto[cont,0] <- placaMoto; // PLACA
+                                    ingresoMoto[cont,1] <- nombreCompleto; // NOMBRE COMPLETO
+                                    ingresoMoto[cont,2] <- identificacion; // IDENTIFICACION
+                                    ingresoMoto[cont,3] <- direccion; // DIRECCION
+                                    ingresoMoto[cont,4] <- modelMoto; // MODELO MOTO
+                                    ingresoMoto[cont,5] <- fechaIngreso; // FECHA INGRESO
+                                    ingresoMoto[cont,6] <- probleMoto; // PROBLEMA
+                                    
+                                    cont <- cont + 1;
+                                2:
+                                    indice <- 0;
+                                    contador <- 0;
+                                    resultado <- 0;
+                                    total <- 0;
+                                    Escribir "Ingrese la placa";
+                                    Leer inputPlaca;
+                                    
+                                    indiceMoto <- buscar_moto( inputPlaca, ingresoMoto, cont );
+                                    Escribir indiceMoto;
+                                    SI indiceMoto > 0 Entonces
+                                        
+                                        Escribir "Placa de moto :", ingresoMoto[indiceMoto,0], " Pertenece a :", ingresoMoto[indiceMoto,1], " Ingreso en ", ingresoMoto[indiceMoto,5];
+                                        Repetir
+                                            
+                                            Escribir "Ingrese los repuestos y el tipo de servicio que se necesita para la solución";
+                                            Leer inputRepuestos;
+                                            
+                                            Para indice <- 0 Hasta 8 Con Paso 1 Hacer
+                                                
+                                                SI inputRepuestos = repuestos[indice] Entonces
+                                                    
+                                                    Escribir "Ingrese la cantidad";
+                                                    Leer inputCantidad;
+                                                    Escribir indice;
+                                                    
+                                                    SI inputCantidad <= cantidades[indice] Entonces
+                                                        resultado <- (inputCantidad) * precios[indice];
+                                                        cotizaRepuestos[contador,0] <- ConvertirATexto(inputCantidad); //cantidad
+                                                        cotizaRepuestos[contador,1] <- repuestos(indice);
+                                                        cotizaRepuestos[contador,2] <- ConvertirATexto(resultado);
+                                                        total <- total + resultado;
+                                                        contador <- contador + 1;
+                                                    FinSi
+                                                    
+                                                FinSi
+                                                
+                                            FinPara
+                                            
+                                            Escribir "Presione x si desea salir o cualquier tecla para continuar";
+                                            Leer salir;
+                                        Hasta Que salir = "x"
+                                        
+                                    FinSi
+                                    Limpiar Pantalla;
+                                    
+                                    Para indice <- 0 Hasta contador - 1 Con Paso 1 Hacer
+                                        Escribir cotizaRepuestos[indice,0], " uni, ", cotizaRepuestos[indice,1], " , precio ", cotizaRepuestos[indice,2]; 
+                                    FinPara
+                                    
+                                    Escribir "------------------------------------------------------------- Total :", total, " dolares";
+                                    Escribir " ";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir " ";
+                                    
+                                    Escribir "1. Realizar la reparación";
+                                    Escribir "2. Salir";
+                                    Leer opcion;
+                                    
+                                    Segun opcion Hacer
+                                        1:
+                                            Para indice1 <- 0 Hasta contador - 1 Con Paso 1 Hacer
+                                                repuesto <- cotizaRepuestos[indice1,1];
+                                                
+                                                Para indice <- 0 Hasta 8 Con Paso 1 Hacer
+                                                    SI repuesto = repuestos[indice] Entonces
+                                                        cantidad <- ConvertirANumero(cotizaRepuestos[indice1,0]);
+                                                        cantidades[indice] <- cantidades[indice] - cantidad;
+                                                    FinSi
+                                                FinPara
+                                                
+                                            FinPara
+                                            
+                                            Escribir "Detallar el servicio realizado";
+                                            Leer servicioRealizado;
+                                            ingresoMoto[indiceMoto,7] <- servicioRealizado;
+                                            ingresoMoto[indiceMoto,8] <- ConvertirATexto(total);
+                                            
+                                    FinSegun
+                            FinSegun
+                            
+                        2:
+                            Escribir "Ingrese la placa";
+                            Leer inputPlaca;
+                            indice <- buscar_moto( inputPlaca, ingresoMoto, cont );
+                            
+                            SI indice > - 1 Entonces
+                                Escribir "Placa de moto :", ingresoMoto[indice,0], " Pertenece a :", ingresoMoto[indice,1], " Ingreso en ", ingresoMoto[indice,5];
+                                Escribir ingresoMoto[indiceMoto,7], " Costo del servicio ", total, " dolares";
+                            FinSi
+                            
+                        3:
+                            Escribir "Bujia";
+                            Escribir "Pastillas de Freno";
+                            Escribir "Bateria";
+                            Escribir "Neumaticos";
+                            Escribir "Filtros";
+                            Escribir "Cadena";
+            
+                            
+                            Escribir "Ingrese el repuesto que desea buscar";
+                            Leer inputRepuestos;
+                            
+                            Para indice <- 0 Hasta 5 Con Paso 1 Hacer
+                            
+                                SI inputRepuestos = repuestos[indice] Entonces
+                                    Escribir cantidades[indice], " uni, de : ", repuestos[indice], " , precio x unidad : ", precios[indice], " dolares.";
+                                
+                                FinSi
+                            FinPara
+                            
+                            Escribir "---------------------------------------------------------------------------------------------------------------------";
+                            Escribir "---------------------------------------------------------------------------------------------------------------------";
+                            Escribir " ";
+                            
+                        De Otro Modo:
+                    FinSegun
+                    
+                Hasta Que opcion = 4
+            FinProceso
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #7</h2>
+        <p>La Secretaría de Salud Municipal requiere de una aplicación que le permita calcular el IMC (Índice de masa corporal)
+            y requiere los datos peso en kilogramos y estatura en metros Para cada persona encuestada adicional a los datos
+            suministrados, debe mostrar el resultado para cada uno y establecer en qué rango se encuentra (bajo peso, normal,
+            sobrepeso y obeso).
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto Como Caracter;
+                Definir identificacion Como Entero;
+                Definir peso Como Real;
+                Definir altura Como Real;
+                Definir imc Como Real;
+                
+                    
+                Escribir "Aplicación de Indice de masa corporal";
+                
+                Escribir "Ingrese su nombre completo";
+                Leer nombreCompleto;
+                Escribir "Ingrese su identificación";
+                Leer identificacion;
+                Escribir "Ingrese su peso en kilogramos";
+                Leer peso;
+                Escribir "Ingrese su altura en metros";
+                Leer altura;
+                
+                imc <- peso / (altura * altura);
+                imc <- REDON(imc*100)/100;
+                Escribir imc;
+                
+                Limpiar Pantalla;
+                
+                SI imc >= 30  Entonces
+                    Escribir "Su imc es :", imc, ". Se encuentra en el rango de obesidad";
+                SiNo
+                    SI imc >= 25 y imc < 30 Entonces
+                        Escribir "Su imc es :", imc, ". Se encuentra en el rango de sobre peso";
+                    SiNo
+                        SI imc >= 18.5 y imc < 25 Entonces
+                            Escribir "Su imc es :", imc, ". Se encuentra en el rango de peso normal";
+                        SiNo
+                            SI imc <= 18.5 Entonces
+                                Escribir "Su imc es :", imc, ". Se encuentra en el rango de bajo de peso";
+                            FinSi
+                        FinSi	
+                    FinSi
+                FinSi
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            SubProceso imc <- imc_formula ()
+                Definir imc, peso, altura Como Real;
+                
+                Escribir "Ingrese su peso en kilogramos";
+                Leer peso;
+                Escribir "Ingrese su altura en metros";
+                Leer altura;
+                
+                imc <- peso / (altura * altura);
+                imc <- REDON(imc*100)/100;
+                
+            FinSubProceso
+            
+            // Funcion guarda los datos personales de usuarios
+            SubProceso solicitud_datos ( nombreCompleto Por Referencia, identificacion Por Referencia)
+                Escribir "Ingrese su nombre completo";
+                Leer nombreCompleto;
+                Escribir "Ingrese su identificación";
+                Leer identificacion;
+            FinSubProceso
+            
+            Proceso sin_titulo
+                Definir nombreCompleto Como Caracter;
+                Definir identificacion Como Entero;
+                Definir peso Como Real;
+                Definir altura Como Real;
+                Definir imc Como Real;
+                
+                solicitud_datos( nombreCompleto, identificacion);
+                imc <- imc_formula();
+                
+                SI imc >= 30  Entonces
+                    Escribir "Su imc es :", imc, ". Se encuentra en el rango de obesidad";
+                SiNo
+                    SI imc >= 25 y imc < 30 Entonces
+                        Escribir "Su imc es :", imc, ". Se encuentra en el rango de sobre peso";
+                    SiNo
+                        SI imc >= 18.5 y imc < 25 Entonces
+                            Escribir "Su imc es :", imc, ". Se encuentra en el rango de peso normal";
+                        SiNo
+                            SI imc <= 18.5 Entonces
+                                Escribir "Su imc es :", imc, ". Se encuentra en el rango de bajo de peso";
+                            FinSi
+                        FinSi	
+                    FinSi
+                FinSi
+                
+                
+                
+            FinProceso
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #8</h2>
+        <p>El pastelero Don Carlos es el mejor pastelero de la ciudad y requiere una aplicación que le permita registrar los
+            pedidos de los clientes en cuanto a las tortas que realiza. Cada torta tiene unas características propias como
+            sabor, cantidad (porciones) y decoraciones). Se requiere que la aplicación permita registrar los pedidos, las tortas
+            disponibles y las ventas que se registren diariamente.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir opcion, opcionSabor, opcionTorta, identificacion, cantidadTorta, total Como Entero;
+                Definir sabor,torta, decoracion Como Caracter;
+                Definir nombreCompleto, direccion Como Caracter;
+                
+                Definir stock Como Logico;
+                stock <- Verdadero;
+                
+                Definir cantBreakable, cantMilenals, cantAmour, cantArcoiris Como Entero;
+                Definir precio, precioBreakable, precioMilenals, precioAmour, precioArcoiris Como Real;
+                
+                total <- 400;
+                
+                cantBreakable <- 0;
+                cantMilenals <- 5;
+                cantAmour <- 2;
+                cantArcoiris <- 0;
+                
+                precioBreakable <- 20; 
+                precioMilenals <- 40;
+                precioAmour <- 30;
+                precioArcoiris <- 45;
+                
+                Escribir "1. Programar pedido";
+                Escribir "2. Tortas disponibles";
+                Escribir "3. Ventas diarias";
+                Leer opcion;
+                
+                Segun opcion Hacer
+                    1: 
+                        Escribir "Elegir uno de los sabores";
+                        Escribir "1. Chocolate";
+                        Escribir "2. Vainilla";
+                        Leer opcionSabor;
+                        
+                        Limpiar Pantalla;
+                        Segun opcionSabor Hacer
+                            1:
+                                Escribir "Elegir una de las siguientes tortas";
+                                Escribir " ";
+                                Escribir "1. Breakable Heart Cake";
+                                Escribir "---------------------";
+                                Escribir "Sabor: Chocolate";
+                                Escribir "Relleno: Manjar blanco y Fudge";
+                                Escribir "Decoracion: Floral";
+                                Escribir "Porciones: 20";
+                                Escribir "Precio : ", precioBreakable, " dolares";
+                                Escribir " ";
+                                
+                                Escribir "2. Milenals Cake";
+                                Escribir "---------------------";
+                                Escribir "Sabor: Chocolate";
+                                Escribir "Relleno: Ganache";
+                                Escribir "Decoracion: Geometrico";
+                                Escribir "Porciones: 12";
+                                Escribir "Precio : ", precioMilenals, " dolares";
+                                
+                                Leer opcionTorta;
+                                
+                                Limpiar Pantalla;
+                                
+                                Segun opcionTorta Hacer
+                                    1:
+                                        torta <- "Breakable Heart Cake";
+                                        precio <- precioBreakable;
+                            
+                                    2:	
+                                        torta <- "Milenals Cake";
+                                        precio <- precioMilenals;
+                        
+                                    De Otro Modo:
+                                        Escribir "La opción elegida no existe";
+                                FinSegun
+                                
+                            2:	
+                                Escribir "Elegir una de las siguientes tortas";
+                                Escribir " ";
+                                
+                                Escribir "1. Amour Cake";
+                                Escribir "---------------------";
+                                Escribir "Sabor: Vainilla";
+                                Escribir "Relleno: Fudge";
+                                Escribir "Decoracion: Floral";
+                                Escribir "Porciones: 12";
+                                Escribir precioAmour, " dolares";
+                                Escribir " ";
+                                
+                                Escribir "2. Arcoiris";
+                                Escribir "---------------------";
+                                Escribir "Sabor: Vainilla";
+                                Escribir "Relleno: Manjar blanco";
+                                Escribir "Decoracion: Naked";
+                                Escribir "Porciones: 30";
+                                Escribir precioArcoiris, " dolares";
+                                Leer opcionTorta;
+                                
+                                Segun opcionTorta Hacer
+                                    1:
+                                        torta <- "Amour";
+                                        precio <- precioAmour;
+                                        
+                                    2:	
+                                        torta <- "Arcoiris";
+                                        precio <- precioArcoiris;
+                        
+                                    De Otro Modo:
+                                        Escribir "La opción elegida no existe";
+                                FinSegun	
+            
+                            De Otro Modo:
+                                Escribir "La opción elegida no existe";
+                        FinSegun
+                        
+                        
+                        Escribir "Ingrese la cantidad que desee";
+                        Leer cantidadTorta;
+                        
+                        SI torta = "Breakable Heart Cake" Entonces
+                            SI cantBreakable >= cantidadTorta y cantidadTorta > 0 Entonces
+                                cantBreakable <- cantBreakable - cantidadTorta;
+                            SiNo
+                                Escribir "No tenemos en stock esa cantidad";
+                                stock <- Falso;
+                            FinSi
+                        SiNo
+                            SI torta = "Milenals Cake" Entonces
+                                SI cantMilenals >= cantidadTorta y cantidadTorta > 0 Entonces
+                                    cantMilenals <- cantMilenals - cantidadTorta;
+                                SiNo
+                                    Escribir "No tenemos en stock esa cantidad";
+                                    stock <- Falso;
+                                FinSi
+                                
+                            SiNo
+                                SI torta = "Amour" Entonces
+                                    SI cantAmour >= cantidadTorta y cantidadTorta > 0 Entonces
+                                        cantAmour <- cantAmour - cantidadTorta;
+                                    SiNo
+                                        Escribir "No tenemos en stock esa cantidad";
+                                        stock <- Falso;
+                                    FinSi
+                                    
+                                SiNo
+                                    SI torta = "Arcoiris" Entonces
+                                        SI cantArcoiris >= cantidadTorta y cantidadTorta > 0 Entonces
+                                            cantArcoiris <- cantArcoiris - cantidadTorta;
+                                        SiNo
+                                            Escribir "No tenemos en stock esa cantidad";
+                                            stock <- Falso;
+                                        FinSi
+                                    FinSi	
+                                FinSi
+                            FinSi
+                        FinSi
+                        
+                        SI stock Entonces
+                            Escribir "Ingrese sus datos";
+                            Escribir "Ingrese nombre completo";
+                            Leer nombreCompleto;
+                            Escribir "Ingrese identificación";
+                            Leer identificacion;
+                            Escribir "Ingrese dirección";
+                            Leer direccion;
+                            Escribir "";
+                                            
+                            Escribir "--------Detalle de la torta----------- ";
+                            Escribir cantidadTorta, " ", torta, " - Precio : ", precio, " dolares" ;
+                            Escribir "Favor de realizar el pago en caja";
+                            
+                            precio <- precio * cantidadTorta;
+                            total <- total + precio;
+                        FinSi
+            
+                    2:
+                        Escribir "Tortas disponibles";
+                        SI cantBreakable > 0 Entonces
+                            Escribir cantBreakable, " pz Breakable Heart Cake";
+                        FinSi
+                        
+                        SI cantMilenals > 0 Entonces
+                            Escribir cantMilenals, " pz Milenals Cake";
+                        FinSi
+                        
+                        SI cantAmour > 0 Entonces
+                            Escribir cantAmour, " pz Amour Cake";
+                        FinSi
+                        
+                        SI cantArcoiris > 0 Entonces
+                            Escribir cantArcoiris, " pz Arcoiris";
+                        FinSi
+                                    
+                    3:
+                        Escribir "Venta del dia";
+                        Escribir total, " dolares";
+                    De Otro Modo:
+                        Escribir "La opción elegida no existe";
+                        
+                FinSegun
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            SubProceso solicitud_datos ( nombreCompleto Por Referencia, identificacion Por Referencia, direccion Por Referencia  )
+                Escribir "Ingrese sus datos";
+                Escribir "Nombre completo";
+                Leer nombreCompleto;
+                Escribir "Identificación";
+                Leer identificacion;
+                Escribir "Dirección";
+                Leer direccion;
+            FinSubProceso
+            
+            SubProceso posicion <- buscar_tortas ( tortas, inputTorta )
+                Definir posicion, indice Como Entero;
+                posicion <- -1;
+                
+                Para indice <- 0 Hasta 3 Con Paso 1 Hacer
+                    
+                    SI inputTorta = tortas[indice] Entonces
+                        posicion <- indice;
+                    FinSi
+                FinPara
+            
+            FinSubProceso
+            
+            SubProceso mostrar_tortas ( precios )
+                Escribir "Elegir una de las siguientes tortas";
+                Escribir " ";
+                Escribir "-----------CHOCOLATE---------------";
+                Escribir " ";
+                Escribir "- Breakable";
+                Escribir "---------------------";
+                Escribir "Sabor: Chocolate";
+                Escribir "Relleno: Manjar blanco y Fudge";
+                Escribir "Decoracion: Floral";
+                Escribir "Porciones: 20";
+                Escribir "Precio : ", precios[1], " dolares";
+                Escribir " ";
+                
+                Escribir "- Milenals";
+                Escribir "---------------------";
+                Escribir "Sabor: Chocolate";
+                Escribir "Relleno: Ganache";
+                Escribir "Decoracion: Geometrico";
+                Escribir "Porciones: 12";
+                Escribir "Precio : ", precios[2], " dolares";
+                
+                Escribir " ";
+                Escribir "-----------VAINILLA---------------";
+                Escribir " ";
+                Escribir "- Amour";
+                Escribir "---------------------";
+                Escribir "Sabor: Vainilla";
+                Escribir "Relleno: Fudge";
+                Escribir "Decoracion: Floral";
+                Escribir "Porciones: 12";
+                Escribir "Precio : ", precios[3], " dolares";
+                Escribir " ";
+                
+                Escribir "- Arcoiris";
+                Escribir "---------------------";
+                Escribir "Sabor: Vainilla";
+                Escribir "Relleno: Manjar blanco";
+                Escribir "Decoracion: Naked";
+                Escribir "Porciones: 30";
+                Escribir "Precio : ", precios[0], " dolares";
+            FinSubProceso
+            
+            Proceso sin_titulo
+                
+                Definir inputTorta, tortas, nombreCompleto, identificacion, direccion, registro Como Caracter;
+                Definir opcion, cantidades, inputCantidad, indice, cont, ganancia Como Entero;
+                Definir precios, operacion Como Real;
+                ganancia <- 0;
+                cont <- 0;
+                Dimension registro[20,20];
+                Dimension precios[4];
+                Dimension cantidades[4];
+                Dimension tortas[4];
+                
+            //	Registro[0,0] <- identificacion
+            //	Registro[0,1] <- nombreCompleto
+            //	Registro[0,2] <- torta
+            //	Registro[0,3] <- cantidad
+                
+                tortas[0] <- "Breakable";
+                tortas[1] <- "Milenals";
+                tortas[2] <- "Amour";
+                tortas[3] <- "Arcoiris";
+                
+                cantidades[0] <- 10;
+                cantidades[1] <- 10;
+                cantidades[2] <- 10;
+                cantidades[3] <- 10;
+                    
+                precios[0] <- 20; // 
+                precios[1] <- 40; // 
+                precios[2] <- 60; // 
+                precios[3] <- 50; // 
+            
+                Repetir
+                    Escribir "1. Programar pedido";
+                    Escribir "2. Tortas disponibles";
+                    Escribir "3. Venta diaria";
+                    Escribir "4. Salir";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            mostrar_tortas( precios );
+                            Escribir "Ingrese la torta que desea";
+                            Leer inputTorta;
+                            indice <- buscar_tortas( tortas, inputTorta );
+                            
+                            SI indice > -1 Entonces
+                                Escribir "Ingrese la cantidad";
+                                Leer inputCantidad;
+                                
+                                Limpiar Pantalla;
+                                
+                                SI inputCantidad <= cantidades[indice] Entonces
+                                    
+                                    cantidades[indice] <- cantidades[indice] - inputCantidad;
+                                    solicitud_datos( nombreCompleto, identificacion, direccion );
+                                    operacion <- inputCantidad * precios[indice];
+                                    
+                                    registro[cont,0] <- identificacion;
+                                    registro[cont,1] <- nombreCompleto; 
+                                    registro[cont,2] <- direccion; 
+                                    registro[cont,3] <- tortas[indice];
+                                    registro[cont,4] <- ConvertirATexto(inputCantidad);
+                                    registro[cont,5] <- ConvertirATexto(operacion);
+                                    
+                                    Escribir "--------Detalle de la torta----------- ";
+                                    Escribir registro[cont,4], " ", registro[cont,3], " - Precio : ", registro[cont,5] , " dolares" ;
+                                    Escribir "Favor de realizar el pago en caja";
+                                    cont <- cont + 1;
+                                    ganancia <- ganancia + operacion;
+                                    
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir "---------------------------------------------------------------------------------------------------------------------";
+                                    Escribir " ";
+                                    
+                                SiNo
+                                    Escribir "No tenemos en stock esa cantidad";
+                                FinSi
+                            SiNo
+                                Escribir "No tenemos esa torta";
+                            FinSi
+                            
+                        2:
+                            mostrar_tortas( precios );
+                            Escribir "Ingrese el nombre de la torta";
+                            Leer inputTorta;
+                            indice <- buscar_tortas( tortas, inputTorta );
+                            
+                            SI indice > -1 Entonces
+                                Escribir cantidades[indice], " uni, ", inputTorta, " , precio :", precios[indice], " dolares.";
+                            FinSi
+                            
+                            Escribir "---------------------------------------------------------------------------------------------------------------------";
+                            Escribir "---------------------------------------------------------------------------------------------------------------------";
+                            Escribir " ";
+                            
+                        3:
+                            Escribir " Venta del día :", ganancia, " dolares";
+                            Escribir "---------------------------------------------------------------------------------------------------------------------";
+                            Escribir "---------------------------------------------------------------------------------------------------------------------";
+                            Escribir " ";
+                    FinSegun
+                    
+                    
+                Hasta Que opcion = 4; 
+                
+                
+                
+            FinProceso
+            </code>
+        </pre>
+
+
+
+        <h2>Ejercicio #9</h2>
+        <p>El profesor de geometría está explicando a sus estudiantes las fórmulas para calcular el área de diferentes figuras
+            geométricas, para ello requiere una aplicación que le facilite el ejercicio solicitándole los valores al estudiante.
+            La aplicación debe permitir que el estudiante seleccione si desea calcular el área de un rectángulo, triángulo o
+            trapecio. No olvide solicitar los datos necesarios para realizar cada cálculo y mostrar su respectivo resultado.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Escribir "Aplicación que cálcula el área";
+                Escribir "Escoja una de las siguientes opciones a calcular";
+                Escribir "1. Área de un rectángulo";
+                Escribir "2. Área de un triángulo";
+                Escribir "3. Área de un trapecio";
+                Leer opcion;
+                
+                Limpiar Pantalla;
+                Segun opcion Hacer
+                    1:
+                        Escribir "Área de un rectángulo";
+                        Escribir "Ingresar la base del rectángulo";
+                        Leer base;
+                        Escribir "Ingresar la altura del rectángulo";
+                        Leer altura;
+                        
+                        area <- (base * altura);
+                        Escribir "El Área de un rectángulo es :", area, " m2";
+                    2:
+                        Escribir "Área de un triángulo";
+                        Escribir "Ingresar la base del triángulo";
+                        Leer base;
+                        Escribir "Ingresar la altura del triángulo";
+                        Leer altura;
+                        
+                        area <- (base * altura)/2;
+                        Escribir "El Área de un triángulo es :", area, " m2";	
+                        
+                    3:
+                        Escribir "Área de un trapecio";
+                        Escribir "Ingresar la base menor del trapecio";
+                        Leer baseMenor;
+                        Escribir "Ingresar la base mayor del trapecio";
+                        Leer baseMayor;
+                        Escribir "Ingresar la altura del trapecio";
+                        Leer altura;
+                        
+                        area <- ((baseMenor + baseMayor)/2)*altura;
+                        Escribir "El Área de un trapecio es :", area, " m2";
+                FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+            SubProceso imc <- imc_formula ()
+                Definir imc, peso, altura Como Real;
+                
+                Escribir "Ingrese su peso en kilogramos";
+                Leer peso;
+                Escribir "Ingrese su altura en metros";
+                Leer altura;
+                
+                imc <- peso / (altura * altura);
+                imc <- REDON(imc*100)/100;
+                
+            FinSubProceso
+            
+            SubProceso solicitud_datos ( nombreCompleto Por Referencia, identificacion Por Referencia)
+                Escribir "Ingrese su nombre completo";
+                Leer nombreCompleto;
+                Escribir "Ingrese su identificación";
+                Leer identificacion;
+            FinSubProceso
+            
+            Proceso sin_titulo
+                Definir nombreCompleto Como Caracter;
+                Definir identificacion Como Entero;
+                Definir peso Como Real;
+                Definir altura Como Real;
+                Definir imc Como Real;
+                
+                solicitud_datos( nombreCompleto, identificacion);
+                imc <- imc_formula();
+                
+                SI imc >= 30  Entonces
+                    Escribir "Su imc es :", imc, ". Se encuentra en el rango de obesidad";
+                SiNo
+                    SI imc >= 25 y imc < 30 Entonces
+                        Escribir "Su imc es :", imc, ". Se encuentra en el rango de sobre peso";
+                    SiNo
+                        SI imc >= 18.5 y imc < 25 Entonces
+                            Escribir "Su imc es :", imc, ". Se encuentra en el rango de peso normal";
+                        SiNo
+                            SI imc <= 18.5 Entonces
+                                Escribir "Su imc es :", imc, ". Se encuentra en el rango de bajo de peso";
+                            FinSi
+                        FinSi	
+                    FinSi
+                FinSi
+            
+            FinProceso
+
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #10</h2>
+        <p>El banco "Su banco fiel" es un banco que inicia sus actividades financieras y necesita una aplicación para llevar las
+            cuentas de sus usuarios; por lo tanto, se sugiere que la cuenta tenga los atributos titular y cantidad. Para cada
+            cliente las cuentas permitirán realizar ingresos, retiros o consultas de valor. En los ingresos no se pueden
+            insertar valores negativos y para los retiros el valor no puede ser mayor al valor que tiene en la cuenta.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir numeroCuenta, inputCodigo, inputCuenta, codigo Como Entero;
+                Definir identificacion, numeroCelular, opcion Como Entero;
+                Definir cuenta Como Logico;
+                Definir saldo, inputDinero Como Entero;
+                Definir nombreCompleto, direccion Como Caracter;
+                
+                
+                Escribir "Bienvenido a la app el Banco Fiel";
+                Escribir "¿ Tiene una cuenta en Banco Fiel ?";
+                Leer cuenta;
+                
+                nombreCompleto <- "Ismael";
+                numeroCuenta <- 1564;
+                codigo <- 1234;
+                saldo <- 2000;
+                
+                SI (No cuenta) Entonces
+                    Escribir "Ingrese sus datos para abrir una cuenta";
+                    Escribir "Ingrese su nombre completo";
+                    Leer nombreCompleto;
+                    Escribir "Ingrese su identificación";
+                    Leer identificacion;
+                    Escribir "Ingrese su dirección";
+                    Leer direccion;
+                    Escribir "Ingrese su numero de celular";
+                    Leer numeroCelular;
+                    Escribir "Ingrese su contraseña";
+                    Leer codigo;
+                    numeroCuenta <- 1550;
+                    Escribir nombreCompleto, ", felicitaciones su cuenta ha sido creada exitosamente, su numero de cuenta es :", numeroCuenta;
+                
+                FinSi
+                
+                
+                Escribir " ";
+                Escribir "Ingrese sus datos para ingresar a su cuenta";
+                Escribir "Ingrese su numero de cuenta";
+                Leer inputCuenta;
+                Escribir "Ingrese su contraseña";
+                Leer inputCodigo;
+                Limpiar Pantalla;
+                
+                SI numeroCuenta = inputCuenta y codigo = inputCodigo Entonces
+                    Escribir "Bienvenido ", nombreCompleto,  " que operación desea realizar";
+                    Escribir "1. Ingresar dinero";
+                    Escribir "2. Consulta de dinero";
+                    Escribir "3. Retirar dinero";
+                    Leer opcion;
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Digite el monto que desee ingresar";
+                            Leer inputDinero;
+                            
+                            SI inputDinero < 0 Entonces
+                                Escribir "No puede ingresar cantidades negativas";
+                            SiNo
+                                Escribir inputDinero;
+                                Escribir saldo;
+                                saldo <- saldo + inputDinero;
+                                Escribir "Se deposito el dinero a su cuenta, ahora su saldo es :", saldo, " dolares.";
+                                
+                            FinSi
+                        2: 	
+                            Escribir "Usted cuenta con un saldo de ",saldo, " dolares";
+                        3:
+                            Escribir "Digite el monto que desee retirar";
+                            Leer inputDinero;
+                            
+                            SI inputDinero < 0 o inputDinero > saldo  Entonces
+                                Escribir "Error, no tiene saldo disponible o ingreso una cantidad negativa.";
+                            SiNo
+                                saldo <- saldo - inputDinero;
+                                Escribir "Se retiro ", inputDinero,  " dolares, ahora tiene :", saldo, " dolares en su cuenta.";
+                                
+                                
+                            FinSi 
+                            
+                        De Otro Modo:
+                            Escribir "Opcion incorrecta";
+                            
+                    FinSegun
+                SiNo
+                    Escribir "Su contraseña es incorrecta o ingreso mal el numero de cuenta.";
+                    
+                FinSi
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            SubProceso posicion <- buscar_cuenta ( cuentas, cont )
+                Definir posicion, indice Como Entero;
+                Definir inputCuenta, codigo Como Caracter;
+                
+                Escribir "Ingrese su identificacion";
+                Leer inputCuenta;
+                
+                posicion <- - 1;
+                
+                Para indice <- 0 Hasta cont-1 Con Paso 1 Hacer
+                    SI inputCuenta = cuentas[indice,0] Entonces
+                        Escribir "Ingrese su contraseña";
+                        Leer codigo;
+                        SI codigo = cuentas[indice,4] Entonces
+                            posicion <- indice;
+                        sino
+                            Escribir "Contraseña incorrecta";
+                        FinSi
+                    FinSi
+                FinPara
+                
+            FinSubProceso
+            
+            SubProceso solicitud_datos ( nombreCompleto Por Referencia, identificacion Por Referencia, direccion Por Referencia, celular Por Referencia, codigo Por Referencia )
+                
+                Escribir "Nombre completo";
+                Leer nombreCompleto;
+                Escribir "Identificación";
+                Leer identificacion;
+                Escribir "Dirección";
+                Leer direccion;
+                Escribir "Celular";
+                Leer celular;
+                Escribir "Contraseña";
+                Leer codigo;
+                
+            FinSubProceso
+            
+            Proceso sin_titulo
+                
+                Definir cuentas, nombreCompleto, identificacion, direccion Como Caracter;
+                Definir cont, indice, opcion, celular, codigo Como Entero;
+                Definir saldo, inputDinero Como Real;
+                
+                Dimension cuentas[5,6];
+                cont <- 0;
+                
+                Repetir
+                    Escribir "Bienvenido a la app el Banco Fiel";
+                    Escribir "1. Abrir una nueva cuenta";
+                    Escribir "2. Ingresa a tu cuenta";
+                    Escribir "3. Salir";
+                    Leer opcion;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Ingrese sus datos";
+                            solicitud_datos( nombreCompleto, identificacion, direccion, celular, codigo );
+                            cuentas[cont,0] <- identificacion;
+                            cuentas[cont,1] <- nombreCompleto;
+                            cuentas[cont,2] <- direccion;
+                            cuentas[cont,3] <- ConvertirATexto(celular);
+                            cuentas[cont,4] <- ConvertirATexto(codigo);
+                            cuentas[cont,5] <- "0";
+                            cont <- cont + 1;
+                        2:
+                            indice <- buscar_cuenta( cuentas, cont );
+                            
+                            SI indice > -1 Entonces
+                                Escribir "Bienvenido ", nombreCompleto,  " que operación desea realizar";
+                                Escribir "1. Ingresar dinero";
+                                Escribir "2. Consulta de dinero";
+                                Escribir "3. Retirar dinero";
+                                Leer opcion;
+                                
+                                Segun opcion Hacer
+                                    1:
+                                        Leer inputDinero;
+                                        
+                                        SI inputDinero > 0 Entonces
+                                            saldo <- ConvertirANumero(cuentas[indice,5]);
+                                            saldo <- saldo + inputDinero;
+                                            cuentas[indice,5] <- ConvertirATexto(saldo);
+                                        FinSi
+                                        
+                                    2:
+                                        Escribir "Ingrese su identificacion";
+                                        Escribir cuentas[indice,5];
+                                    3:
+                                        Escribir "¿ Cuanto desea retirar ?";
+                                        Leer inputDinero;
+                                        SI inputDinero > 0 y inputDinero <= ConvertirANumero(cuentas[indice,5]) Entonces
+                                            saldo <- ConvertirANumero(cuentas[indice,5]);
+                                            saldo <- saldo - inputDinero;
+                                            cuentas[indice,5] <- ConvertirATexto(saldo);
+                                        FinSi
+                                        
+                                        
+                                FinSegun
+                            SiNo
+                                Escribir "No se encontro la cuentra";
+                            FinSi
+                    FinSegun
+                
+                Hasta Que opcion = 3 
+                
+                
+                
+            FinProceso
+            </code>
+        </pre>
+
+
+
+    </section>
+</body>
+    <script src="/js/rainbow-custom.min.js" ></script>
+    <script src="/js/taller.js"></script>
+</html>

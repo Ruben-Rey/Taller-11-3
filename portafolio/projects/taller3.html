@@ -1,0 +1,1456 @@
+<!DOCTYPE html>
+<html class="html--taller" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/blackboard.css">
+    <link rel="stylesheet" href="/css/estylos.css">
+</head>
+<body class="body body--taller">
+    <button class="regresar">
+        <a href="/portafolio/project.html">Regresar</a>
+    </button>
+    <h1>Taller de ciclos</h1>
+
+    <section class="section__taller">
+        <h2>Ejercicio #1</h2>
+        <p>Realizar la siguiente figura por medio del ciclo Para.
+        </p>    
+        <pre class="section__ejercicio">
+
+        *
+        **
+        ***
+        ****
+        *****
+        ******
+        *******
+        ********
+        *********
+        **********
+        </pre>
+                    
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir inicio, repet, colum, fila Como Entero;
+                Definir asterisco, veces Como Caracter;
+                
+                repet <- 0;
+                
+                Para colum <- 0 Hasta 10 Con Paso 1 Hacer
+                    Para fila <- 1 Hasta repet Con Paso 1 Hacer
+                        Escribir Sin Saltar "*";
+                    FinPara
+                    Escribir " ";
+                    repet <- repet + 1;
+                FinPara
+            FinProceso
+            </code>
+        </pre>
+
+        <h2>Ejercicio #2</h2>
+        <p>Realizar la siguiente figura por medio del ciclo Mientras - Hacer</p>
+        
+        <pre class="section__ejercicio">
+
+                 *
+                **
+               ***
+              ****
+             *****
+            ******
+           *******
+          ********
+         *********
+        **********
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir cont, inicio, inicio2, final, final2 Como Entero;
+                cont <- 0;
+                inicio <- 0;
+                final <- 10;
+                final2 <- 1;
+                
+                Mientras inicio < 10 Hacer
+                    cont <- 0;
+                    Mientras cont < final Hacer
+                        Escribir Sin Saltar " ";
+                        cont <- cont + 1;
+                    FinMientras
+                    final <- final - 1;
+                    inicio <- inicio + 1;
+                
+                    inicio2 <- 0;
+                    Mientras inicio2 < final2 Hacer
+                        Escribir Sin Saltar "*";
+                        inicio2 <- inicio2 + 1;
+                    FinMientras
+                    final2 <- final2 + 1;
+                    Escribir " ";
+                FinMientras
+            FinProceso
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #3</h2>
+        <p>Realizar la siguiente figura por medio del ciclo Repetir - Hasta Que.
+        </p>
+        <pre class="section__ejercicio">
+
+                  *           
+                 ***
+                *****
+               *******
+              *********
+             ***********
+            *************
+           ***************
+          *****************
+         *******************
+        *********************
+                 ***
+                 ***
+                *****
+               ******* 
+        </pre>
+
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir inicio, final, colum Como Entero;
+                Definir inicio2, final2, colum2 Como Entero;
+                Definir inicio3, final3, colum3  Como Entero;
+                Definir inicio4, final4  Como Entero;
+                Definir inicio5, final5 Como Entero;
+                Definir inicio6, final6  Como Entero;
+                Definir inicio7, final7  Como Entero;
+                Definir inicio8, final8  Como Entero;
+            
+            
+                Definir init Como Logico;
+                init <- Verdadero;
+                
+                final <- 0;
+                inicio <- 0;
+                colum <- 0;
+                
+                final2 <- 9;
+                inicio2 <- 0;
+                colum2 <- 0;
+                
+                final3 <- 0;
+                inicio3 <- 0;
+                colum3 <- 0;
+                
+                final4 <- 9;
+                inicio4 <- 0;
+                
+                final5 <- 2;
+                inicio5 <- 0;
+                
+                final6 <- 8;
+                inicio6 <- 0;
+                
+                final7 <- 1;
+                inicio7 <- 0;
+                
+                final8 <- 1;
+                inicio8 <- 0;
+                
+                //	La copa del arbol 
+                
+                Repetir
+                    
+                    SI init = Verdadero Entonces
+                        Repetir
+                            Escribir Sin Saltar " ";
+                            inicio2 <- inicio2 + 1;
+                        Hasta Que inicio2 > final2 + 1
+                        Escribir "*";
+                    FinSi
+                                    
+                    inicio2 <- 0;
+                    
+                    Repetir
+                        Escribir Sin Saltar " ";
+                        inicio2 <- inicio2 + 1;
+                    Hasta Que inicio2 > final2
+                    Escribir Sin Saltar "*";
+                    
+                    inicio3 <- 0;
+                    
+                    Repetir
+                        Escribir Sin Saltar "*";
+                        inicio3 <- inicio3 + 1;
+                    Hasta Que inicio3 > final3
+                    final3 <- final3 + 1;
+                    
+                    inicio <- 0;
+                    Repetir
+                        Escribir Sin Saltar "*";
+                        inicio <- inicio + 1;
+                    Hasta Que inicio > final
+                    Escribir " ";
+                    final <- final + 1;
+                    
+                    colum <- colum + 1;
+                    final2 <- final2 - 1;
+                    init <- Falso;
+                Hasta Que colum > 9
+                
+                //	medio tallo del arbol 
+                
+                Repetir
+                    inicio4 <- 0;
+                    Repetir
+                        Escribir Sin Saltar " ";
+                        inicio4 <- inicio4 + 1;
+                    Hasta Que inicio4 > final4
+                    
+                    inicio5 <- 0;
+                    Repetir
+                        Escribir Sin Saltar "*";
+                        inicio5 <- inicio5 + 1;
+                    Hasta Que inicio5 > final5
+                    
+                    Escribir " ";
+                    colum2 <- colum2 + 1;
+                Hasta Que colum2 > 1
+                
+                
+            //	--	medio tallo del arbol -------------------
+                
+                Repetir
+                    
+                    inicio6 <- 0;
+                    
+                    Repetir
+                        Escribir Sin Saltar " ";
+                        inicio6 <- inicio6 + 1;
+                    Hasta Que inicio6 > final6
+                    Escribir Sin Saltar "*";
+                    inicio7 <- 0;
+                    
+                    Repetir
+                        Escribir Sin Saltar "*";
+                        inicio7 <- inicio7 + 1;
+                    Hasta Que inicio7 > final7
+                    final7 <- final7 + 1;
+                    
+                    inicio8 <- 0;
+                    Repetir
+                        Escribir Sin Saltar "*";
+                        inicio8 <- inicio8 + 1;
+                    Hasta Que inicio8 > final8
+                    final8 <- final8 + 1;
+                    
+                    colum3 <- colum3 + 1;
+                    final6 <- final6 - 1;
+                    init <- Falso;
+                    Escribir " ";
+                Hasta Que colum3 > 1
+                
+                
+                Escribir " ";
+            FinProceso
+
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #4</h2>
+        <p>Se requiere un programa que pueda crear la tabla de multiplicar del número que el usuario indique por medio del ciclo
+            Para; esta debe ser impresa del 1 al 10. Ejemplo, si el usuario indica que desea crear la tabla del 5, entonces el
+            resultado debería ser el siguiente:
+        </p>
+
+        <pre class="section__ejercicio">
+
+            1 x 5 = 5
+            2 x 5 = 10
+            3 x 5 = 15
+            4 x 5 = 20
+            5 x 5 = 25
+            6 x 5 = 30
+            7 x 5 = 35
+            8 x 5 = 40
+            9 x 5 = 45
+            10 x 5 = 50
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir contador, inputNumero Como Entero;
+	
+                Escribir "Ingrese el numero de la tabla de multiplicar";
+                Leer inputNumero;
+                
+                Para contador <- 1 Hasta 10 Con Paso 1 Hacer
+                    Escribir contador, " * ", inputNumero,  " = ", contador * inputNumero;
+                    
+                FinPara
+            FinProceso
+            </code>
+        </pre>
+
+        <h2>Ejercicio #5</h2>
+        <p>Utilizando el ciclo que usted desee, crear un menú de ejecución infinita hasta que el usuario desee terminar dicho ciclo.
+        </p>
+        <pre class="section__ejercicio">
+            
+            Menù de usuario
+            1. Captura nombre
+            2. Saludar persona
+            3. Salir del sistema
+        </pre>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto Como Caracter;
+                Definir opcion Como Entero;
+                Repetir
+                    Escribir "1. Capturar nombre";
+                    Escribir "2. Saludar persona";
+                    Escribir "3. Salir del sistema";
+                    
+                    Escribir "Escoja la opción que desee";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Ingrese su nombre completo";
+                            Leer nombreCompleto;
+                            
+                            Limpiar Pantalla;
+                        2:
+                            Escribir "Hola ", nombreCompleto;
+                        3: 
+                            opcion <- 3;
+                        De Otro Modo:
+                            Escribir "Esa opción no existe";
+                        
+                    FinSegun
+                    
+                Hasta Que opcion = 3;
+            FinProceso
+            </code>
+        </pre>
+
+        <h2>Ejercicio #6</h2>
+        <p>Se está creando una aplicación que va a estar conectada con un prototipo que permita almacenar contactos telefónicos
+            en el dispositivo. Para ello cada contacto debe contener nombre completo, teléfono y organización. Se requiere que
+            la aplicación permita añadir 3 contactos verificando que el número no esté almacenado, buscar contactos almacenados
+            y eliminar contactos si el usuario lo requiere. Recuerde que el sistema debe terminar cuando el usuario así lo
+            indique.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto1, nombreCompleto2, nombreCompleto3, buscarContacto, inputNombre Como Caracter;
+                Definir opcion, opcionSlot, eliminar, celular1, celular2, celular3, inputCell Como Entero;
+                Definir inputOrganizacion, organizacion1, organizacion2, organizacion3 Como Caracter;
+                Definir slot1, slot2, slot3 Como Logico;
+                slot1 <- Verdadero;
+                slot2 <- Verdadero;
+                slot3 <- Verdadero;
+                celular1 <- 0;
+                celular2 <- 0;
+                celular3 <- 0;
+                nombreCompleto1 <- " ";
+                nombreCompleto2 <- " ";
+                nombreCompleto3 <- " ";
+                Repetir
+                    Escribir "Prototipo de contactos telefonicos";
+                    Escribir "1. Añadir contactos";
+                    Escribir "2. Buscar contactos";
+                    Escribir "3. Eliminar contactos";
+                    Escribir "4. Salir de la app";
+                    
+                    Escribir "Seleccion una de las opciones";
+                    Leer opcion;
+                    
+                    Segun opcion Hacer
+                        1:
+                            SI slot1 Entonces
+                                Escribir "1. Slot disponible";
+                            SiNo
+                                Escribir "1. NO disponible";
+                            FinSi
+                            
+                            SI slot2 Entonces
+                                Escribir "2. Slot disponible";
+                            SiNo
+                                Escribir "2. NO disponible";
+                            FinSi
+                            
+                            SI slot3 Entonces
+                                Escribir "3. Slot disponible";
+                            SiNo
+                                Escribir "3. NO disponible";
+                            FinSi
+                            
+                            Escribir "Seleccione un slot disponible";
+                            Leer opcionSlot;
+                            
+                            Limpiar Pantalla;
+                            
+                            Segun opcionSlot Hacer
+                                1:
+                                    SI slot1 Entonces
+                                        Escribir "Ingrese el nombre completo";
+                                        Leer inputNombre; 
+                                        Escribir "Ingrese el numero de celular";
+                                        Leer inputCell;
+                                        
+                                        SI inputCell = celular1 o inputCell = celular2 o inputCell = celular3 Entonces
+                                            Escribir "Ese numero de celular ya esta agregado";
+                                        SiNo
+                                            Escribir "Ingrese la organización";
+                                            Leer inputOrganizacion;
+                                            
+                                            Limpiar Pantalla;
+                                            celular1 <- inputCell;
+                                            nombreCompleto1 <- inputNombre;
+                                            organizacion1 <- inputOrganizacion;
+                                            slot1 <- Falso;
+                                        FinSi
+                                    SiNo
+                                        Escribir "Tiene un contacto guardado escoja otro slot";
+                                    FinSi
+                                    
+                                2:	
+                                    SI slot2 Entonces
+                                        Escribir "Ingrese el nombre completo";
+                                        Leer inputNombre; 
+                                        Escribir "Ingrese el numero de celular";
+                                        Leer inputCell;
+                                        
+                                        SI inputCell = celular1 o inputCell = celular2 o inputCell = celular3 Entonces
+                                            Escribir "Ese numero de celular ya esta agregado";
+                                        SiNo
+                                            Escribir "Ingrese la organización";
+                                            Leer inputOrganizacion;
+                                            
+                                            Limpiar Pantalla;
+                                            celular2 <- inputCell;
+                                            nombreCompleto2 <- inputNombre;
+                                            organizacion2 <- inputOrganizacion;
+                                            slot2 <- Falso;
+                                        FinSi
+                                    SiNo
+                                        Escribir "Tiene un contacto guardado escoja otro slot";
+                                    FinSi
+                                    
+                                3:
+                                    SI slot3 Entonces
+                                        Escribir "Ingrese el nombre completo";
+                                        Leer inputNombre; 
+                                        Escribir "Ingrese el numero de celular";
+                                        Leer inputCell;
+                                        
+                                        SI inputCell = celular1 o inputCell = celular2 o inputCell = celular3 Entonces
+                                            Escribir "Ese numero de celular ya esta agregado";
+                                        SiNo
+                                            
+                                            Escribir "Ingrese la organización";
+                                            Leer inputOrganizacion;
+                                            
+                                            Limpiar Pantalla;
+                                            
+                                            celular3 <- inputCell;
+                                            nombreCompleto3 <- inputNombre;
+                                            organizacion3 <- inputOrganizacion;
+                                            slot3 <- Falso;
+                                        FinSi
+                                    SiNo
+                                        Escribir "Tiene un contacto guardado escoja otro slot";
+                                    FinSi
+                                    
+                                De Otro Modo:
+                                    Escribir "Esa opcion no existe";
+                            FinSegun
+                        2:
+                            Escribir "Ingrese el nombre del contacto que desea buscar";
+                            Leer buscarContacto;
+                            
+                            Limpiar Pantalla;
+                            
+                            SI buscarContacto = nombreCompleto1 Entonces
+                                Escribir buscarContacto, " numero de celular es ", celular1;
+                            SiNo
+                                SI buscarContacto = nombreCompleto2 Entonces
+                                    Escribir buscarContacto, " numero de celular es ", celular2;
+                                SiNo
+                                    SI buscarContacto = nombreCompleto3 Entonces
+                                        Escribir buscarContacto, " numero de celular es ", celular3;
+                                    SiNo
+                                        Escribir "Contacto no encontrado";
+                                    Finsi
+                                Finsi
+                            FinSi
+                            
+                        3:		
+                            SI NO slot1 o NO slot2 o NO slot3 Entonces
+                                
+                                SI NO slot1 Entonces
+                                    Escribir "1. ", nombreCompleto1, " numero de celular es ", celular1;
+                                FinSi
+                                
+                                SI NO slot2 Entonces
+                                    Escribir "2. ", nombreCompleto2, " numero de celular es ", celular2;
+                                FinSi
+                                
+                                SI NO slot3 Entonces
+                                    Escribir "3. ", nombreCompleto3, " numero de celular es ", celular3;
+                                FinSi
+                                
+                                Escribir "Seleccione el contacto que desea eliminar";
+                                Leer eliminar;
+                                
+                                Limpiar Pantalla;
+                                
+                                Segun eliminar Hacer
+                                    1:
+                                        nombreCompleto1 <- " ";
+                                        celular1 <- 0;
+                                        slot1 <- Verdadero;
+                                    2:
+                                        nombreCompleto2 <- " ";
+                                        celular2 <- 0;
+                                        slot2 <- Verdadero;
+                                        
+                                    3:
+                                        nombreCompleto3 <- " ";
+                                        celular3 <- 0;
+                                        slot3 <- Verdadero;
+                                        
+                                    De Otro Modo:
+                                        Escribir "Esa opcion no existe";
+                                FinSegun
+                            SiNo
+                                Escribir "No tiene contactos";
+                            FinSi
+                            
+                        De Otro Modo:
+                            Escribir "Esa opción no existe";
+                            
+                    FinSegun
+                Hasta Que opcion = 4
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+            SubProceso eliminar_contactos ( contactos, cont, indice )
+	
+                SI indice > -1 Entonces
+                    Escribir "Contacto eliminado";
+                    contactos[indice,0] <- " ";
+                    contactos[indice,1] <- "0";
+                    contactos[indice,2] <- " ";
+                FinSi
+                
+            FinSubProceso
+            
+            SubProceso posicion <- buscar_contactos ( contactos, cont )
+                Definir inputNombre Como Caracter;
+                Definir indice, posicion Como Entero;
+                
+                posicion <- -1;
+                
+                Escribir "Ingrese el nombre";
+                Leer inputNombre;
+                
+                Limpiar Pantalla;
+                Para indice <- 0 Hasta cont-1 Con Paso 1 Hacer
+                    SI inputNombre = contactos[indice,0] Entonces
+                        Escribir "Numero de Celular :",contactos[indice,1];
+                        Escribir "Organización :", contactos[indice,2];
+                        posicion <- indice;
+                    FinSi
+                FinPara
+                
+                Escribir "---------------------------------------------------------------------------------------------------------------------";
+                Escribir "---------------------------------------------------------------------------------------------------------------------";
+                Escribir " ";
+                
+                
+            FinSubProceso
+            
+            SubProceso agregar_contactos ( contactos, cont Por Referencia )
+                
+                Definir indice Como Entero;
+                Escribir "Verificacion si el contacto existe";
+                indice <- buscar_contactos ( contactos, cont );
+                
+                SI indice < 0 Entonces
+                    Definir nombreCompleto, organizacion Como Caracter;
+                    Definir celular Como Entero;
+                    Escribir "No se encuentra el contacto, continue para agregar contacto";
+                    Escribir "Nombre completo";
+                    Leer nombreCompleto; 
+                    Escribir "Numero de celular";
+                    Leer celular;
+                    Escribir "Organizacion";
+                    Leer organizacion;
+                    
+                    Limpiar Pantalla;
+                    contactos[cont,0] <- nombreCompleto;
+                    contactos[cont,1] <- ConvertirATexto(celular);
+                    contactos[cont,2] <- organizacion; 
+                    
+                    cont <- cont + 1;
+                SIno
+                    Escribir "Contacto ya se encuentra agregado";
+                FinSi
+                
+                
+                
+            FinSubProceso
+            
+            Proceso sin_titulo
+                
+                Definir nombreCompleto, organizacion, contactos Como Caracter;
+                Definir celular, opcion, cont, indice Como Entero;
+                cont <- 0;
+                Dimension contactos[3,3];
+                
+                Repetir
+                    
+                    Escribir "Prototipo de contactos telefonicos";
+                    Escribir "1. Añadir contactos";
+                    Escribir "2. Buscar contactos";
+                    Escribir "3. Eliminar contactos";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    
+                    Segun opcion Hacer
+                        
+                        1:
+                            agregar_contactos( contactos, cont );
+            
+                        2:
+                            indice <- buscar_contactos( contactos, cont );
+                            
+                            SI indice < 0 Entonces
+                                Escribir "Contacto no encontrado";
+                            FinSi
+                            
+                        3:
+                            indice <- buscar_contactos( contactos, cont );
+                            eliminar_contactos( contactos, cont, indice );
+                            
+                    FinSegun
+                    
+                Hasta Que opcion = 4
+                
+                
+                
+                
+            FinProceso
+                    
+            </code>
+        </pre>
+
+
+        <h2>Ejercicio #7</h2>
+        <p>El parqueadero "El guardián" presta sus servicios de parqueadero nocturno para los usuarios del barrio y requiere una
+            aplicación que permita registrar los vehículos que se cuidan en estas instalaciones. Se sugiere que el parqueadero
+            tenga los atributos del vehículo como son, placa y marca, y los datos del cliente como son nombre completo y número
+            de teléfono. Para cada vehículo se debe permitir la opción de ingresar al parqueadero, retirar del parqueadero y
+            consultar si un vehículo se encuentra en el parqueadero. Recuerde que el sistema debe terminar cuando el usuario así
+            lo indique. Tenga en presente que el parqueadero solo puede almacenar máximo 5 vehículos.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto1, nombreCompleto2, nombreCompleto3, nombreCompleto4, nombreCompleto5 Como Caracter;
+                Definir inputPlaca, placa1, placa2, placa3, placa4, placa5 Como Caracter;
+                Definir marca1, marca2, marca3, marca4, marca5 Como Caracter;
+                Definir opcion, celular1, celular2, celular3, celular4, celular5 Como Entero;
+                Definir slot1, slot2, slot3, slot4, slot5 Como Logico;
+                slot1 <- Verdadero;
+                slot2 <- Verdadero;
+                slot3 <- Verdadero;
+                slot4 <- Verdadero;
+                slot5 <- Verdadero;
+                placa1 <- " ";
+                placa2 <- " ";
+                placa3 <- " ";
+                placa4 <- " ";
+                placa5 <- " ";
+            
+                Repetir
+                    
+                    Escribir "Parqueadero el guardian";
+                    Escribir "------------------------";
+                    Escribir "1. Ingreso al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consulta de Vehículo en el parqueadero";
+                    Escribir "4. Salir de la app";
+                    Escribir "Seleccione una de las siguientes opciones";
+                    Leer opcion;
+                
+                    Limpiar Pantalla;
+                
+                    Segun opcion Hacer
+                        1:
+                            SI slot1 Entonces
+                                Escribir "Ingrese los datos del usuario";
+                                Escribir "Nombre completo";
+                                Leer nombreCompleto1;
+                                Escribir "Numero de celular";
+                                Leer celular1;
+                                Escribir "Marca del automovil";
+                                Leer marca1;
+                                Escribir "Placa";
+                                Leer placa1;
+                                slot1 <- Falso;
+                                Escribir "Slot1";
+                            SiNo
+                                SI slot2 Entonces
+                                    Escribir "Ingrese los datos del usuario";
+                                    Escribir "Nombre completo";
+                                    Leer nombreCompleto2;
+                                    Escribir "Numero de celular";
+                                    Leer celular2;
+                                    Escribir "Marca del automovil";
+                                    Leer marca2;
+                                    Escribir "Placa";
+                                    Leer placa2;
+                                    slot2 <- Falso;
+                                    Escribir "Slot2";
+                                SiNo
+                                    SI slot3 Entonces
+                                        Escribir "Ingrese los datos del usuario";
+                                        Escribir "Nombre completo";
+                                        Leer nombreCompleto3;
+                                        Escribir "Numero de celular";
+                                        Leer celular3;
+                                        Escribir "Marca del automovil";
+                                        Leer marca3;
+                                        Escribir "Placa";
+                                        Leer placa3;
+                                        slot3 <- Falso;
+                                        Escribir "Slot3";
+                                        
+                                    SiNo
+                                        SI slot4 Entonces
+                                            Escribir "Ingrese los datos del usuario";
+                                            Escribir "Nombre completo";
+                                            Leer nombreCompleto4;
+                                            Escribir "Numero de celular";
+                                            Leer celular4;
+                                            Escribir "Marca del automovil";
+                                            Leer marca4;
+                                            Escribir "Placa";
+                                            Leer placa4;
+                                            slot4 <- Falso;
+                                            Escribir "Slot4";
+                                        SiNo
+                                            SI slot5 Entonces
+                                                Escribir "Ingrese los datos del usuario";
+                                                Escribir "Nombre completo";
+                                                Leer nombreCompleto5;
+                                                Escribir "Numero de celular";
+                                                Leer celular5;
+                                                Escribir "Marca del automovil";
+                                                Leer marca5;
+                                                Escribir "Placa";
+                                                Leer placa5;
+                                                slot5 <- Falso;
+                                                Escribir "Slot5";
+                                            SiNo
+                                                Escribir "No hay espacio disponible";
+                                            FinSi
+                                        FinSi	
+                                    FinSi
+                                FinSi
+                            FinSi
+                        2:
+                            Escribir "Ingrese la placa";
+                            Leer inputPlaca;
+                            
+                            Limpiar Pantalla;
+                            
+                            SI placa1 = inputPlaca Entonces
+                                Escribir "El vehiculo con placa : ", placa1, " retirado del slot: #1";
+                                nombreCompleto1 <- " ";
+                                celular1 <- 0;
+                                marca1 <- " ";
+                                placa1 <- " ";
+                                slot1 <- Verdadero;
+                            SiNo
+                                SI placa2 = inputPlaca Entonces
+                                    Escribir "El vehiculo con placa : ", placa2, " retirado del slot: #2";
+                                    nombreCompleto2 <- " ";
+                                    celular2 <- 0;
+                                    marca2 <- " ";
+                                    placa2 <- " ";
+                                    slot2 <- Verdadero;
+                                SiNo
+                                    SI placa3 = inputPlaca Entonces
+                                        Escribir "El vehiculo con placa : ", placa3, " retirado del slot: #3";
+                                        nombreCompleto3 <- " ";
+                                        celular3 <- 0;
+                                        marca3 <- " ";
+                                        placa3 <- " ";
+                                        slot3 <- Verdadero;
+                                    SiNo
+                                        SI placa4 = inputPlaca Entonces
+                                            Escribir "El vehiculo con placa : ", placa4, " retirado del slot: #4";
+                                            nombreCompleto4 <- " ";
+                                            celular4 <- 0;
+                                            marca4 <- " ";
+                                            placa4 <- " ";
+                                            slot4 <- Verdadero;
+                                        SiNo
+                                            SI placa5 = inputPlaca Entonces
+                                                Escribir "El vehiculo con placa : ", placa5, " retirado del slot: #5";
+                                                nombreCompleto5 <- " ";
+                                                celular5 <- 0;
+                                                marca5 <- " ";
+                                                placa5 <- " ";
+                                                slot5 <- Verdadero;
+                                            SiNo
+                                                Escribir "Aquella placa no se encuentra";
+                                            FinSi
+                                        FinSi
+                                    FinSi
+                                FinSi
+                                
+                            FinSi
+                        
+                        3:
+                            Escribir "Ingrese la placa";
+                            Leer inputPlaca;
+                            
+                            Limpiar Pantalla;
+                            
+                            SI placa1 = inputPlaca Entonces
+                                Escribir "El vehiculo con placa : ", placa1, " se encuentra en el slot: #1"; 
+                            SiNo
+                                SI placa2 = inputPlaca Entonces
+                                    Escribir "El vehiculo con placa : ", placa2, " se encuentra en el slot: #2";
+                                SiNo
+                                    SI placa3 = inputPlaca Entonces
+                                        Escribir "El vehiculo con placa : ", placa3, " se encuentra en el slot: #3";
+                                    SiNo
+                                        SI placa4 = inputPlaca Entonces
+                                            Escribir "El vehiculo con placa : ", placa4, " se encuentra en el slot: #4";
+                                        SiNo
+                                            SI placa5 = inputPlaca Entonces
+                                                Escribir "El vehiculo con placa : ", placa5, " se encuentra en el slot: #5";
+                                            SiNo
+                                                Escribir "Aquella placa no se encuentra";
+                                            FinSi
+                                        FinSi
+                                    FinSi
+                                FinSi
+                                
+                            FinSi
+                            
+                        De Otro Modo:
+                            Escribir "Esa opción no existe";
+                            
+                        
+                    FinSegun
+                            
+                Hasta Que opcion = 4 
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+            SubProceso retiro_auto ( parqueadero, indice )
+                parqueadero[indice,0] <- "";
+                parqueadero[indice,1] <- "";
+                parqueadero[indice,2] <- "";
+                parqueadero[indice,3] <- "";
+                parqueadero[indice,4] <- "";
+            FinSubProceso
+            
+            SubProceso posicion <- buscar_auto ( parqueadero, cont )
+                Definir inputPlaca Como Caracter;
+                Definir posicion, indice Como Entero;
+                posicion <- -1;
+                
+                Escribir "Ingrese la placa";
+                Leer inputPlaca;
+                
+                Para indice <- 0 Hasta cont-1 Con Paso 1 Hacer
+                    SI inputPlaca = parqueadero[indice,0] Entonces
+                        posicion <- indice;
+                    FinSi
+                FinPara
+            FinSubProceso
+            
+            SubProceso ingreso_parqueadero ( parqueadero, cont )
+                
+                Definir nombreCompleto, marca, placa Como Caracter;
+                Definir celular Como Entero;
+                
+                Escribir "Ingrese los datos del usuario";
+                Escribir "Nombre completo";
+                Leer nombreCompleto;
+                Escribir "Numero de celular";
+                Leer celular;
+                Escribir "Marca del automovil";
+                Leer marca;
+                Escribir "Placa";
+                Leer placa;
+                    
+                parqueadero[cont,0] <- placa;
+                parqueadero[cont,1] <- nombreCompleto;
+                parqueadero[cont,2] <- ConvertirATexto(celular);
+                parqueadero[cont,3] <- marca;
+                parqueadero[cont,4] <- ConvertirATexto(cont);
+                
+            FinSubProceso
+            
+            
+            Proceso sin_titulo
+                
+                Definir parqueadero Como Caracter;
+                Definir cont, opcion, indice Como Entero;
+                
+                Dimension parqueadero[5,6];
+                cont <- 0;
+                
+                Repetir
+                    Escribir "Parqueadero el guardian";
+                    Escribir "------------------------";
+                    Escribir "1. Ingreso al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consulta de Vehículo en el parqueadero";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            SI cont < 5 Entonces
+                                ingreso_parqueadero( parqueadero, cont);
+                                cont <- cont + 1;
+                            SiNo
+                                Escribir "No hay espacio";
+                            FinSi
+                            
+                        2:
+                            indice <- buscar_auto( parqueadero, cont );
+                            SI indice > -1 Entonces
+                                Escribir "Auto retirado del estacionamiento slot :",parqueadero[indice,4]; 
+                                retiro_auto( parqueadero, indice );
+                            FinSi
+                        3:
+                            indice <- buscar_auto( parqueadero, cont );
+                            SI indice > -1  Entonces
+                                Escribir "Su auto con placa :" ,parqueadero[indice,0],  " se encuentra en el slot :", parqueadero[indice,4];
+                                 
+                            SiNo
+                                Escribir "Auto no encontrado";
+                            FinSi
+                    FinSegun
+                Hasta Que opcion = 4 
+            FinProceso
+                    
+            </code>
+        </pre>
+
+        <h2>Ejercicio #8</h2>
+        <p>La escuela automovilística "El Maestro" requiere una aplicación que permita registrar a sus clientes en los cursos de
+            enseñanza automovilística y establecer quienes lo han aprobado para continuar con el trámite de adquirir la licencia
+            de conducción. Para cada usuario se debe permitir registrar su ingreso al curso, consultar usuarios que hayan
+            presentado el curso y resultados de la prueba del curso (si fueron aprobados o no). Recuerde que el sistema debe
+            terminar cuando el usuario así lo indique. Tenga presente que la escuela tiene capacidad máxima de gestionar 8
+            usuarios en su totalidad.
+        </p>
+
+        <button class="mostrar">Soluciòn</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+
+            Proceso primer_app
+                Definir nombreCompleto1, nombreCompleto2, nombreCompleto3, nombreCompleto4, nombreCompleto5, nombreCompleto6, nombreCompleto7, nombreCompleto8 Como Caracter;
+                Definir identificacion1, identificacion2, identificacion3, identificacion4, identificacion5, identificacion6, identificacion7, identificacion8 Como Entero;
+                Definir inputPuntaje, puntaje1, puntaje2, puntaje3, puntaje4, puntaje5, puntaje6, puntaje7, puntaje8 Como Entero;
+                Definir opcion, inputIdent, celular1, celular2, celular3, celular4, celular5, celular6, celular7, celular8 Como Entero;
+                Definir slot1, slot2, slot3, slot4, slot5, slot6, slot7, slot8 Como Logico;
+                Definir aprobo1, aprobo2, aprobo3, aprobo4, aprobo5, aprobo6, aprobo7, aprobo8 Como Logico;
+                
+                slot1 <- Verdadero;
+                slot2 <- Verdadero;
+                slot3 <- Verdadero;
+                slot4 <- Verdadero;
+                slot5 <- Verdadero;
+                slot6 <- Verdadero;
+                slot7 <- Verdadero;
+                slot8 <- Verdadero;
+                
+                identificacion1 <- 0;
+                identificacion2 <- 0;
+                identificacion3 <- 0;
+                identificacion4 <- 0;
+                identificacion5 <- 0;
+                identificacion6 <- 0;
+                identificacion7 <- 0;
+                identificacion8 <- 0;
+                
+                puntaje1 <- 0;
+                puntaje2 <- 0;
+                puntaje3 <- 0;
+                puntaje4 <- 0;
+                puntaje5 <- 0;
+                puntaje6 <- 0;
+                puntaje7 <- 0;
+                puntaje8 <- 0;
+                
+                Repetir
+                    
+                    Escribir "APLICACIÓN DE REGISTRO DE CURSOS";
+                    Escribir "----------------------------------";
+                    Escribir "1. Añadir usuarios al curso";
+                    Escribir "2. Usuarios que llevaron el curso";
+                    Escribir "3. Ingreso de notas";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            Escribir "Ingrese los datos del usuario";
+                            Escribir "Identificación";
+                            Leer inputIdent;
+                            
+                            SI inputIdent = identificacion1 o inputIdent = identificacion2 o inputIdent = identificacion3 o inputIdent = identificacion4 o inputIdent = identificacion5 o inputIdent = identificacion6 o inputIdent = identificacion7 o inputIdent = identificacion8 Entonces
+                                Escribir "Ese usuario ya esta registrado";
+                                
+                            SiNo
+                                SI slot1 Entonces
+                                    Escribir "Nombre completo";
+                                    Leer nombreCompleto1;
+                                    Escribir "Numero de celular";
+                                    Leer celular1;
+                                    identificacion1 <- inputIdent;
+                                    
+                                    aprobo1 <- Falso;
+                                    slot1 <- Falso;
+                                    
+                                SiNo
+                                    SI slot2 Entonces
+                                        Escribir "Nombre completo";
+                                        Leer nombreCompleto2;
+                                        Escribir "Numero de celular";
+                                        Leer celular2;
+                                        identificacion2 <- inputIdent;
+                                        
+                                        aprobo2 <- Falso;
+                                        slot2 <- Falso;
+                                    SiNo
+                                        SI slot3 Entonces
+                                            Escribir "Nombre completo";
+                                            Leer nombreCompleto3;
+                                            Escribir "Numero de celular";
+                                            Leer celular3;
+                                            identificacion3 <- inputIdent;
+                                            
+                                            aprobo3 <- Falso;
+                                            slot3 <- Falso;
+                                            
+                                        SiNo
+                                            SI slot4 Entonces
+                                                Escribir "Nombre completo";
+                                                Leer nombreCompleto4;
+                                                Escribir "Numero de celular";
+                                                Leer celular4;
+                                                identificacion4 <- inputIdent;
+                                                
+                                                aprobo4 <- Falso;
+                                                slot4 <- Falso;
+                                                
+                                            SiNo
+                                                SI slot5 Entonces
+                                                    Escribir "Nombre completo";
+                                                    Leer nombreCompleto5;
+                                                    Escribir "Numero de celular";
+                                                    Leer celular5;
+                                                    identificacion5 <- inputIdent;
+                                                    
+                                                    aprobo5 <- Falso;
+                                                    slot5 <- Falso;
+                                                    
+                                                SiNo
+                                                    SI slot6 Entonces
+                                                        Escribir "Nombre completo";
+                                                        Leer nombreCompleto6;
+                                                        Escribir "Numero de celular";
+                                                        Leer celular6;
+                                                        identificacion6 <- inputIdent;
+                                                        
+                                                        aprobo6 <- Falso;
+                                                        slot6 <- Falso;
+                                                        
+                                                    SiNo
+                                                        SI slot7 Entonces
+                                                            Escribir "Nombre completo";
+                                                            Leer nombreCompleto7;
+                                                            Escribir "Numero de celular";
+                                                            Leer celular7;
+                                                            identificacion1 <- inputIdent;
+                                                            
+                                                            aprobo7 <- Falso;
+                                                            slot7 <- Falso;
+                                                            
+                                                        SiNo
+                                                            SI slo8 Entonces
+                                                                Escribir "Nombre completo";
+                                                                Leer nombreCompleto8;
+                                                                Escribir "Numero de celular";
+                                                                Leer celular8;
+                                                                identificacion1 <- inputIdent;
+                                                                
+                                                                aprobo8 <- Falso;
+                                                                slot8 <- Falso;
+                                                                
+                                                            SiNo
+                                                                Escribir "No hay vacante disponible";
+                                                            FinSi
+                                                        FinSi
+                                                    FinSi
+                                                FinSi
+                                            FinSi	
+                                        FinSi
+                                    FinSi
+                                FinSi
+                            FinSi
+                            
+                        2:
+                            SI NO slot1 Entonces
+                                Escribir nombreCompleto1, " con identificación :", identificacion1, " Aprobado: ", aprobo1, " con puntaje de: ", puntaje1;
+                            FinSi
+                            
+                            SI NO slot2 Entonces
+                                Escribir nombreCompleto2, " con identificación :", identificacion2, " Aprobado: ", aprobo2, " con puntaje de: ", puntaje2;
+                            FinSi
+                            
+                            SI NO slot3 Entonces
+                                Escribir nombreCompleto3, " con identificación :", identificacion3, " Aprobado: ", aprobo3, " con puntaje de: ", puntaje3;
+                            FinSi
+                            
+                            SI NO slot4 Entonces
+                                Escribir nombreCompleto4, " con identificación :", identificacion4, " Aprobado: ", aprobo4, " con puntaje de: ", puntaje4;
+                            FinSi
+                            
+                            SI NO slot5 Entonces
+                                Escribir nombreCompleto5, " con identificación :", identificacion5, " Aprobado: ", aprobo5, " con puntaje de: ", puntaje5;
+                            FinSi
+                            
+                            SI NO slot6 Entonces
+                                Escribir nombreCompleto6, " con identificación :", identificacion6, " Aprobado: ", aprobo6, " con puntaje de: ", puntaje6;
+                            FinSi
+                            
+                            SI NO slot7 Entonces
+                                Escribir nombreCompleto7, " con identificación :", identificacion7, " Aprobado: ", aprobo7, " con puntaje de: ", puntaje7;
+                            FinSi
+                            
+                            SI NO slot8 Entonces
+                                Escribir nombreCompleto9, " con identificación :", identificacion8, " Aprobado: ", aprobo8, " con puntaje de: ", puntaje8;
+                            FinSi
+                            
+                        3:
+                            Escribir "Notas";
+                            Escribir "----------------------------------";
+                            Escribir "Ingrese el numero de identificación";
+                            Leer inputIdent;
+                            
+                            SI inputIdent = identificacion1 Entonces
+                                Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto1; 
+                                Leer inputPuntaje;
+                                
+                                Limpiar Pantalla;
+                                SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                    puntaje1 <- inputPuntaje;
+                                    
+                                    SI puntaje1 >= 80 Entonces
+                                        aprobo1 <- Verdadero;
+                                    SiNo
+                                        aprobo1 <- Falso;
+                                    FinSi
+                                SiNo
+                                    Escribir "Solo se permite valores en el rango del 0 al 100";
+                                FinSi
+                                
+                            SiNo
+                                SI inputIdent = identificacion2 Entonces
+                                    Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto2; 
+                                    Leer inputPuntaje;
+                                    
+                                    Limpiar Pantalla;
+                                    SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                        puntaje2 <- inputPuntaje;
+                                        
+                                        SI puntaje2 >= 80 Entonces
+                                            aprobo2 <- Verdadero;
+                                        SiNo
+                                            aprobo2 <- Falso;
+                                        FinSi
+                                    SiNo
+                                        Escribir "Solo se permite valores en el rango del 0 al 100";
+                                    FinSi
+                                SiNo
+                                    SI inputIdent = identificacion3 Entonces
+                                        Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto3; 
+                                        Leer inputPuntaje;
+                                        
+                                        Limpiar Pantalla;
+                                        SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                            puntaje3 <- inputPuntaje;
+                                            
+                                            SI puntaje3 >= 80 Entonces
+                                                aprobo3 <- Verdadero;
+                                            SiNo
+                                                aprobo3 <- Falso;
+                                            FinSi
+                                        SiNo
+                                            Escribir "Solo se permite valores en el rango del 0 al 100";
+                                        FinSi
+                                    SiNo
+                                        SI inputIdent = identificacion4 Entonces
+                                            Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto4; 
+                                            Leer inputPuntaje;
+                                            
+                                            Limpiar Pantalla;
+                                            SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                                puntaje4 <- inputPuntaje;
+                                                
+                                                SI puntaje4 >= 80 Entonces
+                                                    aprobo4 <- Verdadero;
+                                                SiNo
+                                                    aprobo4 <- Falso;
+                                                FinSi
+                                            SiNo
+                                                Escribir "Solo se permite valores en el rango del 0 al 100";
+                                            FinSi
+                                        SiNo
+                                            SI inputIdent = identificacion5 Entonces
+                                                Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto5; 
+                                                Leer inputPuntaje;
+                                                
+                                                Limpiar Pantalla;
+                                                SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                                    puntaje5 <- inputPuntaje;
+                                                    
+                                                    SI puntaje5 >= 80 Entonces
+                                                        aprobo5 <- Verdadero;
+                                                    SiNo
+                                                        aprobo5 <- Falso;
+                                                    FinSi
+                                                SiNo
+                                                    Escribir "Solo se permite valores en el rango del 0 al 100";
+                                                FinSi
+                                            SiNo
+                                                SI inputIdent = identificacion6 Entonces
+                                                    Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto6; 
+                                                    Leer inputPuntaje;
+                                                    
+                                                    Limpiar Pantalla;
+                                                    SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                                        puntaje6 <- inputPuntaje;
+                                                        
+                                                        SI puntaje6 >= 80 Entonces
+                                                            aprobo6 <- Verdadero;
+                                                        SiNo
+                                                            aprobo6 <- Falso;
+                                                        FinSi
+                                                    SiNo
+                                                        Escribir "Solo se permite valores en el rango del 0 al 100";
+                                                    FinSi
+                                                SiNo
+                                                    SI inputIdent = identificacion7 Entonces
+                                                        Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto7; 
+                                                        Leer inputPuntaje;
+                                                        
+                                                        Limpiar Pantalla;
+                                                        SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                                            puntaje7 <- inputPuntaje;
+                                                            
+                                                            SI puntaje7 >= 80 Entonces
+                                                                aprobo7 <- Verdadero;
+                                                            SiNo
+                                                                aprobo1 <- Falso;
+                                                            FinSi
+                                                        SiNo
+                                                            Escribir "Solo se permite valores en el rango del 0 al 100";
+                                                        FinSi
+                                                    SiNo
+                                                        SI inputIdent = identificacion8 Entonces
+                                                            Escribir "Ingrese la nota entre el 0 al 100, del estudiante : ", nombreCompleto8; 
+                                                            Leer inputPuntaje;
+                                                            
+                                                            Limpiar Pantalla;
+                                                            SI inputPuntaje > 0 y inputPuntaje <= 100 Entonces
+                                                                puntaje8 <- inputPuntaje;
+                                                                
+                                                                SI puntaje8 >= 80 Entonces
+                                                                    aprobo8 <- Verdadero;
+                                                                SiNo
+                                                                    aprobo8 <- Falso;
+                                                                FinSi
+                                                            SiNo
+                                                                Escribir "Solo se permite valores en el rango del 0 al 100";
+                                                            FinSi
+                                                        SiNo
+                                                            Escribir "No se encuentro ese numero de identificación";
+                                                        FinSi
+                                                    FinSi
+                                                FinSi
+                                            FinSi
+                                        FinSi
+                                    FinSi
+                                FinSi
+                            FinSi
+                    FinSegun
+                    
+                Hasta Que opcion = 4
+            FinProceso
+            </code>
+        </pre>
+
+        <button class="mostrar__funcion">Soluciòn con Funciones</button>
+        <pre class="codigo">
+            <code data-language="Java"> 
+            SubProceso retiro_auto ( parqueadero, indice )
+                parqueadero[indice,0] <- "";
+                parqueadero[indice,1] <- "";
+                parqueadero[indice,2] <- "";
+                parqueadero[indice,3] <- "";
+                parqueadero[indice,4] <- "";
+            FinSubProceso
+            
+            SubProceso posicion <- buscar_auto ( parqueadero, cont )
+                Definir inputPlaca Como Caracter;
+                Definir posicion, indice Como Entero;
+                posicion <- -1;
+                
+                Escribir "Ingrese la placa";
+                Leer inputPlaca;
+                
+                Para indice <- 0 Hasta cont-1 Con Paso 1 Hacer
+                    SI inputPlaca = parqueadero[indice,0] Entonces
+                        posicion <- indice;
+                    FinSi
+                FinPara
+            FinSubProceso
+            
+            SubProceso ingreso_parqueadero ( parqueadero, cont )
+                
+                Definir nombreCompleto, marca, placa Como Caracter;
+                Definir celular Como Entero;
+                
+                Escribir "Ingrese los datos del usuario";
+                Escribir "Nombre completo";
+                Leer nombreCompleto;
+                Escribir "Numero de celular";
+                Leer celular;
+                Escribir "Marca del automovil";
+                Leer marca;
+                Escribir "Placa";
+                Leer placa;
+                    
+                parqueadero[cont,0] <- placa;
+                parqueadero[cont,1] <- nombreCompleto;
+                parqueadero[cont,2] <- ConvertirATexto(celular);
+                parqueadero[cont,3] <- marca;
+                parqueadero[cont,4] <- ConvertirATexto(cont);
+                
+            FinSubProceso
+            
+            
+            Proceso sin_titulo
+                
+                Definir parqueadero Como Caracter;
+                Definir cont, opcion, indice Como Entero;
+                
+                Dimension parqueadero[5,6];
+                cont <- 0;
+                
+                Repetir
+                    Escribir "Parqueadero el guardian";
+                    Escribir "------------------------";
+                    Escribir "1. Ingreso al parqueadero";
+                    Escribir "2. Retirar del parqueadero";
+                    Escribir "3. Consulta de Vehículo en el parqueadero";
+                    Escribir "4. Salir de la app";
+                    Leer opcion;
+                    
+                    Limpiar Pantalla;
+                    
+                    Segun opcion Hacer
+                        1:
+                            SI cont < 5 Entonces
+                                ingreso_parqueadero( parqueadero, cont);
+                                cont <- cont + 1;
+                            SiNo
+                                Escribir "No hay espacio";
+                            FinSi
+                            
+                        2:
+                            indice <- buscar_auto( parqueadero, cont );
+                            SI indice > -1 Entonces
+                                Escribir "Auto retirado del estacionamiento slot :",parqueadero[indice,4]; 
+                                retiro_auto( parqueadero, indice );
+                            FinSi
+                        3:
+                            indice <- buscar_auto( parqueadero, cont );
+                            SI indice > -1  Entonces
+                                Escribir "Su auto con placa :" ,parqueadero[indice,0],  " se encuentra en el slot :", parqueadero[indice,4];
+                                 
+                            SiNo
+                                Escribir "Auto no encontrado";
+                            FinSi
+                    FinSegun
+                Hasta Que opcion = 4 
+            FinProceso
+                    
+            </code>
+        </pre>
+
+    </section>
+</body>
+    <script src="/js/rainbow-custom.min.js" ></script>
+    <script src="/js/taller.js"></script>
+</html>
